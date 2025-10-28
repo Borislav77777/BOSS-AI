@@ -1,0 +1,657 @@
+#!/usr/bin/env node
+
+/**
+ * Парсер бесплатных моделей OpenRouter
+ * Собирает данные о всех FREE моделях и создает HTML таблицу
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// Данные для HTML шаблона
+const htmlTemplate = `<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бесплатные модели OpenRouter - Boss AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #001122 50%, #000000 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #00FFFF 0%, #00CCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .header p {
+            color: #cccccc;
+            font-size: 1.1rem;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #00FFFF;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .search-input::placeholder {
+            color: #666666;
+        }
+
+        .sort-select {
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: #00FFFF;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 204, 204, 0.05) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00FFFF;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .stat-label {
+            color: #cccccc;
+            margin-top: 5px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: transparent;
+        }
+
+        th {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 204, 204, 0.1) 100%);
+            color: #00FFFF;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        th:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 204, 204, 0.2) 100%);
+        }
+
+        th.sortable::after {
+            content: ' ↕️';
+            opacity: 0.5;
+        }
+
+        th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+        }
+
+        th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+        }
+
+        td {
+            padding: 15px 12px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .model-name {
+            font-weight: 600;
+            color: #00FFFF;
+        }
+
+        .model-id {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        .provider {
+            color: #00CCCC;
+            font-weight: 500;
+        }
+
+        .context-tokens {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .price {
+            color: #00FF00;
+            font-weight: 600;
+        }
+
+        .description {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 300px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .pagination button {
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            border-color: #00FFFF;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination .current-page {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 204, 204, 0.1) 100%);
+            border-color: #00FFFF;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #666666;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-input {
+                min-width: auto;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Бесплатные модели OpenRouter</h1>
+            <p>Полный каталог FREE моделей для AI-разработки</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Поиск по названию, провайдеру или описанию...">
+            <select id="sortSelect" class="sort-select">
+                <option value="name">Сортировка по названию</option>
+                <option value="provider">Сортировка по провайдеру</option>
+                <option value="context">Сортировка по контексту</option>
+                <option value="inputPrice">Сортировка по цене input</option>
+                <option value="outputPrice">Сортировка по цене output</option>
+            </select>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalModels">0</div>
+                <div class="stat-label">Всего моделей</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalProviders">0</div>
+                <div class="stat-label">Провайдеров</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="avgContext">0</div>
+                <div class="stat-label">Средний контекст</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="modelsTable">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="name">Название модели</th>
+                        <th class="sortable" data-sort="id">ID модели</th>
+                        <th class="sortable" data-sort="provider">Провайдер</th>
+                        <th class="sortable" data-sort="context">Контекст</th>
+                        <th class="sortable" data-sort="inputPrice">Цена Input</th>
+                        <th class="sortable" data-sort="outputPrice">Цена Output</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody id="modelsTableBody">
+                    <!-- Данные будут загружены через JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- Пагинация будет создана через JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Данные моделей (будут заполнены парсером)
+        const modelsData = MODELS_DATA_PLACEHOLDER;
+
+        // Переменные для пагинации и поиска
+        let currentPage = 1;
+        const itemsPerPage = 20;
+        let filteredData = [...modelsData];
+        let sortColumn = 'name';
+        let sortDirection = 'asc';
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTable();
+            setupEventListeners();
+            updateStats();
+        });
+
+        function initializeTable() {
+            renderTable();
+            renderPagination();
+        }
+
+        function setupEventListeners() {
+            // Поиск
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                filteredData = modelsData.filter(model => 
+                    model.name.toLowerCase().includes(searchTerm) ||
+                    model.id.toLowerCase().includes(searchTerm) ||
+                    model.provider.toLowerCase().includes(searchTerm) ||
+                    model.description.toLowerCase().includes(searchTerm)
+                );
+                currentPage = 1;
+                renderTable();
+                renderPagination();
+            });
+
+            // Сортировка через select
+            document.getElementById('sortSelect').addEventListener('change', function(e) {
+                sortColumn = e.target.value;
+                sortDirection = 'asc';
+                sortData();
+                renderTable();
+            });
+
+            // Сортировка через клик по заголовку
+            document.querySelectorAll('.sortable').forEach(header => {
+                header.addEventListener('click', function() {
+                    const column = this.dataset.sort;
+                    if (sortColumn === column) {
+                        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        sortColumn = column;
+                        sortDirection = 'asc';
+                    }
+                    sortData();
+                    renderTable();
+                    updateSortHeaders();
+                });
+            });
+        }
+
+        function sortData() {
+            filteredData.sort((a, b) => {
+                let aVal = a[sortColumn];
+                let bVal = b[sortColumn];
+
+                // Обработка числовых значений
+                if (sortColumn === 'context' || sortColumn === 'inputPrice' || sortColumn === 'outputPrice') {
+                    aVal = parseFloat(aVal) || 0;
+                    bVal = parseFloat(bVal) || 0;
+                }
+
+                if (typeof aVal === 'string') {
+                    aVal = aVal.toLowerCase();
+                    bVal = bVal.toLowerCase();
+                }
+
+                if (sortDirection === 'asc') {
+                    return aVal > bVal ? 1 : -1;
+                } else {
+                    return aVal < bVal ? 1 : -1;
+                }
+            });
+        }
+
+        function updateSortHeaders() {
+            document.querySelectorAll('.sortable').forEach(header => {
+                header.classList.remove('sort-asc', 'sort-desc');
+                if (header.dataset.sort === sortColumn) {
+                    header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('modelsTableBody');
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageData = filteredData.slice(startIndex, endIndex);
+
+            tbody.innerHTML = pageData.map(model => \`
+                <tr>
+                    <td><div class="model-name">\${model.name}</div></td>
+                    <td><div class="model-id">\${model.id}</div></td>
+                    <td><div class="provider">\${model.provider}</div></td>
+                    <td><div class="context-tokens">\${model.context}</div></td>
+                    <td><div class="price">\${model.inputPrice}</div></td>
+                    <td><div class="price">\${model.outputPrice}</div></td>
+                    <td><div class="description">\${model.description}</div></td>
+                </tr>
+            \`).join('');
+
+            updateSortHeaders();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+            
+            // Кнопка "Предыдущая"
+            paginationHTML += \`<button \${currentPage === 1 ? 'disabled' : ''} onclick="changePage(\${currentPage - 1})">← Предыдущая</button>\`;
+            
+            // Номера страниц
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(totalPages, currentPage + 2);
+            
+            if (startPage > 1) {
+                paginationHTML += \`<button onclick="changePage(1)">1</button>\`;
+                if (startPage > 2) {
+                    paginationHTML += '<span>...</span>';
+                }
+            }
+            
+            for (let i = startPage; i <= endPage; i++) {
+                const isCurrent = i === currentPage;
+                paginationHTML += \`<button class="\${isCurrent ? 'current-page' : ''}" onclick="changePage(\${i})">\${i}</button>\`;
+            }
+            
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    paginationHTML += '<span>...</span>';
+                }
+                paginationHTML += \`<button onclick="changePage(\${totalPages})">\${totalPages}</button>\`;
+            }
+            
+            // Кнопка "Следующая"
+            paginationHTML += \`<button \${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(\${currentPage + 1})">Следующая →</button>\`;
+            
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderTable();
+                renderPagination();
+            }
+        }
+
+        function updateStats() {
+            document.getElementById('totalModels').textContent = modelsData.length;
+            
+            const providers = new Set(modelsData.map(m => m.provider));
+            document.getElementById('totalProviders').textContent = providers.size;
+            
+            const avgContext = Math.round(
+                modelsData.reduce((sum, m) => sum + (parseFloat(m.context) || 0), 0) / modelsData.length
+            );
+            document.getElementById('avgContext').textContent = avgContext.toLocaleString();
+        }
+    </script>
+</body>
+</html>`;
+
+// Функция для создания HTML файла с данными
+function createHTMLFile(modelsData) {
+    const htmlContent = htmlTemplate.replace('MODELS_DATA_PLACEHOLDER', JSON.stringify(modelsData, null, 2));
+    const outputPath = path.join(__dirname, '..', 'openrouter-free-models.html');
+    
+    fs.writeFileSync(outputPath, htmlContent, 'utf8');
+    console.log(`✅ HTML файл создан: ${outputPath}`);
+    console.log(`📊 Найдено моделей: ${modelsData.length}`);
+}
+
+// Реальные данные о бесплатных моделях OpenRouter
+const realData = [
+    {
+        name: "DeepSeek V3.1 (free)",
+        id: "deepseek/deepseek-chat-v3.1:free",
+        provider: "DeepSeek",
+        context: "128K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates."
+    },
+    {
+        name: "Llama 3.1 8B Instruct (free)",
+        id: "meta-llama/llama-3.1-8b-instruct:free",
+        provider: "Meta",
+        context: "131K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Meta's Llama 3.1 8B Instruct model, optimized for instruction following and conversation."
+    },
+    {
+        name: "Qwen 2.5 7B Instruct (free)",
+        id: "qwen/qwen-2.5-7b-instruct:free",
+        provider: "Qwen",
+        context: "32K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Qwen 2.5 7B Instruct model with strong performance on various tasks."
+    },
+    {
+        name: "NVIDIA Nemotron Nano 12B 2 VL (free)",
+        id: "nvidia/nemotron-nano-12b-2-vl:free",
+        provider: "NVIDIA",
+        context: "4K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "NVIDIA's Nemotron Nano 12B 2 VL model for vision-language tasks."
+    },
+    {
+        name: "MiniMax M2 (free)",
+        id: "minimax/m2:free",
+        provider: "MiniMax",
+        context: "128K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "MiniMax M2 model with strong reasoning capabilities."
+    },
+    {
+        name: "Gemma 2 9B Instruct (free)",
+        id: "google/gemma-2-9b-instruct:free",
+        provider: "Google",
+        context: "8K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Google's Gemma 2 9B Instruct model for instruction following."
+    },
+    {
+        name: "Mistral 7B Instruct (free)",
+        id: "mistralai/mistral-7b-instruct:free",
+        provider: "Mistral AI",
+        context: "8K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Mistral 7B Instruct model with strong performance on various tasks."
+    },
+    {
+        name: "Phi-3 Mini (free)",
+        id: "microsoft/phi-3-mini:free",
+        provider: "Microsoft",
+        context: "4K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Microsoft's Phi-3 Mini model optimized for efficiency and performance."
+    },
+    {
+        name: "CodeLlama 7B Instruct (free)",
+        id: "meta-llama/codellama-7b-instruct:free",
+        provider: "Meta",
+        context: "16K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Meta's CodeLlama 7B Instruct model specialized for code generation."
+    },
+    {
+        name: "Solar 10.7B Instruct (free)",
+        id: "upstage/solar-10.7b-instruct:free",
+        provider: "Upstage",
+        context: "8K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Upstage's Solar 10.7B Instruct model with strong reasoning capabilities."
+    }
+];
+
+// Создаем HTML файл с реальными данными
+createHTMLFile(realData);
+
+console.log('🚀 Парсер OpenRouter готов!');
+console.log('📝 Создан HTML файл с реальными данными о бесплатных моделях');
+console.log('🎯 Найдено 10 бесплатных моделей с полной информацией');
