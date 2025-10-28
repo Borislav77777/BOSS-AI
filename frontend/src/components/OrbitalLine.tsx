@@ -66,9 +66,9 @@ export const OrbitalLine: React.FC<OrbitalLineProps> = ({
 export const OrbitalGradient: React.FC = () => (
     <defs>
         <linearGradient id="orbitalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00FFFF" stopOpacity="0.2" />
-            <stop offset="50%" stopColor="#00FFFF" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#00FFFF" stopOpacity="0.2" />
+            <stop offset="0%" stopColor="#00FFFF" stopOpacity="0.07" />
+            <stop offset="50%" stopColor="#00FFFF" stopOpacity="0.20" />
+            <stop offset="100%" stopColor="#00FFFF" stopOpacity="0.07" />
         </linearGradient>
     </defs>
 );

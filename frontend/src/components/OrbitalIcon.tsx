@@ -59,20 +59,9 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
                 top: `calc(50% + ${position.y}px)`,
                 transform: 'translate(-50%, -50%)',
             }}
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{
-                opacity: iconOpacity,
-                scale: 1,
-            }}
-            transition={{
-                duration: 0.5,
-                delay: level === 1 ? 0.1 : 0.2,
-                type: 'spring',
-                stiffness: 200,
-                damping: 15,
-            }}
-            whileHover={{ scale: iconScale }}
-            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: iconOpacity, scale: 1 }}
+            transition={{ type: 'tween', duration: 0.2, delay: level === 1 ? 0.1 : 0.2 }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
@@ -87,9 +76,10 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
                 style={{
                     width: `${size}px`,
                     height: `${size}px`,
+                    transformOrigin: '50% 50%'
                 }}
-                animate={{ scale: 1.0 }}
-                transition={{ duration: 0 }}
+                animate={{ scale: isHovered ? 1.03 : 1.0 }}
+                transition={{ type: 'tween', duration: 0.15, ease: 'easeOut' }}
             >
                 <img
                     src={agent.avatarUrl}

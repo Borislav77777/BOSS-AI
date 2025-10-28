@@ -134,7 +134,7 @@ export const AgentSelection: React.FC<AgentSelectionProps> = ({ agents, onSelect
                         animated={true}
                         delay={0.3 + index * 0.05}
                         duration={1.0}
-                        opacity={0.25}  // Уменьшенная прозрачность
+                        opacity={0.08}
                         strokeWidth={1}
                     />
                 ))}
