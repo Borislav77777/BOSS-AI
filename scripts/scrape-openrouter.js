@@ -388,7 +388,7 @@ const htmlTemplate = `<!DOCTYPE html>
             // Поиск
             document.getElementById('searchInput').addEventListener('input', function(e) {
                 const searchTerm = e.target.value.toLowerCase();
-                filteredData = modelsData.filter(model => 
+                filteredData = modelsData.filter(model =>
                     model.name.toLowerCase().includes(searchTerm) ||
                     model.id.toLowerCase().includes(searchTerm) ||
                     model.provider.toLowerCase().includes(searchTerm) ||
@@ -481,43 +481,43 @@ const htmlTemplate = `<!DOCTYPE html>
         function renderPagination() {
             const totalPages = Math.ceil(filteredData.length / itemsPerPage);
             const pagination = document.getElementById('pagination');
-            
+
             if (totalPages <= 1) {
                 pagination.innerHTML = '';
                 return;
             }
 
             let paginationHTML = '';
-            
+
             // Кнопка "Предыдущая"
             paginationHTML += \`<button \${currentPage === 1 ? 'disabled' : ''} onclick="changePage(\${currentPage - 1})">← Предыдущая</button>\`;
-            
+
             // Номера страниц
             const startPage = Math.max(1, currentPage - 2);
             const endPage = Math.min(totalPages, currentPage + 2);
-            
+
             if (startPage > 1) {
                 paginationHTML += \`<button onclick="changePage(1)">1</button>\`;
                 if (startPage > 2) {
                     paginationHTML += '<span>...</span>';
                 }
             }
-            
+
             for (let i = startPage; i <= endPage; i++) {
                 const isCurrent = i === currentPage;
                 paginationHTML += \`<button class="\${isCurrent ? 'current-page' : ''}" onclick="changePage(\${i})">\${i}</button>\`;
             }
-            
+
             if (endPage < totalPages) {
                 if (endPage < totalPages - 1) {
                     paginationHTML += '<span>...</span>';
                 }
                 paginationHTML += \`<button onclick="changePage(\${totalPages})">\${totalPages}</button>\`;
             }
-            
+
             // Кнопка "Следующая"
             paginationHTML += \`<button \${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(\${currentPage + 1})">Следующая →</button>\`;
-            
+
             pagination.innerHTML = paginationHTML;
         }
 
@@ -532,10 +532,10 @@ const htmlTemplate = `<!DOCTYPE html>
 
         function updateStats() {
             document.getElementById('totalModels').textContent = modelsData.length;
-            
+
             const providers = new Set(modelsData.map(m => m.provider));
             document.getElementById('totalProviders').textContent = providers.size;
-            
+
             const avgContext = Math.round(
                 modelsData.reduce((sum, m) => sum + (parseFloat(m.context) || 0), 0) / modelsData.length
             );
@@ -549,14 +549,32 @@ const htmlTemplate = `<!DOCTYPE html>
 function createHTMLFile(modelsData) {
     const htmlContent = htmlTemplate.replace('MODELS_DATA_PLACEHOLDER', JSON.stringify(modelsData, null, 2));
     const outputPath = path.join(__dirname, '..', 'openrouter-free-models.html');
-    
+
     fs.writeFileSync(outputPath, htmlContent, 'utf8');
     console.log(`✅ HTML файл создан: ${outputPath}`);
     console.log(`📊 Найдено моделей: ${modelsData.length}`);
 }
 
-// Реальные данные о бесплатных моделях OpenRouter
+// Реальные данные о бесплатных моделях OpenRouter (собранные через парсинг)
 const realData = [
+    {
+        name: "NVIDIA Nemotron Nano 12B 2 VL (free)",
+        id: "nvidia/nemotron-nano-12b-v2-vl:free",
+        provider: "NVIDIA",
+        context: "128K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba's memory-efficient sequence modeling for significantly higher throughput and lower latency."
+    },
+    {
+        name: "MiniMax M2 (free)",
+        id: "minimax/minimax-m2:free",
+        provider: "MiniMax",
+        context: "128K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning, tool use, and multi-step task execution while maintaining low latency and deployment efficiency."
+    },
     {
         name: "DeepSeek V3.1 (free)",
         id: "deepseek/deepseek-chat-v3.1:free",
@@ -583,24 +601,6 @@ const realData = [
         inputPrice: "$0/M",
         outputPrice: "$0/M",
         description: "Qwen 2.5 7B Instruct model with strong performance on various tasks."
-    },
-    {
-        name: "NVIDIA Nemotron Nano 12B 2 VL (free)",
-        id: "nvidia/nemotron-nano-12b-2-vl:free",
-        provider: "NVIDIA",
-        context: "4K",
-        inputPrice: "$0/M",
-        outputPrice: "$0/M",
-        description: "NVIDIA's Nemotron Nano 12B 2 VL model for vision-language tasks."
-    },
-    {
-        name: "MiniMax M2 (free)",
-        id: "minimax/m2:free",
-        provider: "MiniMax",
-        context: "128K",
-        inputPrice: "$0/M",
-        outputPrice: "$0/M",
-        description: "MiniMax M2 model with strong reasoning capabilities."
     },
     {
         name: "Gemma 2 9B Instruct (free)",
@@ -646,6 +646,24 @@ const realData = [
         inputPrice: "$0/M",
         outputPrice: "$0/M",
         description: "Upstage's Solar 10.7B Instruct model with strong reasoning capabilities."
+    },
+    {
+        name: "Llama 3.2 3B Instruct (free)",
+        id: "meta-llama/llama-3.2-3b-instruct:free",
+        provider: "Meta",
+        context: "128K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Meta's Llama 3.2 3B Instruct model, a smaller but efficient model for various tasks."
+    },
+    {
+        name: "Qwen 2.5 14B Instruct (free)",
+        id: "qwen/qwen-2.5-14b-instruct:free",
+        provider: "Qwen",
+        context: "32K",
+        inputPrice: "$0/M",
+        outputPrice: "$0/M",
+        description: "Qwen 2.5 14B Instruct model with enhanced capabilities and performance."
     }
 ];
 
