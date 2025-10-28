@@ -45,7 +45,6 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
         }
     };
 
-    const iconScale = isHovered ? 1.1 : 1.0;
     const iconOpacity = isExpanded ? 0.7 : 1.0;
 
     const labelSize = isMobile ? 'text-xs' : level === 1 ? 'text-sm' : 'text-xs';
@@ -66,20 +65,16 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
         >
-            {/* Иконка (статичная без hover-скейла/свечения) */}
-            <motion.div
-                className={`
-                    relative rounded-full
-                    bg-black/50 backdrop-blur-sm overflow-hidden
-                    focus:outline-none focus-visible:outline-none
-                `}
+            {/* Иконка с плавным scale и cyan glow */}
+            <div
+                className="relative rounded-full bg-black/50 backdrop-blur-sm overflow-hidden focus:outline-none focus-visible:outline-none transition-all duration-200 ease-out"
                 style={{
                     width: `${size}px`,
                     height: `${size}px`,
-                    transformOrigin: '50% 50%'
+                    transform: isHovered ? 'scale(1.05)' : 'scale(1.0)',
+                    transformOrigin: 'center',
+                    boxShadow: isHovered ? '0 0 20px rgba(0, 255, 255, 0.4)' : 'none'
                 }}
-                animate={{ scale: isHovered ? 1.03 : 1.0 }}
-                transition={{ type: 'tween', duration: 0.15, ease: 'easeOut' }}
             >
                 <img
                     src={agent.avatarUrl}
@@ -105,7 +100,7 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
                 </div>
 
                 {/* Эффекты отключены */}
-            </motion.div>
+            </div>
 
             {/* Текст ПОД иконкой */}
             {showLabel && (
