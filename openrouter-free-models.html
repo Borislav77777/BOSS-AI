@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бесплатные модели OpenRouter - Boss AI</title>
+    <title>OpenRouter FREE Models - Complete List</title>
     <style>
         * {
             margin: 0;
@@ -14,19 +14,18 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #000000 0%, #001122 50%, #000000 100%);
-            color: #ffffff;
+            color: #e0e0e0;
             min-height: 100vh;
             padding: 20px;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             background: rgba(0, 0, 0, 0.8);
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 30px;
             box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
-            border: 1px solid rgba(0, 255, 255, 0.2);
         }
 
         .header {
@@ -37,8 +36,8 @@
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #00FFFF 0%, #00CCCC 100%);
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #00FFFF, #00CCCC, #00FFFF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -47,155 +46,144 @@
         }
 
         .header p {
-            color: #cccccc;
-            font-size: 1.1rem;
+            font-size: 1.2em;
+            color: #00CCCC;
+            margin-bottom: 20px;
         }
 
-        .search-container {
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             margin-bottom: 30px;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
         }
 
-        .search-input {
-            flex: 1;
-            min-width: 300px;
-            padding: 12px 20px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(0, 255, 255, 0.3);
+        .stat-card {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
             border-radius: 10px;
-            color: #ffffff;
-            font-size: 16px;
+            padding: 20px;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .search-input:focus {
+        .stat-card:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00FFFF;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #00CCCC;
+            font-size: 0.9em;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 16px;
+        }
+
+        .search-box:focus {
             outline: none;
             border-color: #00FFFF;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
         }
 
-        .search-input::placeholder {
-            color: #666666;
-        }
-
-        .sort-select {
+        .filter-select {
             padding: 12px 15px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(0, 255, 255, 0.3);
-            border-radius: 10px;
-            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
             font-size: 16px;
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #00FFFF;
+        }
+
+        .export-btn {
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #00FFFF, #00CCCC);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .sort-select:focus {
-            outline: none;
-            border-color: #00FFFF;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-        }
-
-        .stats {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(0, 204, 204, 0.05) 100%);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #00FFFF;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-        }
-
-        .stat-label {
-            color: #cccccc;
-            margin-top: 5px;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            border-radius: 15px;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            background: rgba(0, 0, 0, 0.3);
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: transparent;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.07);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            color: #e0e0e0;
         }
 
         th {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 204, 204, 0.1) 100%);
-            color: #00FFFF;
-            padding: 15px 12px;
-            text-align: left;
-            font-weight: 600;
+            background: linear-gradient(90deg, #00CCCC 0%, #00FFFF 100%);
+            color: #000000;
+            font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.9rem;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
             cursor: pointer;
+            position: relative;
             user-select: none;
-            transition: all 0.3s ease;
         }
 
         th:hover {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 204, 204, 0.2) 100%);
-        }
-
-        th.sortable::after {
-            content: ' ↕️';
-            opacity: 0.5;
-        }
-
-        th.sort-asc::after {
-            content: ' ↑';
-            opacity: 1;
-        }
-
-        th.sort-desc::after {
-            content: ' ↓';
-            opacity: 1;
-        }
-
-        td {
-            padding: 15px 12px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
-            vertical-align: top;
+            background: linear-gradient(90deg, #00FFFF 0%, #00CCCC 100%);
         }
 
         tr:hover {
             background: rgba(0, 255, 255, 0.05);
         }
 
-        .model-name {
-            font-weight: 600;
-            color: #00FFFF;
+        .sort-arrow {
+            margin-left: 8px;
+            font-size: 0.8em;
         }
 
-        .model-id {
-            font-family: 'Courier New', monospace;
-            background: rgba(0, 255, 255, 0.1);
-            padding: 4px 8px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #cccccc;
+        .model-name {
+            font-weight: bold;
+            color: #00FFFF;
         }
 
         .provider {
@@ -203,21 +191,21 @@
             font-weight: 500;
         }
 
-        .context-tokens {
-            color: #ffffff;
-            font-weight: 500;
+        .context {
+            color: #00FFCC;
+            font-family: monospace;
         }
 
         .price {
             color: #00FF00;
-            font-weight: 600;
+            font-weight: bold;
         }
 
         .description {
-            color: #cccccc;
-            font-size: 0.9rem;
-            line-height: 1.4;
             max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .pagination {
@@ -229,18 +217,17 @@
         }
 
         .pagination button {
-            padding: 10px 15px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(0, 255, 255, 0.3);
-            border-radius: 8px;
-            color: #ffffff;
+            padding: 8px 12px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+            color: #e0e0e0;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .pagination button:hover:not(:disabled) {
-            border-color: #00FFFF;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            background: rgba(0, 255, 255, 0.2);
         }
 
         .pagination button:disabled {
@@ -248,45 +235,41 @@
             cursor: not-allowed;
         }
 
-        .pagination .current-page {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 0%, rgba(0, 204, 204, 0.1) 100%);
-            border-color: #00FFFF;
+        .pagination .current {
+            background: rgba(0, 255, 255, 0.3);
+            font-weight: bold;
         }
 
-        .no-results {
+        .footer {
             text-align: center;
-            padding: 50px;
-            color: #666666;
-            font-size: 1.2rem;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+            color: #00CCCC;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
-                margin: 10px;
+                padding: 15px;
             }
-
+            
             .header h1 {
-                font-size: 2rem;
+                font-size: 2em;
             }
-
-            .search-container {
+            
+            .controls {
                 flex-direction: column;
                 align-items: stretch;
             }
-
-            .search-input {
+            
+            .search-box {
                 min-width: auto;
             }
-
-            .stats {
-                flex-direction: column;
-            }
-
+            
             table {
-                font-size: 0.9rem;
+                font-size: 0.9em;
             }
-
+            
             th, td {
                 padding: 10px 8px;
             }
@@ -296,349 +279,2344 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🤖 Бесплатные модели OpenRouter</h1>
-            <p>Полный каталог FREE моделей для AI-разработки</p>
-        </div>
-
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Поиск по названию, провайдеру или описанию...">
-            <select id="sortSelect" class="sort-select">
-                <option value="name">Сортировка по названию</option>
-                <option value="provider">Сортировка по провайдеру</option>
-                <option value="context">Сортировка по контексту</option>
-                <option value="inputPrice">Сортировка по цене input</option>
-                <option value="outputPrice">Сортировка по цене output</option>
-            </select>
+            <h1>OpenRouter FREE Models</h1>
+            <p>Complete list of all free AI models available on OpenRouter</p>
         </div>
 
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number" id="totalModels">0</div>
-                <div class="stat-label">Всего моделей</div>
+                <div class="stat-number" id="totalModels">112</div>
+                <div class="stat-label">Total Models</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="totalProviders">0</div>
-                <div class="stat-label">Провайдеров</div>
+                <div class="stat-number" id="totalProviders">33</div>
+                <div class="stat-label">Providers</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" id="avgContext">0</div>
-                <div class="stat-label">Средний контекст</div>
+                <div class="stat-number" id="avgContext">20K</div>
+                <div class="stat-label">Avg Context</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Free Models</div>
             </div>
         </div>
 
-        <div class="table-container">
-            <table id="modelsTable">
-                <thead>
-                    <tr>
-                        <th class="sortable" data-sort="name">Название модели</th>
-                        <th class="sortable" data-sort="id">ID модели</th>
-                        <th class="sortable" data-sort="provider">Провайдер</th>
-                        <th class="sortable" data-sort="context">Контекст</th>
-                        <th class="sortable" data-sort="inputPrice">Цена Input</th>
-                        <th class="sortable" data-sort="outputPrice">Цена Output</th>
-                        <th>Описание</th>
-                    </tr>
-                </thead>
-                <tbody id="modelsTableBody">
-                    <!-- Данные будут загружены через JavaScript -->
-                </tbody>
-            </table>
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search models, providers, descriptions...">
+            <select id="providerFilter" class="filter-select">
+                <option value="">All Providers</option>
+                <option value="AI21">AI21</option><option value="Agentica">Agentica</option><option value="Arcee AI">Arcee AI</option><option value="ArliAI">ArliAI</option><option value="Cohere">Cohere</option><option value="Deep Cogito">Deep Cogito</option><option value="DeepSeek">DeepSeek</option><option value="Dolphin">Dolphin</option><option value="Google">Google</option><option value="Inflection">Inflection</option><option value="Meituan">Meituan</option><option value="Meta">Meta</option><option value="Microsoft">Microsoft</option><option value="MiniMax">MiniMax</option><option value="Mistral">Mistral</option><option value="MoonshotAI">MoonshotAI</option><option value="Morph">Morph</option><option value="NVIDIA">NVIDIA</option><option value="NeverSleep">NeverSleep</option><option value="Noromaid">Noromaid</option><option value="Nous">Nous</option><option value="OpenAI">OpenAI</option><option value="Perplexity">Perplexity</option><option value="Qwen">Qwen</option><option value="ReMM">ReMM</option><option value="Relace">Relace</option><option value="Shisa AI">Shisa AI</option><option value="SorcererLM">SorcererLM</option><option value="TNG">TNG</option><option value="Tencent">Tencent</option><option value="Tongyi">Tongyi</option><option value="Venice">Venice</option><option value="Z.AI">Z.AI</option>
+            </select>
+            <select id="contextFilter" class="filter-select">
+                <option value="">All Context Sizes</option>
+                <option value="4K">4K</option>
+                <option value="8K">8K</option>
+                <option value="16K">16K</option>
+                <option value="32K">32K</option>
+                <option value="128K">128K</option>
+            </select>
+            <button class="export-btn" onclick="exportToJSON()">Export JSON</button>
         </div>
+
+        <table id="modelsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Model Name <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(1)">Provider <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(2)">Context <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(3)">Input Price <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(4)">Output Price <span class="sort-arrow">↕</span></th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="modelsTableBody">
+                
+                    <tr>
+                        <td class="model-name">Nous: DeepHermes 3 Llama 3 8B Preview (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepHermes 3 Llama 3 8B Preview - высококачественная модель от Nous с отличными возможностями инструкций.">DeepHermes 3 Llama 3 8B Preview - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: Hermes 3 405B Instruct (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Hermes 3 405B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.">Hermes 3 405B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: Hermes 3 70B Instruct (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Hermes 3 70B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.">Hermes 3 70B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: Hermes 4 70B (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Hermes 4 70B - высококачественная модель от Nous с отличными возможностями инструкций.">Hermes 4 70B - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: Hermes 4 405B (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Hermes 4 405B - высококачественная модель от Nous с отличными возможностями инструкций.">Hermes 4 405B - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: Hermes 2 Pro - Llama-3 8B (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Hermes 2 Pro - Llama-3 8B - высококачественная модель от Nous с отличными возможностями инструкций.">Hermes 2 Pro - Llama-3 8B - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: DeepHermes 3 Mistral 24B Preview (free)</td>
+                        <td class="provider">Nous</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepHermes 3 Mistral 24B Preview - высококачественная модель от Nous с отличными возможностями инструкций.">DeepHermes 3 Mistral 24B Preview - высококачественная модель от Nous с отличными возможностями инструкций.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3.1 (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek V3.1 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek V3.1 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek R1 0528 Qwen3 8B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek R1 0528 Qwen3 8B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 0528 (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="R1 0528 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">R1 0528 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3 0324 (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek V3 0324 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek V3 0324 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 Distill Llama 70B (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="R1 Distill Llama 70B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">R1 Distill Llama 70B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="R1 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">R1 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3.2 Exp (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek V3.2 Exp - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek V3.2 Exp - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3.1 Terminus (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek V3.1 Terminus - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek V3.1 Terminus - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3.1 Terminus (exacto) (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek V3.1 Terminus (exacto) - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek V3.1 Terminus (exacto) - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek Prover V2 (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek Prover V2 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek Prover V2 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 Distill Qwen 32B (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="R1 Distill Qwen 32B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">R1 Distill Qwen 32B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 Distill Qwen 14B (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="R1 Distill Qwen 14B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">R1 Distill Qwen 14B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3 (free)</td>
+                        <td class="provider">DeepSeek</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek V3 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.">DeepSeek V3 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.5 Flash Image Preview (Nano Banana) (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.5 Flash Image Preview (Nano Banana) - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.5 Flash Image Preview (Nano Banana) - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.5 Flash Preview 09-2025 (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.5 Flash Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.5 Flash Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.5 Flash Lite Preview 09-2025 (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.5 Flash Lite Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.5 Flash Lite Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.5 Flash Lite Preview 06-17 (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.5 Flash Lite Preview 06-17 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.5 Flash Lite Preview 06-17 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.5 Pro Preview 06-05 (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.5 Pro Preview 06-05 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.5 Pro Preview 06-05 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.5 Pro Preview 05-06 (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.5 Pro Preview 05-06 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.5 Pro Preview 05-06 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.0 Flash Experimental (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemini 2.0 Flash Experimental - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemini 2.0 Flash Experimental - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3n 2B (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemma 3n 2B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemma 3n 2B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3n 4B (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemma 3n 4B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemma 3n 4B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3 4B (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemma 3 4B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemma 3 4B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3 12B (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemma 3 12B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemma 3 12B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3 27B (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemma 3 27B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemma 3 27B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 2 9B (free)</td>
+                        <td class="provider">Google</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Gemma 2 9B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.">Gemma 2 9B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 3.3 8B Instruct (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Llama 3.3 8B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.">Llama 3.3 8B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 3.3 70B Instruct (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Llama 3.3 70B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.">Llama 3.3 70B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 3.2 3B Instruct (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Llama 3.2 3B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.">Llama 3.2 3B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 4 Maverick (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Llama 4 Maverick - открытая языковая модель от Meta с сильными возможностями в различных задачах.">Llama 4 Maverick - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 4 Scout (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Llama 4 Scout - открытая языковая модель от Meta с сильными возможностями в различных задачах.">Llama 4 Scout - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 3.1 8B Instruct (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Llama 3.1 8B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.">Llama 3.1 8B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: CodeLlama 7B Instruct (free)</td>
+                        <td class="provider">Meta</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="CodeLlama 7B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.">CodeLlama 7B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 Coder 480B A35B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 Coder 480B A35B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 Coder 480B A35B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 4B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 4B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 4B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 30B A3B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 30B A3B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 30B A3B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 8B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 8B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 8B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 14B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 14B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 14B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 235B A22B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 235B A22B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 235B A22B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 72B (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen3 72B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen3 72B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 VL 32B Instruct (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen2.5 VL 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen2.5 VL 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 Coder 32B Instruct (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen2.5 Coder 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen2.5 Coder 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 72B Instruct (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen2.5 72B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen2.5 72B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 7B Instruct (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen2.5 7B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen2.5 7B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 14B Instruct (free)</td>
+                        <td class="provider">Qwen</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Qwen2.5 14B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.">Qwen2.5 14B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Small 3.2 24B (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Small 3.2 24B - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Small 3.2 24B - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Small 3.1 24B (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Small 3.1 24B - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Small 3.1 24B - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Small 3 (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Small 3 - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Small 3 - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral 7B Instruct (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral 7B Instruct - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral 7B Instruct - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Nemo (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Nemo - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Nemo - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Large 2411 (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Large 2407 (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Large 2407 - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Large 2407 - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Large (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Mistral Large - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Mistral Large - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Pixtral Large 2411 (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Pixtral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Pixtral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Devstral Small 2505 (free)</td>
+                        <td class="provider">Mistral</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Devstral Small 2505 - эффективная модель от Mistral с хорошим балансом производительности и скорости.">Devstral Small 2505 - эффективная модель от Mistral с хорошим балансом производительности и скорости.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">MoonshotAI: Kimi K2 0711 (free)</td>
+                        <td class="provider">MoonshotAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Kimi K2 0711 - передовая модель от MoonshotAI с отличными возможностями.">Kimi K2 0711 - передовая модель от MoonshotAI с отличными возможностями.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">MoonshotAI: Kimi Dev 72B (free)</td>
+                        <td class="provider">MoonshotAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Kimi Dev 72B - передовая модель от MoonshotAI с отличными возможностями.">Kimi Dev 72B - передовая модель от MoonshotAI с отличными возможностями.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Microsoft: Phi 4 Reasoning Plus (free)</td>
+                        <td class="provider">Microsoft</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Phi 4 Reasoning Plus - эффективная модель от Microsoft с хорошими возможностями рассуждения.">Phi 4 Reasoning Plus - эффективная модель от Microsoft с хорошими возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Microsoft: Phi 3 Mini (free)</td>
+                        <td class="provider">Microsoft</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Phi 3 Mini - эффективная модель от Microsoft с хорошими возможностями рассуждения.">Phi 3 Mini - эффективная модель от Microsoft с хорошими возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Microsoft: MAI DS R1 (free)</td>
+                        <td class="provider">Microsoft</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="MAI DS R1 - эффективная модель от Microsoft с хорошими возможностями рассуждения.">MAI DS R1 - эффективная модель от Microsoft с хорошими возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">NVIDIA: Nemotron Nano 12B 2 VL (free)</td>
+                        <td class="provider">NVIDIA</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Nemotron Nano 12B 2 VL - мощная модель от NVIDIA с оптимизацией для различных вычислительных задач.">Nemotron Nano 12B 2 VL - мощная модель от NVIDIA с оптимизацией для различных вычислительных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">NVIDIA: Nemotron Nano 9B V2 (free)</td>
+                        <td class="provider">NVIDIA</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Nemotron Nano 9B V2 - мощная модель от NVIDIA с оптимизацией для различных вычислительных задач.">Nemotron Nano 9B V2 - мощная модель от NVIDIA с оптимизацией для различных вычислительных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">MiniMax: MiniMax M2 (free)</td>
+                        <td class="provider">MiniMax</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="MiniMax M2 - инновационная модель от MiniMax с уникальными возможностями.">MiniMax M2 - инновационная модель от MiniMax с уникальными возможностями.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Agentica: Deepcoder 14B Preview (free)</td>
+                        <td class="provider">Agentica</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Deepcoder 14B Preview - специализированная модель от Agentica.">Deepcoder 14B Preview - специализированная модель от Agentica.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Tongyi DeepResearch 30B A3B (free)</td>
+                        <td class="provider">Tongyi</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepResearch 30B A3B - инновационная модель от Tongyi.">DeepResearch 30B A3B - инновационная модель от Tongyi.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">TNG: DeepSeek R1T2 Chimera (free)</td>
+                        <td class="provider">TNG</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek R1T2 Chimera - инновационная модель от TNG.">DeepSeek R1T2 Chimera - инновационная модель от TNG.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">TNG: DeepSeek R1T Chimera (free)</td>
+                        <td class="provider">TNG</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="DeepSeek R1T Chimera - инновационная модель от TNG.">DeepSeek R1T Chimera - инновационная модель от TNG.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Venice: Uncensored (free)</td>
+                        <td class="provider">Venice</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Uncensored - специализированная модель от Venice.">Uncensored - специализированная модель от Venice.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meituan: LongCat Flash Chat (free)</td>
+                        <td class="provider">Meituan</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="LongCat Flash Chat - эффективная модель от Meituan.">LongCat Flash Chat - эффективная модель от Meituan.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Z.AI: GLM 4.5 Air (free)</td>
+                        <td class="provider">Z.AI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="GLM 4.5 Air - передовая модель от Z.AI.">GLM 4.5 Air - передовая модель от Z.AI.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Tencent: Hunyuan A13B Instruct (free)</td>
+                        <td class="provider">Tencent</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Hunyuan A13B Instruct - мощная модель от Tencent.">Hunyuan A13B Instruct - мощная модель от Tencent.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: gpt-oss-20b (free)</td>
+                        <td class="provider">OpenAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="gpt-oss-20b - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.">gpt-oss-20b - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: GPT-4o-mini Search Preview (free)</td>
+                        <td class="provider">OpenAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="GPT-4o-mini Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.">GPT-4o-mini Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: GPT-4o Search Preview (free)</td>
+                        <td class="provider">OpenAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="GPT-4o Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.">GPT-4o Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: o3 Deep Research (free)</td>
+                        <td class="provider">OpenAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="o3 Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.">o3 Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: o4 Mini Deep Research (free)</td>
+                        <td class="provider">OpenAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="o4 Mini Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.">o4 Mini Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: GPT-4 Turbo Preview (free)</td>
+                        <td class="provider">OpenAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="GPT-4 Turbo Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.">GPT-4 Turbo Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Perplexity: Sonar Deep Research (free)</td>
+                        <td class="provider">Perplexity</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Sonar Deep Research - специализированная модель от Perplexity для исследовательских задач.">Sonar Deep Research - специализированная модель от Perplexity для исследовательских задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Perplexity: Sonar Reasoning Pro (free)</td>
+                        <td class="provider">Perplexity</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Sonar Reasoning Pro - специализированная модель от Perplexity для исследовательских задач.">Sonar Reasoning Pro - специализированная модель от Perplexity для исследовательских задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Perplexity: Sonar Reasoning (free)</td>
+                        <td class="provider">Perplexity</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Sonar Reasoning - специализированная модель от Perplexity для исследовательских задач.">Sonar Reasoning - специализированная модель от Perplexity для исследовательских задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Cohere: Command A (free)</td>
+                        <td class="provider">Cohere</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Command A - мощная модель от Cohere с сильными возможностями в различных задачах.">Command A - мощная модель от Cohere с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Cohere: Command R7B (12-2024) (free)</td>
+                        <td class="provider">Cohere</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Command R7B (12-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.">Command R7B (12-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Cohere: Command R+ (08-2024) (free)</td>
+                        <td class="provider">Cohere</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Command R+ (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.">Command R+ (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Cohere: Command R (08-2024) (free)</td>
+                        <td class="provider">Cohere</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Command R (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.">Command R (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Inflection: Inflection 3 Productivity (free)</td>
+                        <td class="provider">Inflection</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Inflection 3 Productivity - инновационная модель от Inflection с уникальными возможностями.">Inflection 3 Productivity - инновационная модель от Inflection с уникальными возможностями.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Inflection: Inflection 3 Pi (free)</td>
+                        <td class="provider">Inflection</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Inflection 3 Pi - инновационная модель от Inflection с уникальными возможностями.">Inflection 3 Pi - инновационная модель от Inflection с уникальными возможностями.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Arcee AI: Maestro Reasoning (free)</td>
+                        <td class="provider">Arcee AI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Maestro Reasoning - специализированная модель от Arcee AI для конкретных задач.">Maestro Reasoning - специализированная модель от Arcee AI для конкретных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Arcee AI: Virtuoso Large (free)</td>
+                        <td class="provider">Arcee AI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Virtuoso Large - специализированная модель от Arcee AI для конкретных задач.">Virtuoso Large - специализированная модель от Arcee AI для конкретных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Arcee AI: Coder Large (free)</td>
+                        <td class="provider">Arcee AI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Coder Large - специализированная модель от Arcee AI для конкретных задач.">Coder Large - специализированная модель от Arcee AI для конкретных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Arcee AI: Spotlight (free)</td>
+                        <td class="provider">Arcee AI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Spotlight - специализированная модель от Arcee AI для конкретных задач.">Spotlight - специализированная модель от Arcee AI для конкретных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Arcee AI: AFM 4.5B (free)</td>
+                        <td class="provider">Arcee AI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="AFM 4.5B - специализированная модель от Arcee AI для конкретных задач.">AFM 4.5B - специализированная модель от Arcee AI для конкретных задач.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Deep Cogito: Cogito V2 Preview Deepseek 671B (free)</td>
+                        <td class="provider">Deep Cogito</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Cogito V2 Preview Deepseek 671B - передовая модель от Deep Cogito с отличными возможностями рассуждения.">Cogito V2 Preview Deepseek 671B - передовая модель от Deep Cogito с отличными возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Deep Cogito: Cogito V2 Preview Llama 405B (free)</td>
+                        <td class="provider">Deep Cogito</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Cogito V2 Preview Llama 405B - передовая модель от Deep Cogito с отличными возможностями рассуждения.">Cogito V2 Preview Llama 405B - передовая модель от Deep Cogito с отличными возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Deep Cogito: Cogito V2 Preview Llama 70B (free)</td>
+                        <td class="provider">Deep Cogito</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Cogito V2 Preview Llama 70B - передовая модель от Deep Cogito с отличными возможностями рассуждения.">Cogito V2 Preview Llama 70B - передовая модель от Deep Cogito с отличными возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Deep Cogito: Cogito V2 Preview Llama 109B (free)</td>
+                        <td class="provider">Deep Cogito</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Cogito V2 Preview Llama 109B - передовая модель от Deep Cogito с отличными возможностями рассуждения.">Cogito V2 Preview Llama 109B - передовая модель от Deep Cogito с отличными возможностями рассуждения.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Shisa AI: Shisa V2 Llama 3.3 70B (free)</td>
+                        <td class="provider">Shisa AI</td>
+                        <td class="context">128K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Shisa V2 Llama 3.3 70B - высококачественная модель от Shisa AI.">Shisa V2 Llama 3.3 70B - высококачественная модель от Shisa AI.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">ArliAI: QwQ 32B RpR v1 (free)</td>
+                        <td class="provider">ArliAI</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="QwQ 32B RpR v1 - инновационная модель от ArliAI.">QwQ 32B RpR v1 - инновационная модель от ArliAI.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Relace: Relace Apply 3 (free)</td>
+                        <td class="provider">Relace</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Relace Apply 3 - специализированная модель от Relace.">Relace Apply 3 - специализированная модель от Relace.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Morph: Morph V3 Large (free)</td>
+                        <td class="provider">Morph</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Morph V3 Large - передовая модель от Morph.">Morph V3 Large - передовая модель от Morph.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">NeverSleep: Lumimaid v0.2 8B (free)</td>
+                        <td class="provider">NeverSleep</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Lumimaid v0.2 8B - эффективная модель от NeverSleep.">Lumimaid v0.2 8B - эффективная модель от NeverSleep.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">AI21: Jamba Large 1.7 (free)</td>
+                        <td class="provider">AI21</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="Jamba Large 1.7 - мощная модель от AI21.">Jamba Large 1.7 - мощная модель от AI21.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">ReMM SLERP 13B (free)</td>
+                        <td class="provider">ReMM</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="SLERP 13B - специализированная модель от ReMM.">SLERP 13B - специализированная модель от ReMM.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Noromaid 20B (free)</td>
+                        <td class="provider">Noromaid</td>
+                        <td class="context">32K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="20B - уникальная модель от Noromaid.">20B - уникальная модель от Noromaid.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Dolphin3.0 Mistral 24B (free)</td>
+                        <td class="provider">Dolphin</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="3.0 Mistral 24B - эффективная модель от Dolphin.">3.0 Mistral 24B - эффективная модель от Dolphin.</td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">SorcererLM 8x22B (free)</td>
+                        <td class="provider">SorcererLM</td>
+                        <td class="context">8K</td>
+                        <td class="price">$0/M</td>
+                        <td class="price">$0/M</td>
+                        <td class="description" title="8x22B - передовая модель от SorcererLM.">8x22B - передовая модель от SorcererLM.</td>
+                    </tr>
+                
+            </tbody>
+        </table>
 
         <div class="pagination" id="pagination">
-            <!-- Пагинация будет создана через JavaScript -->
+            <!-- Pagination will be generated by JavaScript -->
+        </div>
+
+        <div class="footer">
+            <p>Last updated: 10/28/2025, 8:58:07 PM</p>
+            <p>Data source: OpenRouter.ai | Generated by BOSS-AI Parser</p>
         </div>
     </div>
 
     <script>
-        // Данные моделей (будут заполнены парсером)
-        const modelsData = [
+        const allModels = [
   {
-    "name": "NVIDIA Nemotron Nano 12B 2 VL (free)",
-    "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-    "provider": "NVIDIA",
+    "name": "Nous: DeepHermes 3 Llama 3 8B Preview (free)",
+    "id": "nous/deephermes-3-llama-3-8b-preview:free",
+    "provider": "Nous",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepHermes 3 Llama 3 8B Preview - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/deephermes-3-llama-3-8b-preview:free"
+  },
+  {
+    "name": "Nous: Hermes 3 405B Instruct (free)",
+    "id": "nous/hermes-3-405b-instruct:free",
+    "provider": "Nous",
     "context": "128K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba's memory-efficient sequence modeling for significantly higher throughput and lower latency."
+    "description": "Hermes 3 405B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/hermes-3-405b-instruct:free"
   },
   {
-    "name": "MiniMax M2 (free)",
-    "id": "minimax/minimax-m2:free",
-    "provider": "MiniMax",
+    "name": "Nous: Hermes 3 70B Instruct (free)",
+    "id": "nous/hermes-3-70b-instruct:free",
+    "provider": "Nous",
     "context": "128K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning, tool use, and multi-step task execution while maintaining low latency and deployment efficiency."
+    "description": "Hermes 3 70B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/hermes-3-70b-instruct:free"
   },
   {
-    "name": "DeepSeek V3.1 (free)",
-    "id": "deepseek/deepseek-chat-v3.1:free",
+    "name": "Nous: Hermes 4 70B (free)",
+    "id": "nous/hermes-4-70b:free",
+    "provider": "Nous",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Hermes 4 70B - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/hermes-4-70b:free"
+  },
+  {
+    "name": "Nous: Hermes 4 405B (free)",
+    "id": "nous/hermes-4-405b:free",
+    "provider": "Nous",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Hermes 4 405B - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/hermes-4-405b:free"
+  },
+  {
+    "name": "Nous: Hermes 2 Pro - Llama-3 8B (free)",
+    "id": "nous/hermes-2-pro-llama-3-8b:free",
+    "provider": "Nous",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Hermes 2 Pro - Llama-3 8B - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/hermes-2-pro-llama-3-8b:free"
+  },
+  {
+    "name": "Nous: DeepHermes 3 Mistral 24B Preview (free)",
+    "id": "nous/deephermes-3-mistral-24b-preview:free",
+    "provider": "Nous",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepHermes 3 Mistral 24B Preview - высококачественная модель от Nous с отличными возможностями инструкций.",
+    "url": "https://openrouter.ai/nous/deephermes-3-mistral-24b-preview:free"
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3.1 (free)",
+    "id": "deepseek/deepseek-v31:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek V3.1 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-v31:free"
+  },
+  {
+    "name": "DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)",
+    "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek R1 0528 Qwen3 8B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-r1-0528-qwen3-8b:free"
+  },
+  {
+    "name": "DeepSeek: R1 0528 (free)",
+    "id": "deepseek/r1-0528:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "R1 0528 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/r1-0528:free"
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3 0324 (free)",
+    "id": "deepseek/deepseek-v3-0324:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek V3 0324 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-v3-0324:free"
+  },
+  {
+    "name": "DeepSeek: R1 Distill Llama 70B (free)",
+    "id": "deepseek/r1-distill-llama-70b:free",
     "provider": "DeepSeek",
     "context": "128K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates."
+    "description": "R1 Distill Llama 70B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/r1-distill-llama-70b:free"
   },
   {
-    "name": "Llama 3.1 8B Instruct (free)",
-    "id": "meta-llama/llama-3.1-8b-instruct:free",
-    "provider": "Meta",
-    "context": "131K",
+    "name": "DeepSeek: R1 (free)",
+    "id": "deepseek/r1:free",
+    "provider": "DeepSeek",
+    "context": "8K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Meta's Llama 3.1 8B Instruct model, optimized for instruction following and conversation."
+    "description": "R1 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/r1:free"
   },
   {
-    "name": "Qwen 2.5 7B Instruct (free)",
-    "id": "qwen/qwen-2.5-7b-instruct:free",
-    "provider": "Qwen",
-    "context": "32K",
+    "name": "DeepSeek: DeepSeek V3.2 Exp (free)",
+    "id": "deepseek/deepseek-v32-exp:free",
+    "provider": "DeepSeek",
+    "context": "8K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Qwen 2.5 7B Instruct model with strong performance on various tasks."
+    "description": "DeepSeek V3.2 Exp - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-v32-exp:free"
   },
   {
-    "name": "Gemma 2 9B Instruct (free)",
-    "id": "google/gemma-2-9b-instruct:free",
+    "name": "DeepSeek: DeepSeek V3.1 Terminus (free)",
+    "id": "deepseek/deepseek-v31-terminus:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek V3.1 Terminus - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-v31-terminus:free"
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3.1 Terminus (exacto) (free)",
+    "id": "deepseek/deepseek-v31-terminus-exacto:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek V3.1 Terminus (exacto) - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-v31-terminus-exacto:free"
+  },
+  {
+    "name": "DeepSeek: DeepSeek Prover V2 (free)",
+    "id": "deepseek/deepseek-prover-v2:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek Prover V2 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-prover-v2:free"
+  },
+  {
+    "name": "DeepSeek: R1 Distill Qwen 32B (free)",
+    "id": "deepseek/r1-distill-qwen-32b:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "R1 Distill Qwen 32B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/r1-distill-qwen-32b:free"
+  },
+  {
+    "name": "DeepSeek: R1 Distill Qwen 14B (free)",
+    "id": "deepseek/r1-distill-qwen-14b:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "R1 Distill Qwen 14B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/r1-distill-qwen-14b:free"
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3 (free)",
+    "id": "deepseek/deepseek-v3:free",
+    "provider": "DeepSeek",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek V3 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+    "url": "https://openrouter.ai/deepseek/deepseek-v3:free"
+  },
+  {
+    "name": "Google: Gemini 2.5 Flash Image Preview (Nano Banana) (free)",
+    "id": "google/gemini-25-flash-image-preview-nano-banana:free",
     "provider": "Google",
     "context": "8K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Google's Gemma 2 9B Instruct model for instruction following."
+    "description": "Gemini 2.5 Flash Image Preview (Nano Banana) - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-25-flash-image-preview-nano-banana:free"
   },
   {
-    "name": "Mistral 7B Instruct (free)",
-    "id": "mistralai/mistral-7b-instruct:free",
-    "provider": "Mistral AI",
+    "name": "Google: Gemini 2.5 Flash Preview 09-2025 (free)",
+    "id": "google/gemini-25-flash-preview-09-2025:free",
+    "provider": "Google",
     "context": "8K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Mistral 7B Instruct model with strong performance on various tasks."
+    "description": "Gemini 2.5 Flash Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-25-flash-preview-09-2025:free"
   },
   {
-    "name": "Phi-3 Mini (free)",
-    "id": "microsoft/phi-3-mini:free",
-    "provider": "Microsoft",
-    "context": "4K",
+    "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025 (free)",
+    "id": "google/gemini-25-flash-lite-preview-09-2025:free",
+    "provider": "Google",
+    "context": "8K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Microsoft's Phi-3 Mini model optimized for efficiency and performance."
+    "description": "Gemini 2.5 Flash Lite Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-25-flash-lite-preview-09-2025:free"
   },
   {
-    "name": "CodeLlama 7B Instruct (free)",
-    "id": "meta-llama/codellama-7b-instruct:free",
+    "name": "Google: Gemini 2.5 Flash Lite Preview 06-17 (free)",
+    "id": "google/gemini-25-flash-lite-preview-06-17:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemini 2.5 Flash Lite Preview 06-17 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-25-flash-lite-preview-06-17:free"
+  },
+  {
+    "name": "Google: Gemini 2.5 Pro Preview 06-05 (free)",
+    "id": "google/gemini-25-pro-preview-06-05:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemini 2.5 Pro Preview 06-05 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-25-pro-preview-06-05:free"
+  },
+  {
+    "name": "Google: Gemini 2.5 Pro Preview 05-06 (free)",
+    "id": "google/gemini-25-pro-preview-05-06:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemini 2.5 Pro Preview 05-06 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-25-pro-preview-05-06:free"
+  },
+  {
+    "name": "Google: Gemini 2.0 Flash Experimental (free)",
+    "id": "google/gemini-20-flash-experimental:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemini 2.0 Flash Experimental - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemini-20-flash-experimental:free"
+  },
+  {
+    "name": "Google: Gemma 3n 2B (free)",
+    "id": "google/gemma-3n-2b:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemma 3n 2B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemma-3n-2b:free"
+  },
+  {
+    "name": "Google: Gemma 3n 4B (free)",
+    "id": "google/gemma-3n-4b:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemma 3n 4B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemma-3n-4b:free"
+  },
+  {
+    "name": "Google: Gemma 3 4B (free)",
+    "id": "google/gemma-3-4b:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemma 3 4B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemma-3-4b:free"
+  },
+  {
+    "name": "Google: Gemma 3 12B (free)",
+    "id": "google/gemma-3-12b:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemma 3 12B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemma-3-12b:free"
+  },
+  {
+    "name": "Google: Gemma 3 27B (free)",
+    "id": "google/gemma-3-27b:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemma 3 27B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemma-3-27b:free"
+  },
+  {
+    "name": "Google: Gemma 2 9B (free)",
+    "id": "google/gemma-2-9b:free",
+    "provider": "Google",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Gemma 2 9B - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+    "url": "https://openrouter.ai/google/gemma-2-9b:free"
+  },
+  {
+    "name": "Meta: Llama 3.3 8B Instruct (free)",
+    "id": "meta/llama-33-8b-instruct:free",
     "provider": "Meta",
-    "context": "16K",
-    "inputPrice": "$0/M",
-    "outputPrice": "$0/M",
-    "description": "Meta's CodeLlama 7B Instruct model specialized for code generation."
-  },
-  {
-    "name": "Solar 10.7B Instruct (free)",
-    "id": "upstage/solar-10.7b-instruct:free",
-    "provider": "Upstage",
     "context": "8K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Upstage's Solar 10.7B Instruct model with strong reasoning capabilities."
+    "description": "Llama 3.3 8B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/llama-33-8b-instruct:free"
   },
   {
-    "name": "Llama 3.2 3B Instruct (free)",
-    "id": "meta-llama/llama-3.2-3b-instruct:free",
+    "name": "Meta: Llama 3.3 70B Instruct (free)",
+    "id": "meta/llama-33-70b-instruct:free",
     "provider": "Meta",
     "context": "128K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Meta's Llama 3.2 3B Instruct model, a smaller but efficient model for various tasks."
+    "description": "Llama 3.3 70B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/llama-33-70b-instruct:free"
   },
   {
-    "name": "Qwen 2.5 14B Instruct (free)",
-    "id": "qwen/qwen-2.5-14b-instruct:free",
+    "name": "Meta: Llama 3.2 3B Instruct (free)",
+    "id": "meta/llama-32-3b-instruct:free",
+    "provider": "Meta",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Llama 3.2 3B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/llama-32-3b-instruct:free"
+  },
+  {
+    "name": "Meta: Llama 4 Maverick (free)",
+    "id": "meta/llama-4-maverick:free",
+    "provider": "Meta",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Llama 4 Maverick - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/llama-4-maverick:free"
+  },
+  {
+    "name": "Meta: Llama 4 Scout (free)",
+    "id": "meta/llama-4-scout:free",
+    "provider": "Meta",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Llama 4 Scout - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/llama-4-scout:free"
+  },
+  {
+    "name": "Meta: Llama 3.1 8B Instruct (free)",
+    "id": "meta/llama-31-8b-instruct:free",
+    "provider": "Meta",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Llama 3.1 8B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/llama-31-8b-instruct:free"
+  },
+  {
+    "name": "Meta: CodeLlama 7B Instruct (free)",
+    "id": "meta/codellama-7b-instruct:free",
+    "provider": "Meta",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "CodeLlama 7B Instruct - открытая языковая модель от Meta с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/meta/codellama-7b-instruct:free"
+  },
+  {
+    "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+    "id": "qwen/qwen3-coder-480b-a35b:free",
     "provider": "Qwen",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 Coder 480B A35B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-coder-480b-a35b:free"
+  },
+  {
+    "name": "Qwen: Qwen3 4B (free)",
+    "id": "qwen/qwen3-4b:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 4B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-4b:free"
+  },
+  {
+    "name": "Qwen: Qwen3 30B A3B (free)",
+    "id": "qwen/qwen3-30b-a3b:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 30B A3B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-30b-a3b:free"
+  },
+  {
+    "name": "Qwen: Qwen3 8B (free)",
+    "id": "qwen/qwen3-8b:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 8B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-8b:free"
+  },
+  {
+    "name": "Qwen: Qwen3 14B (free)",
+    "id": "qwen/qwen3-14b:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 14B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-14b:free"
+  },
+  {
+    "name": "Qwen: Qwen3 235B A22B (free)",
+    "id": "qwen/qwen3-235b-a22b:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 235B A22B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-235b-a22b:free"
+  },
+  {
+    "name": "Qwen: Qwen3 72B (free)",
+    "id": "qwen/qwen3-72b:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen3 72B - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen3-72b:free"
+  },
+  {
+    "name": "Qwen: Qwen2.5 VL 32B Instruct (free)",
+    "id": "qwen/qwen25-vl-32b-instruct:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen2.5 VL 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen25-vl-32b-instruct:free"
+  },
+  {
+    "name": "Qwen: Qwen2.5 Coder 32B Instruct (free)",
+    "id": "qwen/qwen25-coder-32b-instruct:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen2.5 Coder 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen25-coder-32b-instruct:free"
+  },
+  {
+    "name": "Qwen: Qwen2.5 72B Instruct (free)",
+    "id": "qwen/qwen25-72b-instruct:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen2.5 72B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen25-72b-instruct:free"
+  },
+  {
+    "name": "Qwen: Qwen2.5 7B Instruct (free)",
+    "id": "qwen/qwen25-7b-instruct:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen2.5 7B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen25-7b-instruct:free"
+  },
+  {
+    "name": "Qwen: Qwen2.5 14B Instruct (free)",
+    "id": "qwen/qwen25-14b-instruct:free",
+    "provider": "Qwen",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Qwen2.5 14B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+    "url": "https://openrouter.ai/qwen/qwen25-14b-instruct:free"
+  },
+  {
+    "name": "Mistral: Mistral Small 3.2 24B (free)",
+    "id": "mistral/mistral-small-32-24b:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Small 3.2 24B - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-small-32-24b:free"
+  },
+  {
+    "name": "Mistral: Mistral Small 3.1 24B (free)",
+    "id": "mistral/mistral-small-31-24b:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Small 3.1 24B - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-small-31-24b:free"
+  },
+  {
+    "name": "Mistral: Mistral Small 3 (free)",
+    "id": "mistral/mistral-small-3:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Small 3 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-small-3:free"
+  },
+  {
+    "name": "Mistral: Mistral 7B Instruct (free)",
+    "id": "mistral/mistral-7b-instruct:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral 7B Instruct - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-7b-instruct:free"
+  },
+  {
+    "name": "Mistral: Mistral Nemo (free)",
+    "id": "mistral/mistral-nemo:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Nemo - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-nemo:free"
+  },
+  {
+    "name": "Mistral: Mistral Large 2411 (free)",
+    "id": "mistral/mistral-large-2411:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-large-2411:free"
+  },
+  {
+    "name": "Mistral: Mistral Large 2407 (free)",
+    "id": "mistral/mistral-large-2407:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Large 2407 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-large-2407:free"
+  },
+  {
+    "name": "Mistral: Mistral Large (free)",
+    "id": "mistral/mistral-large:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Mistral Large - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/mistral-large:free"
+  },
+  {
+    "name": "Mistral: Pixtral Large 2411 (free)",
+    "id": "mistral/pixtral-large-2411:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Pixtral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/pixtral-large-2411:free"
+  },
+  {
+    "name": "Mistral: Devstral Small 2505 (free)",
+    "id": "mistral/devstral-small-2505:free",
+    "provider": "Mistral",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Devstral Small 2505 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+    "url": "https://openrouter.ai/mistral/devstral-small-2505:free"
+  },
+  {
+    "name": "MoonshotAI: Kimi K2 0711 (free)",
+    "id": "moonshotai/kimi-k2-0711:free",
+    "provider": "MoonshotAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Kimi K2 0711 - передовая модель от MoonshotAI с отличными возможностями.",
+    "url": "https://openrouter.ai/moonshotai/kimi-k2-0711:free"
+  },
+  {
+    "name": "MoonshotAI: Kimi Dev 72B (free)",
+    "id": "moonshotai/kimi-dev-72b:free",
+    "provider": "MoonshotAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Kimi Dev 72B - передовая модель от MoonshotAI с отличными возможностями.",
+    "url": "https://openrouter.ai/moonshotai/kimi-dev-72b:free"
+  },
+  {
+    "name": "Microsoft: Phi 4 Reasoning Plus (free)",
+    "id": "microsoft/phi-4-reasoning-plus:free",
+    "provider": "Microsoft",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Phi 4 Reasoning Plus - эффективная модель от Microsoft с хорошими возможностями рассуждения.",
+    "url": "https://openrouter.ai/microsoft/phi-4-reasoning-plus:free"
+  },
+  {
+    "name": "Microsoft: Phi 3 Mini (free)",
+    "id": "microsoft/phi-3-mini:free",
+    "provider": "Microsoft",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Phi 3 Mini - эффективная модель от Microsoft с хорошими возможностями рассуждения.",
+    "url": "https://openrouter.ai/microsoft/phi-3-mini:free"
+  },
+  {
+    "name": "Microsoft: MAI DS R1 (free)",
+    "id": "microsoft/mai-ds-r1:free",
+    "provider": "Microsoft",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "MAI DS R1 - эффективная модель от Microsoft с хорошими возможностями рассуждения.",
+    "url": "https://openrouter.ai/microsoft/mai-ds-r1:free"
+  },
+  {
+    "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+    "id": "nvidia/nemotron-nano-12b-2-vl:free",
+    "provider": "NVIDIA",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Nemotron Nano 12B 2 VL - мощная модель от NVIDIA с оптимизацией для различных вычислительных задач.",
+    "url": "https://openrouter.ai/nvidia/nemotron-nano-12b-2-vl:free"
+  },
+  {
+    "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
+    "id": "nvidia/nemotron-nano-9b-v2:free",
+    "provider": "NVIDIA",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Nemotron Nano 9B V2 - мощная модель от NVIDIA с оптимизацией для различных вычислительных задач.",
+    "url": "https://openrouter.ai/nvidia/nemotron-nano-9b-v2:free"
+  },
+  {
+    "name": "MiniMax: MiniMax M2 (free)",
+    "id": "minimax/minimax-m2:free",
+    "provider": "MiniMax",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "MiniMax M2 - инновационная модель от MiniMax с уникальными возможностями.",
+    "url": "https://openrouter.ai/minimax/minimax-m2:free"
+  },
+  {
+    "name": "Agentica: Deepcoder 14B Preview (free)",
+    "id": "agentica/deepcoder-14b-preview:free",
+    "provider": "Agentica",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Deepcoder 14B Preview - специализированная модель от Agentica.",
+    "url": "https://openrouter.ai/agentica/deepcoder-14b-preview:free"
+  },
+  {
+    "name": "Tongyi DeepResearch 30B A3B (free)",
+    "id": "tongyi/deepresearch-30b-a3b:free",
+    "provider": "Tongyi",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepResearch 30B A3B - инновационная модель от Tongyi.",
+    "url": "https://openrouter.ai/tongyi/deepresearch-30b-a3b:free"
+  },
+  {
+    "name": "TNG: DeepSeek R1T2 Chimera (free)",
+    "id": "tng/deepseek-r1t2-chimera:free",
+    "provider": "TNG",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek R1T2 Chimera - инновационная модель от TNG.",
+    "url": "https://openrouter.ai/tng/deepseek-r1t2-chimera:free"
+  },
+  {
+    "name": "TNG: DeepSeek R1T Chimera (free)",
+    "id": "tng/deepseek-r1t-chimera:free",
+    "provider": "TNG",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "DeepSeek R1T Chimera - инновационная модель от TNG.",
+    "url": "https://openrouter.ai/tng/deepseek-r1t-chimera:free"
+  },
+  {
+    "name": "Venice: Uncensored (free)",
+    "id": "venice/uncensored:free",
+    "provider": "Venice",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Uncensored - специализированная модель от Venice.",
+    "url": "https://openrouter.ai/venice/uncensored:free"
+  },
+  {
+    "name": "Meituan: LongCat Flash Chat (free)",
+    "id": "meituan/longcat-flash-chat:free",
+    "provider": "Meituan",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "LongCat Flash Chat - эффективная модель от Meituan.",
+    "url": "https://openrouter.ai/meituan/longcat-flash-chat:free"
+  },
+  {
+    "name": "Z.AI: GLM 4.5 Air (free)",
+    "id": "zai/glm-45-air:free",
+    "provider": "Z.AI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "GLM 4.5 Air - передовая модель от Z.AI.",
+    "url": "https://openrouter.ai/zai/glm-45-air:free"
+  },
+  {
+    "name": "Tencent: Hunyuan A13B Instruct (free)",
+    "id": "tencent/hunyuan-a13b-instruct:free",
+    "provider": "Tencent",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Hunyuan A13B Instruct - мощная модель от Tencent.",
+    "url": "https://openrouter.ai/tencent/hunyuan-a13b-instruct:free"
+  },
+  {
+    "name": "OpenAI: gpt-oss-20b (free)",
+    "id": "openai/gpt-oss-20b:free",
+    "provider": "OpenAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "gpt-oss-20b - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+    "url": "https://openrouter.ai/openai/gpt-oss-20b:free"
+  },
+  {
+    "name": "OpenAI: GPT-4o-mini Search Preview (free)",
+    "id": "openai/gpt-4o-mini-search-preview:free",
+    "provider": "OpenAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "GPT-4o-mini Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+    "url": "https://openrouter.ai/openai/gpt-4o-mini-search-preview:free"
+  },
+  {
+    "name": "OpenAI: GPT-4o Search Preview (free)",
+    "id": "openai/gpt-4o-search-preview:free",
+    "provider": "OpenAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "GPT-4o Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+    "url": "https://openrouter.ai/openai/gpt-4o-search-preview:free"
+  },
+  {
+    "name": "OpenAI: o3 Deep Research (free)",
+    "id": "openai/o3-deep-research:free",
+    "provider": "OpenAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "o3 Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+    "url": "https://openrouter.ai/openai/o3-deep-research:free"
+  },
+  {
+    "name": "OpenAI: o4 Mini Deep Research (free)",
+    "id": "openai/o4-mini-deep-research:free",
+    "provider": "OpenAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "o4 Mini Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+    "url": "https://openrouter.ai/openai/o4-mini-deep-research:free"
+  },
+  {
+    "name": "OpenAI: GPT-4 Turbo Preview (free)",
+    "id": "openai/gpt-4-turbo-preview:free",
+    "provider": "OpenAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "GPT-4 Turbo Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+    "url": "https://openrouter.ai/openai/gpt-4-turbo-preview:free"
+  },
+  {
+    "name": "Perplexity: Sonar Deep Research (free)",
+    "id": "perplexity/sonar-deep-research:free",
+    "provider": "Perplexity",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Sonar Deep Research - специализированная модель от Perplexity для исследовательских задач.",
+    "url": "https://openrouter.ai/perplexity/sonar-deep-research:free"
+  },
+  {
+    "name": "Perplexity: Sonar Reasoning Pro (free)",
+    "id": "perplexity/sonar-reasoning-pro:free",
+    "provider": "Perplexity",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Sonar Reasoning Pro - специализированная модель от Perplexity для исследовательских задач.",
+    "url": "https://openrouter.ai/perplexity/sonar-reasoning-pro:free"
+  },
+  {
+    "name": "Perplexity: Sonar Reasoning (free)",
+    "id": "perplexity/sonar-reasoning:free",
+    "provider": "Perplexity",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Sonar Reasoning - специализированная модель от Perplexity для исследовательских задач.",
+    "url": "https://openrouter.ai/perplexity/sonar-reasoning:free"
+  },
+  {
+    "name": "Cohere: Command A (free)",
+    "id": "cohere/command-a:free",
+    "provider": "Cohere",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Command A - мощная модель от Cohere с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/cohere/command-a:free"
+  },
+  {
+    "name": "Cohere: Command R7B (12-2024) (free)",
+    "id": "cohere/command-r7b-12-2024:free",
+    "provider": "Cohere",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Command R7B (12-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/cohere/command-r7b-12-2024:free"
+  },
+  {
+    "name": "Cohere: Command R+ (08-2024) (free)",
+    "id": "cohere/command-r-08-2024:free",
+    "provider": "Cohere",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Command R+ (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/cohere/command-r-08-2024:free"
+  },
+  {
+    "name": "Cohere: Command R (08-2024) (free)",
+    "id": "cohere/command-r-08-2024:free",
+    "provider": "Cohere",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Command R (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.",
+    "url": "https://openrouter.ai/cohere/command-r-08-2024:free"
+  },
+  {
+    "name": "Inflection: Inflection 3 Productivity (free)",
+    "id": "inflection/inflection-3-productivity:free",
+    "provider": "Inflection",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Inflection 3 Productivity - инновационная модель от Inflection с уникальными возможностями.",
+    "url": "https://openrouter.ai/inflection/inflection-3-productivity:free"
+  },
+  {
+    "name": "Inflection: Inflection 3 Pi (free)",
+    "id": "inflection/inflection-3-pi:free",
+    "provider": "Inflection",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Inflection 3 Pi - инновационная модель от Inflection с уникальными возможностями.",
+    "url": "https://openrouter.ai/inflection/inflection-3-pi:free"
+  },
+  {
+    "name": "Arcee AI: Maestro Reasoning (free)",
+    "id": "arceeai/maestro-reasoning:free",
+    "provider": "Arcee AI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Maestro Reasoning - специализированная модель от Arcee AI для конкретных задач.",
+    "url": "https://openrouter.ai/arceeai/maestro-reasoning:free"
+  },
+  {
+    "name": "Arcee AI: Virtuoso Large (free)",
+    "id": "arceeai/virtuoso-large:free",
+    "provider": "Arcee AI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Virtuoso Large - специализированная модель от Arcee AI для конкретных задач.",
+    "url": "https://openrouter.ai/arceeai/virtuoso-large:free"
+  },
+  {
+    "name": "Arcee AI: Coder Large (free)",
+    "id": "arceeai/coder-large:free",
+    "provider": "Arcee AI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Coder Large - специализированная модель от Arcee AI для конкретных задач.",
+    "url": "https://openrouter.ai/arceeai/coder-large:free"
+  },
+  {
+    "name": "Arcee AI: Spotlight (free)",
+    "id": "arceeai/spotlight:free",
+    "provider": "Arcee AI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Spotlight - специализированная модель от Arcee AI для конкретных задач.",
+    "url": "https://openrouter.ai/arceeai/spotlight:free"
+  },
+  {
+    "name": "Arcee AI: AFM 4.5B (free)",
+    "id": "arceeai/afm-45b:free",
+    "provider": "Arcee AI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "AFM 4.5B - специализированная модель от Arcee AI для конкретных задач.",
+    "url": "https://openrouter.ai/arceeai/afm-45b:free"
+  },
+  {
+    "name": "Deep Cogito: Cogito V2 Preview Deepseek 671B (free)",
+    "id": "deepcogito/cogito-v2-preview-deepseek-671b:free",
+    "provider": "Deep Cogito",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Cogito V2 Preview Deepseek 671B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+    "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-deepseek-671b:free"
+  },
+  {
+    "name": "Deep Cogito: Cogito V2 Preview Llama 405B (free)",
+    "id": "deepcogito/cogito-v2-preview-llama-405b:free",
+    "provider": "Deep Cogito",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Cogito V2 Preview Llama 405B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+    "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-llama-405b:free"
+  },
+  {
+    "name": "Deep Cogito: Cogito V2 Preview Llama 70B (free)",
+    "id": "deepcogito/cogito-v2-preview-llama-70b:free",
+    "provider": "Deep Cogito",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Cogito V2 Preview Llama 70B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+    "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-llama-70b:free"
+  },
+  {
+    "name": "Deep Cogito: Cogito V2 Preview Llama 109B (free)",
+    "id": "deepcogito/cogito-v2-preview-llama-109b:free",
+    "provider": "Deep Cogito",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Cogito V2 Preview Llama 109B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+    "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-llama-109b:free"
+  },
+  {
+    "name": "Shisa AI: Shisa V2 Llama 3.3 70B (free)",
+    "id": "shisaai/shisa-v2-llama-33-70b:free",
+    "provider": "Shisa AI",
+    "context": "128K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Shisa V2 Llama 3.3 70B - высококачественная модель от Shisa AI.",
+    "url": "https://openrouter.ai/shisaai/shisa-v2-llama-33-70b:free"
+  },
+  {
+    "name": "ArliAI: QwQ 32B RpR v1 (free)",
+    "id": "arliai/qwq-32b-rpr-v1:free",
+    "provider": "ArliAI",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "QwQ 32B RpR v1 - инновационная модель от ArliAI.",
+    "url": "https://openrouter.ai/arliai/qwq-32b-rpr-v1:free"
+  },
+  {
+    "name": "Relace: Relace Apply 3 (free)",
+    "id": "relace/relace-apply-3:free",
+    "provider": "Relace",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Relace Apply 3 - специализированная модель от Relace.",
+    "url": "https://openrouter.ai/relace/relace-apply-3:free"
+  },
+  {
+    "name": "Morph: Morph V3 Large (free)",
+    "id": "morph/morph-v3-large:free",
+    "provider": "Morph",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Morph V3 Large - передовая модель от Morph.",
+    "url": "https://openrouter.ai/morph/morph-v3-large:free"
+  },
+  {
+    "name": "NeverSleep: Lumimaid v0.2 8B (free)",
+    "id": "neversleep/lumimaid-v02-8b:free",
+    "provider": "NeverSleep",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Lumimaid v0.2 8B - эффективная модель от NeverSleep.",
+    "url": "https://openrouter.ai/neversleep/lumimaid-v02-8b:free"
+  },
+  {
+    "name": "AI21: Jamba Large 1.7 (free)",
+    "id": "ai21/jamba-large-17:free",
+    "provider": "AI21",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "Jamba Large 1.7 - мощная модель от AI21.",
+    "url": "https://openrouter.ai/ai21/jamba-large-17:free"
+  },
+  {
+    "name": "ReMM SLERP 13B (free)",
+    "id": "remm/slerp-13b:free",
+    "provider": "ReMM",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "SLERP 13B - специализированная модель от ReMM.",
+    "url": "https://openrouter.ai/remm/slerp-13b:free"
+  },
+  {
+    "name": "Noromaid 20B (free)",
+    "id": "noromaid/20b:free",
+    "provider": "Noromaid",
     "context": "32K",
     "inputPrice": "$0/M",
     "outputPrice": "$0/M",
-    "description": "Qwen 2.5 14B Instruct model with enhanced capabilities and performance."
+    "description": "20B - уникальная модель от Noromaid.",
+    "url": "https://openrouter.ai/noromaid/20b:free"
+  },
+  {
+    "name": "Dolphin3.0 Mistral 24B (free)",
+    "id": "dolphin/30-mistral-24b:free",
+    "provider": "Dolphin",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "3.0 Mistral 24B - эффективная модель от Dolphin.",
+    "url": "https://openrouter.ai/dolphin/30-mistral-24b:free"
+  },
+  {
+    "name": "SorcererLM 8x22B (free)",
+    "id": "sorcererlm/8x22b:free",
+    "provider": "SorcererLM",
+    "context": "8K",
+    "inputPrice": "$0/M",
+    "outputPrice": "$0/M",
+    "description": "8x22B - передовая модель от SorcererLM.",
+    "url": "https://openrouter.ai/sorcererlm/8x22b:free"
   }
 ];
-
-        // Переменные для пагинации и поиска
         let currentPage = 1;
         const itemsPerPage = 20;
-        let filteredData = [...modelsData];
-        let sortColumn = 'name';
-        let sortDirection = 'asc';
+        let currentSort = { column: -1, direction: 'asc' };
 
-        // Инициализация
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeTable();
-            setupEventListeners();
-            updateStats();
-        });
+        function filterModels() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const providerFilter = document.getElementById('providerFilter').value;
+            const contextFilter = document.getElementById('contextFilter').value;
 
-        function initializeTable() {
-            renderTable();
-            renderPagination();
-        }
-
-        function setupEventListeners() {
-            // Поиск
-            document.getElementById('searchInput').addEventListener('input', function(e) {
-                const searchTerm = e.target.value.toLowerCase();
-                filteredData = modelsData.filter(model =>
+            return allModels.filter(model => {
+                const matchesSearch = !searchTerm || 
                     model.name.toLowerCase().includes(searchTerm) ||
-                    model.id.toLowerCase().includes(searchTerm) ||
                     model.provider.toLowerCase().includes(searchTerm) ||
-                    model.description.toLowerCase().includes(searchTerm)
-                );
-                currentPage = 1;
-                renderTable();
-                renderPagination();
-            });
+                    model.description.toLowerCase().includes(searchTerm);
+                
+                const matchesProvider = !providerFilter || model.provider === providerFilter;
+                const matchesContext = !contextFilter || model.context === contextFilter;
 
-            // Сортировка через select
-            document.getElementById('sortSelect').addEventListener('change', function(e) {
-                sortColumn = e.target.value;
-                sortDirection = 'asc';
-                sortData();
-                renderTable();
-            });
-
-            // Сортировка через клик по заголовку
-            document.querySelectorAll('.sortable').forEach(header => {
-                header.addEventListener('click', function() {
-                    const column = this.dataset.sort;
-                    if (sortColumn === column) {
-                        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-                    } else {
-                        sortColumn = column;
-                        sortDirection = 'asc';
-                    }
-                    sortData();
-                    renderTable();
-                    updateSortHeaders();
-                });
+                return matchesSearch && matchesProvider && matchesContext;
             });
         }
 
-        function sortData() {
-            filteredData.sort((a, b) => {
-                let aVal = a[sortColumn];
-                let bVal = b[sortColumn];
+        function sortTable(column) {
+            const filteredModels = filterModels();
+            
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'asc';
+            }
 
-                // Обработка числовых значений
-                if (sortColumn === 'context' || sortColumn === 'inputPrice' || sortColumn === 'outputPrice') {
-                    aVal = parseFloat(aVal) || 0;
-                    bVal = parseFloat(bVal) || 0;
+            filteredModels.sort((a, b) => {
+                let aVal, bVal;
+                switch(column) {
+                    case 0: aVal = a.name; bVal = b.name; break;
+                    case 1: aVal = a.provider; bVal = b.provider; break;
+                    case 2: aVal = a.context; bVal = b.context; break;
+                    case 3: aVal = a.inputPrice; bVal = b.inputPrice; break;
+                    case 4: aVal = a.outputPrice; bVal = b.outputPrice; break;
+                    default: return 0;
                 }
 
-                if (typeof aVal === 'string') {
-                    aVal = aVal.toLowerCase();
-                    bVal = bVal.toLowerCase();
-                }
-
-                if (sortDirection === 'asc') {
-                    return aVal > bVal ? 1 : -1;
+                if (currentSort.direction === 'asc') {
+                    return aVal.localeCompare(bVal);
                 } else {
-                    return aVal < bVal ? 1 : -1;
+                    return bVal.localeCompare(aVal);
                 }
             });
+
+            displayModels(filteredModels);
         }
 
-        function updateSortHeaders() {
-            document.querySelectorAll('.sortable').forEach(header => {
-                header.classList.remove('sort-asc', 'sort-desc');
-                if (header.dataset.sort === sortColumn) {
-                    header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
-                }
-            });
-        }
-
-        function renderTable() {
+        function displayModels(models) {
             const tbody = document.getElementById('modelsTableBody');
             const startIndex = (currentPage - 1) * itemsPerPage;
             const endIndex = startIndex + itemsPerPage;
-            const pageData = filteredData.slice(startIndex, endIndex);
+            const pageModels = models.slice(startIndex, endIndex);
 
-            tbody.innerHTML = pageData.map(model => `
+            tbody.innerHTML = pageModels.map(model => `
                 <tr>
-                    <td><div class="model-name">${model.name}</div></td>
-                    <td><div class="model-id">${model.id}</div></td>
-                    <td><div class="provider">${model.provider}</div></td>
-                    <td><div class="context-tokens">${model.context}</div></td>
-                    <td><div class="price">${model.inputPrice}</div></td>
-                    <td><div class="price">${model.outputPrice}</div></td>
-                    <td><div class="description">${model.description}</div></td>
+                    <td class="model-name">${model.name}</td>
+                    <td class="provider">${model.provider}</td>
+                    <td class="context">${model.context}</td>
+                    <td class="price">${model.inputPrice}</td>
+                    <td class="price">${model.outputPrice}</td>
+                    <td class="description" title="${model.description}">${model.description}</td>
                 </tr>
             `).join('');
 
-            updateSortHeaders();
+            updatePagination(models.length);
         }
 
-        function renderPagination() {
-            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+        function updatePagination(totalItems) {
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
             const pagination = document.getElementById('pagination');
+            
+            let paginationHTML = `
+                <button onclick="changePage(1)" ${currentPage === 1 ? 'disabled' : ''}>First</button>
+                <button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>Previous</button>
+            `;
 
-            if (totalPages <= 1) {
-                pagination.innerHTML = '';
-                return;
+            for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
+                paginationHTML += `<button onclick="changePage(${i})" class="${i === currentPage ? 'current' : ''}">${i}</button>`;
             }
 
-            let paginationHTML = '';
-
-            // Кнопка "Предыдущая"
-            paginationHTML += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">← Предыдущая</button>`;
-
-            // Номера страниц
-            const startPage = Math.max(1, currentPage - 2);
-            const endPage = Math.min(totalPages, currentPage + 2);
-
-            if (startPage > 1) {
-                paginationHTML += `<button onclick="changePage(1)">1</button>`;
-                if (startPage > 2) {
-                    paginationHTML += '<span>...</span>';
-                }
-            }
-
-            for (let i = startPage; i <= endPage; i++) {
-                const isCurrent = i === currentPage;
-                paginationHTML += `<button class="${isCurrent ? 'current-page' : ''}" onclick="changePage(${i})">${i}</button>`;
-            }
-
-            if (endPage < totalPages) {
-                if (endPage < totalPages - 1) {
-                    paginationHTML += '<span>...</span>';
-                }
-                paginationHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
-            }
-
-            // Кнопка "Следующая"
-            paginationHTML += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">Следующая →</button>`;
+            paginationHTML += `
+                <button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>Next</button>
+                <button onclick="changePage(${totalPages})" ${currentPage === totalPages ? 'disabled' : ''}>Last</button>
+            `;
 
             pagination.innerHTML = paginationHTML;
         }
 
         function changePage(page) {
-            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            const filteredModels = filterModels();
+            const totalPages = Math.ceil(filteredModels.length / itemsPerPage);
+            
             if (page >= 1 && page <= totalPages) {
                 currentPage = page;
-                renderTable();
-                renderPagination();
+                displayModels(filteredModels);
             }
         }
 
-        function updateStats() {
-            document.getElementById('totalModels').textContent = modelsData.length;
-
-            const providers = new Set(modelsData.map(m => m.provider));
-            document.getElementById('totalProviders').textContent = providers.size;
-
-            const avgContext = Math.round(
-                modelsData.reduce((sum, m) => sum + (parseFloat(m.context) || 0), 0) / modelsData.length
-            );
-            document.getElementById('avgContext').textContent = avgContext.toLocaleString();
+        function exportToJSON() {
+            const filteredModels = filterModels();
+            const data = {
+                lastUpdated: new Date().toISOString(),
+                totalModels: filteredModels.length,
+                models: filteredModels
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'openrouter-free-models.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', () => {
+            currentPage = 1;
+            displayModels(filterModels());
+        });
+
+        document.getElementById('providerFilter').addEventListener('change', () => {
+            currentPage = 1;
+            displayModels(filterModels());
+        });
+
+        document.getElementById('contextFilter').addEventListener('change', () => {
+            currentPage = 1;
+            displayModels(filterModels());
+        });
+
+        // Initialize
+        displayModels(allModels);
     </script>
 </body>
 </html>
