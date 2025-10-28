@@ -1,0 +1,536 @@
+{
+  "lastUpdated": "2025-10-28T22:03:03.286Z",
+  "totalFailed": 106,
+  "failedModels": [
+    {
+      "name": "Nous: DeepHermes 3 Llama 3 8B Preview (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: R1 0528 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3 0324 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: R1 Distill Llama 70B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: R1 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Nous: Hermes 3 405B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Agentica: Deepcoder 14B Preview (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Tongyi DeepResearch 30B A3B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Venice: Uncensored (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "TNG: DeepSeek R1T2 Chimera (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "TNG: DeepSeek R1T Chimera (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "MiniMax: MiniMax M2 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Meituan: LongCat Flash Chat (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Image Preview (Nano Banana)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "OpenAI: gpt-oss-20b (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Z.AI: GLM 4.5 Air (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen3 4B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "MoonshotAI: Kimi K2 0711 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemma 3n 2B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Tencent: Hunyuan A13B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral: Mistral Small 3.2 24B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "MoonshotAI: Kimi Dev 72B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Microsoft: Phi 4 Reasoning Plus (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Morph: Morph V3 Large (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Lite Preview 06-17 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.5 Pro Preview 06-05 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.5 Pro Preview 05-06 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "OpenAI: GPT-4o-mini Search Preview (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "OpenAI: GPT-4o Search Preview (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen3 8B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen3 14B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen3 235B A22B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Microsoft: MAI DS R1 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Shisa AI: Shisa V2 Llama 3.3 70B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "ArliAI: QwQ 32B RpR v1 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Meta: Llama 4 Maverick (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Meta: Llama 4 Scout (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen2.5 VL 32B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral: Mistral Small 3.1 24B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemma 3 4B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemma 3 12B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemma 3 27B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Dolphin3.0 Mistral 24B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral: Mistral Small 3 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.0 Flash Experimental (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Meta: Llama 3.3 70B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen2.5 Coder 32B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Meta: Llama 3.2 3B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen: Qwen2.5 72B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral: Mistral Nemo (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemma 2 9B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral: Mistral 7B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Deep Cogito: Cogito V2 Preview Deepseek 671B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Deep Cogito: Cogito V2 Preview Llama 405B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Deep Cogito: Cogito V2 Preview Llama 70B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Nous: DeepHermes 3 Mistral 24B Preview (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Arcee AI: Maestro Reasoning (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Arcee AI: Virtuoso Large (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Arcee AI: Coder Large (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "NousResearch: Hermes 2 Pro - Llama-3 8B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.2 Exp (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Relace: Relace Apply 3 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1 Terminus (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1 Terminus (exacto) (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Arcee AI: AFM 4.5B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Cogito V2 Preview Llama 109B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Nous: Hermes 4 70B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Nous: Hermes 4 405B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Arcee AI: Spotlight (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek Prover V2 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Cohere: Command A (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: R1 Distill Qwen 32B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: R1 Distill Qwen 14B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Cohere: Command R7B (12-2024) (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "SorcererLM 8x22B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Inflection: Inflection 3 Productivity (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Inflection: Inflection 3 Pi (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "NeverSleep: Lumimaid v0.2 8B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Cohere: Command R+ (08-2024) (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Cohere: Command R (08-2024) (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Nous: Hermes 3 70B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "OpenAI: o3 Deep Research (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "OpenAI: o4 Mini Deep Research (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Perplexity: Sonar Deep Research (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Preview 09-2025 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "AI21: Jamba Large 1.7 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Perplexity: Sonar Reasoning Pro (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Perplexity: Sonar Reasoning (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral Large 2411 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral Large 2407 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral: Pixtral Large 2411 (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Mistral Large (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "OpenAI: GPT-4 Turbo Preview (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "ReMM SLERP 13B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Noromaid 20B (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen2.5 Coder 32B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen2.5 72B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    },
+    {
+      "name": "Qwen2.5 VL 32B Instruct (free)",
+      "reason": "link_not_found",
+      "step": "search"
+    }
+  ]
+}

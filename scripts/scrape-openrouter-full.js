@@ -16,7 +16,7 @@ const allFreeModels = [
   { name: "Nous: Hermes 4 405B (free)", provider: "Nous", modelName: "Hermes 4 405B" },
   { name: "Nous: Hermes 2 Pro - Llama-3 8B (free)", provider: "Nous", modelName: "Hermes 2 Pro - Llama-3 8B" },
   { name: "Nous: DeepHermes 3 Mistral 24B Preview (free)", provider: "Nous", modelName: "DeepHermes 3 Mistral 24B Preview" },
-  
+
   // DeepSeek models
   { name: "DeepSeek: DeepSeek V3.1 (free)", provider: "DeepSeek", modelName: "DeepSeek V3.1" },
   { name: "DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)", provider: "DeepSeek", modelName: "DeepSeek R1 0528 Qwen3 8B" },
@@ -31,7 +31,7 @@ const allFreeModels = [
   { name: "DeepSeek: R1 Distill Qwen 32B (free)", provider: "DeepSeek", modelName: "R1 Distill Qwen 32B" },
   { name: "DeepSeek: R1 Distill Qwen 14B (free)", provider: "DeepSeek", modelName: "R1 Distill Qwen 14B" },
   { name: "DeepSeek: DeepSeek V3 (free)", provider: "DeepSeek", modelName: "DeepSeek V3" },
-  
+
   // Google models
   { name: "Google: Gemini 2.5 Flash Image Preview (Nano Banana) (free)", provider: "Google", modelName: "Gemini 2.5 Flash Image Preview (Nano Banana)" },
   { name: "Google: Gemini 2.5 Flash Preview 09-2025 (free)", provider: "Google", modelName: "Gemini 2.5 Flash Preview 09-2025" },
@@ -46,7 +46,7 @@ const allFreeModels = [
   { name: "Google: Gemma 3 12B (free)", provider: "Google", modelName: "Gemma 3 12B" },
   { name: "Google: Gemma 3 27B (free)", provider: "Google", modelName: "Gemma 3 27B" },
   { name: "Google: Gemma 2 9B (free)", provider: "Google", modelName: "Gemma 2 9B" },
-  
+
   // Meta models
   { name: "Meta: Llama 3.3 8B Instruct (free)", provider: "Meta", modelName: "Llama 3.3 8B Instruct" },
   { name: "Meta: Llama 3.3 70B Instruct (free)", provider: "Meta", modelName: "Llama 3.3 70B Instruct" },
@@ -55,7 +55,7 @@ const allFreeModels = [
   { name: "Meta: Llama 4 Scout (free)", provider: "Meta", modelName: "Llama 4 Scout" },
   { name: "Meta: Llama 3.1 8B Instruct (free)", provider: "Meta", modelName: "Llama 3.1 8B Instruct" },
   { name: "Meta: CodeLlama 7B Instruct (free)", provider: "Meta", modelName: "CodeLlama 7B Instruct" },
-  
+
   // Qwen models
   { name: "Qwen: Qwen3 Coder 480B A35B (free)", provider: "Qwen", modelName: "Qwen3 Coder 480B A35B" },
   { name: "Qwen: Qwen3 4B (free)", provider: "Qwen", modelName: "Qwen3 4B" },
@@ -69,7 +69,7 @@ const allFreeModels = [
   { name: "Qwen: Qwen2.5 72B Instruct (free)", provider: "Qwen", modelName: "Qwen2.5 72B Instruct" },
   { name: "Qwen: Qwen2.5 7B Instruct (free)", provider: "Qwen", modelName: "Qwen2.5 7B Instruct" },
   { name: "Qwen: Qwen2.5 14B Instruct (free)", provider: "Qwen", modelName: "Qwen2.5 14B Instruct" },
-  
+
   // Mistral models
   { name: "Mistral: Mistral Small 3.2 24B (free)", provider: "Mistral", modelName: "Mistral Small 3.2 24B" },
   { name: "Mistral: Mistral Small 3.1 24B (free)", provider: "Mistral", modelName: "Mistral Small 3.1 24B" },
@@ -81,45 +81,45 @@ const allFreeModels = [
   { name: "Mistral: Mistral Large (free)", provider: "Mistral", modelName: "Mistral Large" },
   { name: "Mistral: Pixtral Large 2411 (free)", provider: "Mistral", modelName: "Pixtral Large 2411" },
   { name: "Mistral: Devstral Small 2505 (free)", provider: "Mistral", modelName: "Devstral Small 2505" },
-  
+
   // MoonshotAI models
   { name: "MoonshotAI: Kimi K2 0711 (free)", provider: "MoonshotAI", modelName: "Kimi K2 0711" },
   { name: "MoonshotAI: Kimi Dev 72B (free)", provider: "MoonshotAI", modelName: "Kimi Dev 72B" },
-  
+
   // Microsoft models
   { name: "Microsoft: Phi 4 Reasoning Plus (free)", provider: "Microsoft", modelName: "Phi 4 Reasoning Plus" },
   { name: "Microsoft: Phi 3 Mini (free)", provider: "Microsoft", modelName: "Phi 3 Mini" },
   { name: "Microsoft: MAI DS R1 (free)", provider: "Microsoft", modelName: "MAI DS R1" },
-  
+
   // NVIDIA models
   { name: "NVIDIA: Nemotron Nano 12B 2 VL (free)", provider: "NVIDIA", modelName: "Nemotron Nano 12B 2 VL" },
   { name: "NVIDIA: Nemotron Nano 9B V2 (free)", provider: "NVIDIA", modelName: "Nemotron Nano 9B V2" },
-  
+
   // MiniMax models
   { name: "MiniMax: MiniMax M2 (free)", provider: "MiniMax", modelName: "MiniMax M2" },
-  
+
   // Agentica models
   { name: "Agentica: Deepcoder 14B Preview (free)", provider: "Agentica", modelName: "Deepcoder 14B Preview" },
-  
+
   // Tongyi models
   { name: "Tongyi DeepResearch 30B A3B (free)", provider: "Tongyi", modelName: "DeepResearch 30B A3B" },
-  
+
   // TNG models
   { name: "TNG: DeepSeek R1T2 Chimera (free)", provider: "TNG", modelName: "DeepSeek R1T2 Chimera" },
   { name: "TNG: DeepSeek R1T Chimera (free)", provider: "TNG", modelName: "DeepSeek R1T Chimera" },
-  
+
   // Venice models
   { name: "Venice: Uncensored (free)", provider: "Venice", modelName: "Uncensored" },
-  
+
   // Meituan models
   { name: "Meituan: LongCat Flash Chat (free)", provider: "Meituan", modelName: "LongCat Flash Chat" },
-  
+
   // Z.AI models
   { name: "Z.AI: GLM 4.5 Air (free)", provider: "Z.AI", modelName: "GLM 4.5 Air" },
-  
+
   // Tencent models
   { name: "Tencent: Hunyuan A13B Instruct (free)", provider: "Tencent", modelName: "Hunyuan A13B Instruct" },
-  
+
   // OpenAI models
   { name: "OpenAI: gpt-oss-20b (free)", provider: "OpenAI", modelName: "gpt-oss-20b" },
   { name: "OpenAI: GPT-4o-mini Search Preview (free)", provider: "OpenAI", modelName: "GPT-4o-mini Search Preview" },
@@ -127,62 +127,62 @@ const allFreeModels = [
   { name: "OpenAI: o3 Deep Research (free)", provider: "OpenAI", modelName: "o3 Deep Research" },
   { name: "OpenAI: o4 Mini Deep Research (free)", provider: "OpenAI", modelName: "o4 Mini Deep Research" },
   { name: "OpenAI: GPT-4 Turbo Preview (free)", provider: "OpenAI", modelName: "GPT-4 Turbo Preview" },
-  
+
   // Perplexity models
   { name: "Perplexity: Sonar Deep Research (free)", provider: "Perplexity", modelName: "Sonar Deep Research" },
   { name: "Perplexity: Sonar Reasoning Pro (free)", provider: "Perplexity", modelName: "Sonar Reasoning Pro" },
   { name: "Perplexity: Sonar Reasoning (free)", provider: "Perplexity", modelName: "Sonar Reasoning" },
-  
+
   // Cohere models
   { name: "Cohere: Command A (free)", provider: "Cohere", modelName: "Command A" },
   { name: "Cohere: Command R7B (12-2024) (free)", provider: "Cohere", modelName: "Command R7B (12-2024)" },
   { name: "Cohere: Command R+ (08-2024) (free)", provider: "Cohere", modelName: "Command R+ (08-2024)" },
   { name: "Cohere: Command R (08-2024) (free)", provider: "Cohere", modelName: "Command R (08-2024)" },
-  
+
   // Inflection models
   { name: "Inflection: Inflection 3 Productivity (free)", provider: "Inflection", modelName: "Inflection 3 Productivity" },
   { name: "Inflection: Inflection 3 Pi (free)", provider: "Inflection", modelName: "Inflection 3 Pi" },
-  
+
   // Arcee AI models
   { name: "Arcee AI: Maestro Reasoning (free)", provider: "Arcee AI", modelName: "Maestro Reasoning" },
   { name: "Arcee AI: Virtuoso Large (free)", provider: "Arcee AI", modelName: "Virtuoso Large" },
   { name: "Arcee AI: Coder Large (free)", provider: "Arcee AI", modelName: "Coder Large" },
   { name: "Arcee AI: Spotlight (free)", provider: "Arcee AI", modelName: "Spotlight" },
   { name: "Arcee AI: AFM 4.5B (free)", provider: "Arcee AI", modelName: "AFM 4.5B" },
-  
+
   // Deep Cogito models
   { name: "Deep Cogito: Cogito V2 Preview Deepseek 671B (free)", provider: "Deep Cogito", modelName: "Cogito V2 Preview Deepseek 671B" },
   { name: "Deep Cogito: Cogito V2 Preview Llama 405B (free)", provider: "Deep Cogito", modelName: "Cogito V2 Preview Llama 405B" },
   { name: "Deep Cogito: Cogito V2 Preview Llama 70B (free)", provider: "Deep Cogito", modelName: "Cogito V2 Preview Llama 70B" },
   { name: "Deep Cogito: Cogito V2 Preview Llama 109B (free)", provider: "Deep Cogito", modelName: "Cogito V2 Preview Llama 109B" },
-  
+
   // Shisa AI models
   { name: "Shisa AI: Shisa V2 Llama 3.3 70B (free)", provider: "Shisa AI", modelName: "Shisa V2 Llama 3.3 70B" },
-  
+
   // ArliAI models
   { name: "ArliAI: QwQ 32B RpR v1 (free)", provider: "ArliAI", modelName: "QwQ 32B RpR v1" },
-  
+
   // Relace models
   { name: "Relace: Relace Apply 3 (free)", provider: "Relace", modelName: "Relace Apply 3" },
-  
+
   // Morph models
   { name: "Morph: Morph V3 Large (free)", provider: "Morph", modelName: "Morph V3 Large" },
-  
+
   // NeverSleep models
   { name: "NeverSleep: Lumimaid v0.2 8B (free)", provider: "NeverSleep", modelName: "Lumimaid v0.2 8B" },
-  
+
   // AI21 models
   { name: "AI21: Jamba Large 1.7 (free)", provider: "AI21", modelName: "Jamba Large 1.7" },
-  
+
   // ReMM models
   { name: "ReMM SLERP 13B (free)", provider: "ReMM", modelName: "SLERP 13B" },
-  
+
   // Noromaid models
   { name: "Noromaid 20B (free)", provider: "Noromaid", modelName: "20B" },
-  
+
   // Dolphin models
   { name: "Dolphin3.0 Mistral 24B (free)", provider: "Dolphin", modelName: "3.0 Mistral 24B" },
-  
+
   // SorcererLM models
   { name: "SorcererLM 8x22B (free)", provider: "SorcererLM", modelName: "8x22B" }
 ];
@@ -198,7 +198,7 @@ function generateModelId(provider, modelName) {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
-  
+
   return `${cleanProvider}/${cleanModelName}:free`;
 }
 
@@ -216,7 +216,7 @@ function generateModelUrl(provider, modelName) {
 function createModelDetails(model) {
   const modelId = generateModelId(model.provider, model.modelName);
   const url = generateModelUrl(model.provider, model.modelName);
-  
+
   // Генерируем контекст на основе размера модели
   const contextSizes = {
     '2B': '8K', '3B': '8K', '4B': '8K',
@@ -227,7 +227,7 @@ function createModelDetails(model) {
     '109B': '128K', '235B': '128K', '405B': '128K',
     '480B': '128K', '671B': '128K'
   };
-  
+
   let context = '8K'; // по умолчанию
   for (const [size, ctx] of Object.entries(contextSizes)) {
     if (model.modelName.includes(size)) {
@@ -235,7 +235,7 @@ function createModelDetails(model) {
       break;
     }
   }
-  
+
   // Генерируем описание на основе провайдера и модели
   const descriptions = {
     'Google': `${model.modelName} - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.`,
@@ -272,9 +272,9 @@ function createModelDetails(model) {
     'Tongyi': `${model.modelName} - инновационная модель от Tongyi.`,
     'Agentica': `${model.modelName} - специализированная модель от Agentica.`
   };
-  
+
   const baseDescription = descriptions[model.provider] || `${model.modelName} - мощная языковая модель с отличными возможностями.`;
-  
+
   return {
     name: model.name,
     id: modelId,
@@ -545,24 +545,24 @@ function createHTMLFile(models) {
             .container {
                 padding: 15px;
             }
-            
+
             .header h1 {
                 font-size: 2em;
             }
-            
+
             .controls {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+
             .search-box {
                 min-width: auto;
             }
-            
+
             table {
                 font-size: 0.9em;
             }
-            
+
             th, td {
                 padding: 10px 8px;
             }
@@ -662,11 +662,11 @@ function createHTMLFile(models) {
             const contextFilter = document.getElementById('contextFilter').value;
 
             return allModels.filter(model => {
-                const matchesSearch = !searchTerm || 
+                const matchesSearch = !searchTerm ||
                     model.name.toLowerCase().includes(searchTerm) ||
                     model.provider.toLowerCase().includes(searchTerm) ||
                     model.description.toLowerCase().includes(searchTerm);
-                
+
                 const matchesProvider = !providerFilter || model.provider === providerFilter;
                 const matchesContext = !contextFilter || model.context === contextFilter;
 
@@ -676,7 +676,7 @@ function createHTMLFile(models) {
 
         function sortTable(column) {
             const filteredModels = filterModels();
-            
+
             if (currentSort.column === column) {
                 currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
             } else {
@@ -728,7 +728,7 @@ function createHTMLFile(models) {
         function updatePagination(totalItems) {
             const totalPages = Math.ceil(totalItems / itemsPerPage);
             const pagination = document.getElementById('pagination');
-            
+
             let paginationHTML = \`
                 <button onclick="changePage(1)" \${currentPage === 1 ? 'disabled' : ''}>First</button>
                 <button onclick="changePage(\${currentPage - 1})" \${currentPage === 1 ? 'disabled' : ''}>Previous</button>
@@ -749,7 +749,7 @@ function createHTMLFile(models) {
         function changePage(page) {
             const filteredModels = filterModels();
             const totalPages = Math.ceil(filteredModels.length / itemsPerPage);
-            
+
             if (page >= 1 && page <= totalPages) {
                 currentPage = page;
                 displayModels(filteredModels);
@@ -763,7 +763,7 @@ function createHTMLFile(models) {
                 totalModels: filteredModels.length,
                 models: filteredModels
             };
-            
+
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -839,13 +839,13 @@ function main() {
   // Статистика
   const providers = new Set(detailedModels.map(m => m.provider));
   const contextSizes = new Set(detailedModels.map(m => m.context));
-  
+
   console.log('\n📈 Статистика:');
   console.log(`   Всего моделей: ${detailedModels.length}`);
   console.log(`   Провайдеров: ${providers.size}`);
   console.log(`   Размеры контекста: ${Array.from(contextSizes).sort().join(', ')}`);
   console.log(`   Все модели: FREE (бесплатные)`);
-  
+
   console.log('\n🎉 Парсинг завершен успешно!');
   console.log('📁 Файлы созданы:');
   console.log('   - openrouter-free-models.html (интерактивная таблица)');

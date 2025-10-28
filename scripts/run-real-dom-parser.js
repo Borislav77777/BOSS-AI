@@ -1,14 +1,12 @@
 const { chromium } = require('playwright');
-const { main } = require('./scrape-openrouter-final.js');
+const { main } = require('./scrape-openrouter-real-dom.js');
 
 /**
- * Запуск НАСТОЯЩЕГО парсера OpenRouter с Playwright
+ * Запуск НАСТОЯЩЕГО парсера OpenRouter через DOM-поиск
  */
+async function runRealDOMParser() {
+  console.log('🚀 Запуск НАСТОЯЩЕГО парсера OpenRouter через DOM-поиск...');
 
-async function runRealParser() {
-  console.log('🚀 Запуск НАСТОЯЩЕГО парсера OpenRouter...');
-
-  // Запускаем браузер
   const browser = await chromium.launch({
     headless: true, // Headless режим для сервера
     slowMo: 500 // Замедляем для стабильности
@@ -33,22 +31,12 @@ async function runRealParser() {
   global.page = page;
 
   try {
-    // Запускаем парсинг
     await main();
-
-    console.log('✅ Парсинг завершен успешно!');
-
   } catch (error) {
     console.error('❌ Ошибка при парсинге:', error);
   } finally {
-    // Закрываем браузер
     await browser.close();
   }
 }
 
-// Запускаем если файл выполняется напрямую
-if (require.main === module) {
-  runRealParser().catch(console.error);
-}
-
-module.exports = { runRealParser };
+runRealDOMParser();

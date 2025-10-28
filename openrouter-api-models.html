@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRouter - Модели через API (51)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #00FFFF, #00CCCC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00FFFF;
+        }
+        
+        .search-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .search-input {
+            padding: 15px 20px;
+            font-size: 16px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #e0e0e0;
+            width: 400px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: #00FFFF;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        
+        th {
+            background: linear-gradient(90deg, #00CCCC 0%, #00FFFF 100%);
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        th:hover {
+            background: linear-gradient(90deg, #00FFFF 0%, #00CCCC 100%);
+        }
+        
+        tr:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+        
+        .model-name {
+            font-weight: bold;
+            color: #00FFFF;
+        }
+        
+        .provider {
+            color: #00CCCC;
+            font-weight: 500;
+        }
+        
+        .context-length {
+            color: #00FFFF;
+            font-weight: 500;
+        }
+        
+        .pricing {
+            color: #00CCCC;
+        }
+        
+        .url-link {
+            color: #00FFFF;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
+        .url-link:hover {
+            text-decoration: underline;
+        }
+        
+        .sort-arrow {
+            margin-left: 8px;
+            font-size: 0.8em;
+        }
+        
+        .export-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .export-btn {
+            padding: 12px 25px;
+            margin: 0 10px;
+            background: linear-gradient(45deg, #00CCCC, #00FFFF);
+            color: #000000;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>OpenRouter - Модели через API</h1>
+            <p>Настоящие данные из OpenRouter API с точными ссылками</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">51</div>
+                    <div>Всего моделей</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20</div>
+                    <div>Провайдеров</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">29</div>
+                    <div>Длинный контекст</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Поиск по моделям..." id="searchInput">
+        </div>
+        
+        <table id="modelsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Название <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(1)">Провайдер <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(2)">Контекст <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(3)">Цена (вход/выход) <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(4)">ID модели <span class="sort-arrow">↕</span></th>
+                    <th>Ссылка</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td class="model-name">Nous: DeepHermes 3 Llama 3 8B Preview (free)</td>
+                        <td class="provider">nousresearch</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>nousresearch/deephermes-3-llama-3-8b-preview:free</td>
+                        <td><a href="https://openrouter.ai/models/nousresearch/deephermes-3-llama-3-8b-preview:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3.1 (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">163,800</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-chat-v3.1:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-chat-v3.1:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-r1-0528-qwen3-8b:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-r1-0528-qwen3-8b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 0528 (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">163,840</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-r1-0528:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-r1-0528:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3 0324 (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">163,840</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-chat-v3-0324:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-chat-v3-0324:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 Distill Llama 70B (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">8,192</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-r1-distill-llama-70b:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-r1-distill-llama-70b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: R1 0528 (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">163,840</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-r1-0528:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-r1-0528:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Nous: Hermes 3 405B Instruct (free)</td>
+                        <td class="provider">nousresearch</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>nousresearch/hermes-3-llama-3.1-405b:free</td>
+                        <td><a href="https://openrouter.ai/models/nousresearch/hermes-3-llama-3.1-405b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Agentica: Deepcoder 14B Preview (free)</td>
+                        <td class="provider">agentica-org</td>
+                        <td class="context-length">96,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>agentica-org/deepcoder-14b-preview:free</td>
+                        <td><a href="https://openrouter.ai/models/agentica-org/deepcoder-14b-preview:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Tongyi DeepResearch 30B A3B (free)</td>
+                        <td class="provider">alibaba</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>alibaba/tongyi-deepresearch-30b-a3b:free</td>
+                        <td><a href="https://openrouter.ai/models/alibaba/tongyi-deepresearch-30b-a3b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Venice: Uncensored (free)</td>
+                        <td class="provider">cognitivecomputations</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>cognitivecomputations/dolphin-mistral-24b-venice-edition:free</td>
+                        <td><a href="https://openrouter.ai/models/cognitivecomputations/dolphin-mistral-24b-venice-edition:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">TNG: DeepSeek R1T2 Chimera (free)</td>
+                        <td class="provider">tngtech</td>
+                        <td class="context-length">163,840</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>tngtech/deepseek-r1t2-chimera:free</td>
+                        <td><a href="https://openrouter.ai/models/tngtech/deepseek-r1t2-chimera:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">TNG: DeepSeek R1T Chimera (free)</td>
+                        <td class="provider">tngtech</td>
+                        <td class="context-length">163,840</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>tngtech/deepseek-r1t-chimera:free</td>
+                        <td><a href="https://openrouter.ai/models/tngtech/deepseek-r1t-chimera:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">NVIDIA: Nemotron Nano 12B 2 VL (free)</td>
+                        <td class="provider">nvidia</td>
+                        <td class="context-length">128,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>nvidia/nemotron-nano-12b-v2-vl:free</td>
+                        <td><a href="https://openrouter.ai/models/nvidia/nemotron-nano-12b-v2-vl:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">MiniMax: MiniMax M2 (free)</td>
+                        <td class="provider">minimax</td>
+                        <td class="context-length">204,800</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>minimax/minimax-m2:free</td>
+                        <td><a href="https://openrouter.ai/models/minimax/minimax-m2:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meituan: LongCat Flash Chat (free)</td>
+                        <td class="provider">meituan</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>meituan/longcat-flash-chat:free</td>
+                        <td><a href="https://openrouter.ai/models/meituan/longcat-flash-chat:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">NVIDIA: Nemotron Nano 9B V2 (free)</td>
+                        <td class="provider">nvidia</td>
+                        <td class="context-length">128,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>nvidia/nemotron-nano-9b-v2:free</td>
+                        <td><a href="https://openrouter.ai/models/nvidia/nemotron-nano-9b-v2:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 Coder 480B A35B (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">262,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen3-coder:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen3-coder:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">OpenAI: gpt-oss-20b (free)</td>
+                        <td class="provider">openai</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>openai/gpt-oss-20b:free</td>
+                        <td><a href="https://openrouter.ai/models/openai/gpt-oss-20b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Z.AI: GLM 4.5 Air (free)</td>
+                        <td class="provider">z-ai</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>z-ai/glm-4.5-air:free</td>
+                        <td><a href="https://openrouter.ai/models/z-ai/glm-4.5-air:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 4B (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">40,960</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen3-4b:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen3-4b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">MoonshotAI: Kimi K2 0711 (free)</td>
+                        <td class="provider">moonshotai</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>moonshotai/kimi-k2:free</td>
+                        <td><a href="https://openrouter.ai/models/moonshotai/kimi-k2:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3n 2B (free)</td>
+                        <td class="provider">google</td>
+                        <td class="context-length">8,192</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>google/gemma-3n-e2b-it:free</td>
+                        <td><a href="https://openrouter.ai/models/google/gemma-3n-e2b-it:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Tencent: Hunyuan A13B Instruct (free)</td>
+                        <td class="provider">tencent</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>tencent/hunyuan-a13b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/tencent/hunyuan-a13b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Small 3.2 24B (free)</td>
+                        <td class="provider">mistralai</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>mistralai/mistral-small-3.2-24b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/mistralai/mistral-small-3.2-24b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">MoonshotAI: Kimi Dev 72B (free)</td>
+                        <td class="provider">moonshotai</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>moonshotai/kimi-dev-72b:free</td>
+                        <td><a href="https://openrouter.ai/models/moonshotai/kimi-dev-72b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 8B (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">40,960</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen3-8b:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen3-8b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 14B (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">40,960</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen3-14b:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen3-14b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen3 235B A22B (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">40,960</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen3-235b-a22b:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen3-235b-a22b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Microsoft: MAI DS R1 (free)</td>
+                        <td class="provider">microsoft</td>
+                        <td class="context-length">163,840</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>microsoft/mai-ds-r1:free</td>
+                        <td><a href="https://openrouter.ai/models/microsoft/mai-ds-r1:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Shisa AI: Shisa V2 Llama 3.3 70B  (free)</td>
+                        <td class="provider">shisa-ai</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>shisa-ai/shisa-v2-llama3.3-70b:free</td>
+                        <td><a href="https://openrouter.ai/models/shisa-ai/shisa-v2-llama3.3-70b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">ArliAI: QwQ 32B RpR v1 (free)</td>
+                        <td class="provider">arliai</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>arliai/qwq-32b-arliai-rpr-v1:free</td>
+                        <td><a href="https://openrouter.ai/models/arliai/qwq-32b-arliai-rpr-v1:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 4 Maverick (free)</td>
+                        <td class="provider">meta-llama</td>
+                        <td class="context-length">128,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>meta-llama/llama-4-maverick:free</td>
+                        <td><a href="https://openrouter.ai/models/meta-llama/llama-4-maverick:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 4 Scout (free)</td>
+                        <td class="provider">meta-llama</td>
+                        <td class="context-length">128,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>meta-llama/llama-4-scout:free</td>
+                        <td><a href="https://openrouter.ai/models/meta-llama/llama-4-scout:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 VL 32B Instruct (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">16,384</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen2.5-vl-32b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen2.5-vl-32b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Small 3.1 24B (free)</td>
+                        <td class="provider">mistralai</td>
+                        <td class="context-length">96,000</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>mistralai/mistral-small-3.1-24b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/mistralai/mistral-small-3.1-24b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3 4B (free)</td>
+                        <td class="provider">google</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>google/gemma-3-4b-it:free</td>
+                        <td><a href="https://openrouter.ai/models/google/gemma-3-4b-it:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3 12B (free)</td>
+                        <td class="provider">google</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>google/gemma-3-12b-it:free</td>
+                        <td><a href="https://openrouter.ai/models/google/gemma-3-12b-it:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 3 27B (free)</td>
+                        <td class="provider">google</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>google/gemma-3-27b-it:free</td>
+                        <td><a href="https://openrouter.ai/models/google/gemma-3-27b-it:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Dolphin3.0 Mistral 24B (free)</td>
+                        <td class="provider">cognitivecomputations</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>cognitivecomputations/dolphin3.0-mistral-24b:free</td>
+                        <td><a href="https://openrouter.ai/models/cognitivecomputations/dolphin3.0-mistral-24b:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Small 3.2 24B (free)</td>
+                        <td class="provider">mistralai</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>mistralai/mistral-small-3.2-24b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/mistralai/mistral-small-3.2-24b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemini 2.0 Flash Experimental (free)</td>
+                        <td class="provider">google</td>
+                        <td class="context-length">1,048,576</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>google/gemini-2.0-flash-exp:free</td>
+                        <td><a href="https://openrouter.ai/models/google/gemini-2.0-flash-exp:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 3.3 70B Instruct (free)</td>
+                        <td class="provider">meta-llama</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>meta-llama/llama-3.3-70b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/meta-llama/llama-3.3-70b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Meta: Llama 3.2 3B Instruct (free)</td>
+                        <td class="provider">meta-llama</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>meta-llama/llama-3.2-3b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/meta-llama/llama-3.2-3b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral Nemo (free)</td>
+                        <td class="provider">mistralai</td>
+                        <td class="context-length">131,072</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>mistralai/mistral-nemo:free</td>
+                        <td><a href="https://openrouter.ai/models/mistralai/mistral-nemo:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Google: Gemma 2 9B (free)</td>
+                        <td class="provider">google</td>
+                        <td class="context-length">8,192</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>google/gemma-2-9b-it:free</td>
+                        <td><a href="https://openrouter.ai/models/google/gemma-2-9b-it:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Mistral: Mistral 7B Instruct (free)</td>
+                        <td class="provider">mistralai</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>mistralai/mistral-7b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/mistralai/mistral-7b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">DeepSeek: DeepSeek V3.1 (free)</td>
+                        <td class="provider">deepseek</td>
+                        <td class="context-length">163,800</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>deepseek/deepseek-chat-v3.1:free</td>
+                        <td><a href="https://openrouter.ai/models/deepseek/deepseek-chat-v3.1:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen2.5 Coder 32B Instruct (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen-2.5-coder-32b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen-2.5-coder-32b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen2.5 72B Instruct (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">32,768</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen-2.5-72b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen-2.5-72b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+                    <tr>
+                        <td class="model-name">Qwen: Qwen2.5 VL 32B Instruct (free)</td>
+                        <td class="provider">qwen</td>
+                        <td class="context-length">16,384</td>
+                        <td class="pricing">0 / 0</td>
+                        <td>qwen/qwen2.5-vl-32b-instruct:free</td>
+                        <td><a href="https://openrouter.ai/models/qwen/qwen2.5-vl-32b-instruct:free" target="_blank" class="url-link">Открыть</a></td>
+                    </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="export-buttons">
+            <button class="export-btn" onclick="exportToJSON()">Экспорт JSON</button>
+            <button class="export-btn" onclick="exportToCSV()">Экспорт CSV</button>
+        </div>
+    </div>
+    
+    <script>
+        let currentData = [{"id":"nousresearch/deephermes-3-llama-3-8b-preview:free","name":"Nous: DeepHermes 3 Llama 3 8B Preview (free)","provider":"nousresearch","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Nous: DeepHermes 3 Llama 3 8B Preview (free)","url":"https://openrouter.ai/models/nousresearch/deephermes-3-llama-3-8b-preview:free","scrapedAt":"2025-10-28T22:04:32.657Z","source":"api"},{"id":"deepseek/deepseek-chat-v3.1:free","name":"DeepSeek: DeepSeek V3.1 (free)","provider":"deepseek","contextLength":163800,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: DeepSeek V3.1 (free)","url":"https://openrouter.ai/models/deepseek/deepseek-chat-v3.1:free","scrapedAt":"2025-10-28T22:04:32.657Z","source":"api"},{"id":"deepseek/deepseek-r1-0528-qwen3-8b:free","name":"DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)","provider":"deepseek","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)","url":"https://openrouter.ai/models/deepseek/deepseek-r1-0528-qwen3-8b:free","scrapedAt":"2025-10-28T22:04:32.657Z","source":"api"},{"id":"deepseek/deepseek-r1-0528:free","name":"DeepSeek: R1 0528 (free)","provider":"deepseek","contextLength":163840,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: R1 0528 (free)","url":"https://openrouter.ai/models/deepseek/deepseek-r1-0528:free","scrapedAt":"2025-10-28T22:04:32.657Z","source":"api"},{"id":"deepseek/deepseek-chat-v3-0324:free","name":"DeepSeek: DeepSeek V3 0324 (free)","provider":"deepseek","contextLength":163840,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: DeepSeek V3 0324 (free)","url":"https://openrouter.ai/models/deepseek/deepseek-chat-v3-0324:free","scrapedAt":"2025-10-28T22:04:32.657Z","source":"api"},{"id":"deepseek/deepseek-r1-distill-llama-70b:free","name":"DeepSeek: R1 Distill Llama 70B (free)","provider":"deepseek","contextLength":8192,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: R1 Distill Llama 70B (free)","url":"https://openrouter.ai/models/deepseek/deepseek-r1-distill-llama-70b:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"deepseek/deepseek-r1-0528:free","name":"DeepSeek: R1 0528 (free)","provider":"deepseek","contextLength":163840,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: R1 (free)","url":"https://openrouter.ai/models/deepseek/deepseek-r1-0528:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"nousresearch/hermes-3-llama-3.1-405b:free","name":"Nous: Hermes 3 405B Instruct (free)","provider":"nousresearch","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Nous: Hermes 3 405B Instruct (free)","url":"https://openrouter.ai/models/nousresearch/hermes-3-llama-3.1-405b:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"agentica-org/deepcoder-14b-preview:free","name":"Agentica: Deepcoder 14B Preview (free)","provider":"agentica-org","contextLength":96000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Agentica: Deepcoder 14B Preview (free)","url":"https://openrouter.ai/models/agentica-org/deepcoder-14b-preview:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"alibaba/tongyi-deepresearch-30b-a3b:free","name":"Tongyi DeepResearch 30B A3B (free)","provider":"alibaba","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Tongyi DeepResearch 30B A3B (free)","url":"https://openrouter.ai/models/alibaba/tongyi-deepresearch-30b-a3b:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"cognitivecomputations/dolphin-mistral-24b-venice-edition:free","name":"Venice: Uncensored (free)","provider":"cognitivecomputations","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Venice: Uncensored (free)","url":"https://openrouter.ai/models/cognitivecomputations/dolphin-mistral-24b-venice-edition:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"tngtech/deepseek-r1t2-chimera:free","name":"TNG: DeepSeek R1T2 Chimera (free)","provider":"tngtech","contextLength":163840,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"TNG: DeepSeek R1T2 Chimera (free)","url":"https://openrouter.ai/models/tngtech/deepseek-r1t2-chimera:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"tngtech/deepseek-r1t-chimera:free","name":"TNG: DeepSeek R1T Chimera (free)","provider":"tngtech","contextLength":163840,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"TNG: DeepSeek R1T Chimera (free)","url":"https://openrouter.ai/models/tngtech/deepseek-r1t-chimera:free","scrapedAt":"2025-10-28T22:04:32.658Z","source":"api"},{"id":"nvidia/nemotron-nano-12b-v2-vl:free","name":"NVIDIA: Nemotron Nano 12B 2 VL (free)","provider":"nvidia","contextLength":128000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"NVIDIA: Nemotron Nano 12B 2 VL (free)","url":"https://openrouter.ai/models/nvidia/nemotron-nano-12b-v2-vl:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"minimax/minimax-m2:free","name":"MiniMax: MiniMax M2 (free)","provider":"minimax","contextLength":204800,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"MiniMax: MiniMax M2 (free)","url":"https://openrouter.ai/models/minimax/minimax-m2:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"meituan/longcat-flash-chat:free","name":"Meituan: LongCat Flash Chat (free)","provider":"meituan","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Meituan: LongCat Flash Chat (free)","url":"https://openrouter.ai/models/meituan/longcat-flash-chat:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"nvidia/nemotron-nano-9b-v2:free","name":"NVIDIA: Nemotron Nano 9B V2 (free)","provider":"nvidia","contextLength":128000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"NVIDIA: Nemotron Nano 9B V2 (free)","url":"https://openrouter.ai/models/nvidia/nemotron-nano-9b-v2:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"qwen/qwen3-coder:free","name":"Qwen: Qwen3 Coder 480B A35B (free)","provider":"qwen","contextLength":262000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen: Qwen3 Coder 480B A35B (free)","url":"https://openrouter.ai/models/qwen/qwen3-coder:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"openai/gpt-oss-20b:free","name":"OpenAI: gpt-oss-20b (free)","provider":"openai","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"OpenAI: gpt-oss-20b (free)","url":"https://openrouter.ai/models/openai/gpt-oss-20b:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"z-ai/glm-4.5-air:free","name":"Z.AI: GLM 4.5 Air (free)","provider":"z-ai","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Z.AI: GLM 4.5 Air (free)","url":"https://openrouter.ai/models/z-ai/glm-4.5-air:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"qwen/qwen3-4b:free","name":"Qwen: Qwen3 4B (free)","provider":"qwen","contextLength":40960,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen: Qwen3 4B (free)","url":"https://openrouter.ai/models/qwen/qwen3-4b:free","scrapedAt":"2025-10-28T22:04:32.659Z","source":"api"},{"id":"moonshotai/kimi-k2:free","name":"MoonshotAI: Kimi K2 0711 (free)","provider":"moonshotai","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"MoonshotAI: Kimi K2 0711 (free)","url":"https://openrouter.ai/models/moonshotai/kimi-k2:free","scrapedAt":"2025-10-28T22:04:32.660Z","source":"api"},{"id":"google/gemma-3n-e2b-it:free","name":"Google: Gemma 3n 2B (free)","provider":"google","contextLength":8192,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Google: Gemma 3n 2B (free)","url":"https://openrouter.ai/models/google/gemma-3n-e2b-it:free","scrapedAt":"2025-10-28T22:04:32.660Z","source":"api"},{"id":"tencent/hunyuan-a13b-instruct:free","name":"Tencent: Hunyuan A13B Instruct (free)","provider":"tencent","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Tencent: Hunyuan A13B Instruct (free)","url":"https://openrouter.ai/models/tencent/hunyuan-a13b-instruct:free","scrapedAt":"2025-10-28T22:04:32.660Z","source":"api"},{"id":"mistralai/mistral-small-3.2-24b-instruct:free","name":"Mistral: Mistral Small 3.2 24B (free)","provider":"mistralai","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Mistral: Mistral Small 3.2 24B (free)","url":"https://openrouter.ai/models/mistralai/mistral-small-3.2-24b-instruct:free","scrapedAt":"2025-10-28T22:04:32.660Z","source":"api"},{"id":"moonshotai/kimi-dev-72b:free","name":"MoonshotAI: Kimi Dev 72B (free)","provider":"moonshotai","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"MoonshotAI: Kimi Dev 72B (free)","url":"https://openrouter.ai/models/moonshotai/kimi-dev-72b:free","scrapedAt":"2025-10-28T22:04:32.660Z","source":"api"},{"id":"qwen/qwen3-8b:free","name":"Qwen: Qwen3 8B (free)","provider":"qwen","contextLength":40960,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen: Qwen3 8B (free)","url":"https://openrouter.ai/models/qwen/qwen3-8b:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"qwen/qwen3-14b:free","name":"Qwen: Qwen3 14B (free)","provider":"qwen","contextLength":40960,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen: Qwen3 14B (free)","url":"https://openrouter.ai/models/qwen/qwen3-14b:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"qwen/qwen3-235b-a22b:free","name":"Qwen: Qwen3 235B A22B (free)","provider":"qwen","contextLength":40960,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen: Qwen3 235B A22B (free)","url":"https://openrouter.ai/models/qwen/qwen3-235b-a22b:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"microsoft/mai-ds-r1:free","name":"Microsoft: MAI DS R1 (free)","provider":"microsoft","contextLength":163840,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Microsoft: MAI DS R1 (free)","url":"https://openrouter.ai/models/microsoft/mai-ds-r1:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"shisa-ai/shisa-v2-llama3.3-70b:free","name":"Shisa AI: Shisa V2 Llama 3.3 70B  (free)","provider":"shisa-ai","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Shisa AI: Shisa V2 Llama 3.3 70B (free)","url":"https://openrouter.ai/models/shisa-ai/shisa-v2-llama3.3-70b:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"arliai/qwq-32b-arliai-rpr-v1:free","name":"ArliAI: QwQ 32B RpR v1 (free)","provider":"arliai","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"ArliAI: QwQ 32B RpR v1 (free)","url":"https://openrouter.ai/models/arliai/qwq-32b-arliai-rpr-v1:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"meta-llama/llama-4-maverick:free","name":"Meta: Llama 4 Maverick (free)","provider":"meta-llama","contextLength":128000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Meta: Llama 4 Maverick (free)","url":"https://openrouter.ai/models/meta-llama/llama-4-maverick:free","scrapedAt":"2025-10-28T22:04:32.661Z","source":"api"},{"id":"meta-llama/llama-4-scout:free","name":"Meta: Llama 4 Scout (free)","provider":"meta-llama","contextLength":128000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Meta: Llama 4 Scout (free)","url":"https://openrouter.ai/models/meta-llama/llama-4-scout:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"qwen/qwen2.5-vl-32b-instruct:free","name":"Qwen: Qwen2.5 VL 32B Instruct (free)","provider":"qwen","contextLength":16384,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen: Qwen2.5 VL 32B Instruct (free)","url":"https://openrouter.ai/models/qwen/qwen2.5-vl-32b-instruct:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"mistralai/mistral-small-3.1-24b-instruct:free","name":"Mistral: Mistral Small 3.1 24B (free)","provider":"mistralai","contextLength":96000,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Mistral: Mistral Small 3.1 24B (free)","url":"https://openrouter.ai/models/mistralai/mistral-small-3.1-24b-instruct:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"google/gemma-3-4b-it:free","name":"Google: Gemma 3 4B (free)","provider":"google","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Google: Gemma 3 4B (free)","url":"https://openrouter.ai/models/google/gemma-3-4b-it:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"google/gemma-3-12b-it:free","name":"Google: Gemma 3 12B (free)","provider":"google","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Google: Gemma 3 12B (free)","url":"https://openrouter.ai/models/google/gemma-3-12b-it:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"google/gemma-3-27b-it:free","name":"Google: Gemma 3 27B (free)","provider":"google","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Google: Gemma 3 27B (free)","url":"https://openrouter.ai/models/google/gemma-3-27b-it:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"cognitivecomputations/dolphin3.0-mistral-24b:free","name":"Dolphin3.0 Mistral 24B (free)","provider":"cognitivecomputations","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Dolphin3.0 Mistral 24B (free)","url":"https://openrouter.ai/models/cognitivecomputations/dolphin3.0-mistral-24b:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"mistralai/mistral-small-3.2-24b-instruct:free","name":"Mistral: Mistral Small 3.2 24B (free)","provider":"mistralai","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Mistral: Mistral Small 3 (free)","url":"https://openrouter.ai/models/mistralai/mistral-small-3.2-24b-instruct:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"google/gemini-2.0-flash-exp:free","name":"Google: Gemini 2.0 Flash Experimental (free)","provider":"google","contextLength":1048576,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Google: Gemini 2.0 Flash Experimental (free)","url":"https://openrouter.ai/models/google/gemini-2.0-flash-exp:free","scrapedAt":"2025-10-28T22:04:32.662Z","source":"api"},{"id":"meta-llama/llama-3.3-70b-instruct:free","name":"Meta: Llama 3.3 70B Instruct (free)","provider":"meta-llama","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Meta: Llama 3.3 70B Instruct (free)","url":"https://openrouter.ai/models/meta-llama/llama-3.3-70b-instruct:free","scrapedAt":"2025-10-28T22:04:32.663Z","source":"api"},{"id":"meta-llama/llama-3.2-3b-instruct:free","name":"Meta: Llama 3.2 3B Instruct (free)","provider":"meta-llama","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Meta: Llama 3.2 3B Instruct (free)","url":"https://openrouter.ai/models/meta-llama/llama-3.2-3b-instruct:free","scrapedAt":"2025-10-28T22:04:32.663Z","source":"api"},{"id":"mistralai/mistral-nemo:free","name":"Mistral: Mistral Nemo (free)","provider":"mistralai","contextLength":131072,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Mistral: Mistral Nemo (free)","url":"https://openrouter.ai/models/mistralai/mistral-nemo:free","scrapedAt":"2025-10-28T22:04:32.663Z","source":"api"},{"id":"google/gemma-2-9b-it:free","name":"Google: Gemma 2 9B (free)","provider":"google","contextLength":8192,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Google: Gemma 2 9B (free)","url":"https://openrouter.ai/models/google/gemma-2-9b-it:free","scrapedAt":"2025-10-28T22:04:32.663Z","source":"api"},{"id":"mistralai/mistral-7b-instruct:free","name":"Mistral: Mistral 7B Instruct (free)","provider":"mistralai","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Mistral: Mistral 7B Instruct (free)","url":"https://openrouter.ai/models/mistralai/mistral-7b-instruct:free","scrapedAt":"2025-10-28T22:04:32.663Z","source":"api"},{"id":"deepseek/deepseek-chat-v3.1:free","name":"DeepSeek: DeepSeek V3.1 (free)","provider":"deepseek","contextLength":163800,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"DeepSeek: DeepSeek V3 (free)","url":"https://openrouter.ai/models/deepseek/deepseek-chat-v3.1:free","scrapedAt":"2025-10-28T22:04:32.667Z","source":"api"},{"id":"qwen/qwen-2.5-coder-32b-instruct:free","name":"Qwen2.5 Coder 32B Instruct (free)","provider":"qwen","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen2.5 Coder 32B Instruct (free)","url":"https://openrouter.ai/models/qwen/qwen-2.5-coder-32b-instruct:free","scrapedAt":"2025-10-28T22:04:32.670Z","source":"api"},{"id":"qwen/qwen-2.5-72b-instruct:free","name":"Qwen2.5 72B Instruct (free)","provider":"qwen","contextLength":32768,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen2.5 72B Instruct (free)","url":"https://openrouter.ai/models/qwen/qwen-2.5-72b-instruct:free","scrapedAt":"2025-10-28T22:04:32.670Z","source":"api"},{"id":"qwen/qwen2.5-vl-32b-instruct:free","name":"Qwen: Qwen2.5 VL 32B Instruct (free)","provider":"qwen","contextLength":16384,"pricing":{"prompt":"0","completion":"0","request":"0","image":"0","web_search":"0","internal_reasoning":"0"},"searchName":"Qwen2.5 VL 32B Instruct (free)","url":"https://openrouter.ai/models/qwen/qwen2.5-vl-32b-instruct:free","scrapedAt":"2025-10-28T22:04:32.670Z","source":"api"}];
+        let currentSort = { column: -1, direction: 'asc' };
+        
+        // Поиск
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('#modelsTable tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+        
+        // Сортировка
+        function sortTable(column) {
+            const tbody = document.querySelector('#modelsTable tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            const direction = currentSort.column === column && currentSort.direction === 'asc' ? 'desc' : 'asc';
+            currentSort = { column, direction };
+            
+            rows.sort((a, b) => {
+                const aText = a.cells[column].textContent.trim();
+                const bText = b.cells[column].textContent.trim();
+                
+                if (direction === 'asc') {
+                    return aText.localeCompare(bText);
+                } else {
+                    return bText.localeCompare(aText);
+                }
+            });
+            
+            rows.forEach(row => tbody.appendChild(row));
+            
+            // Обновляем стрелки
+            document.querySelectorAll('.sort-arrow').forEach(arrow => {
+                arrow.textContent = '↕';
+            });
+            document.querySelectorAll('th')[column].querySelector('.sort-arrow').textContent = direction === 'asc' ? '↑' : '↓';
+        }
+        
+        // Экспорт
+        function exportToJSON() {
+            const dataStr = JSON.stringify(currentData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'openrouter-api-models.json';
+            link.click();
+        }
+        
+        function exportToCSV() {
+            const headers = ['Название', 'Провайдер', 'Контекст', 'Цена вход', 'Цена выход', 'ID модели', 'Ссылка'];
+            const csvContent = [
+                headers.join(','),
+                ...currentData.map(model => [
+                    '"' + model.name.replace(/"/g, '""') + '"',
+                    '"' + model.provider.replace(/"/g, '""') + '"',
+                    '"' + (model.contextLength || 'Unknown').toString().replace(/"/g, '""') + '"',
+                    '"' + model.pricing.prompt.replace(/"/g, '""') + '"',
+                    '"' + model.pricing.completion.replace(/"/g, '""') + '"',
+                    '"' + model.id.replace(/"/g, '""') + '"',
+                    '"' + model.url.replace(/"/g, '""') + '"'
+                ].join(','))
+            ].join('\n');
+            
+            const dataBlob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'openrouter-api-models.csv';
+            link.click();
+        }
+    </script>
+</body>
+</html>

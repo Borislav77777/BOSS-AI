@@ -185,7 +185,7 @@ const allModelsFromScreenshots = [
 function removeDuplicates(models) {
   const seen = new Set();
   const unique = [];
-  
+
   for (const model of models) {
     const key = `${model.provider}:${model.modelName}`;
     if (!seen.has(key)) {
@@ -193,7 +193,7 @@ function removeDuplicates(models) {
       unique.push(model);
     }
   }
-  
+
   return unique;
 }
 
@@ -208,7 +208,7 @@ function generateModelId(provider, modelName) {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
-  
+
   return `${cleanProvider}/${cleanModelName}:free`;
 }
 
@@ -226,7 +226,7 @@ function generateModelUrl(provider, modelName) {
 function createModelDetails(model) {
   const modelId = generateModelId(model.provider, model.modelName);
   const url = generateModelUrl(model.provider, model.modelName);
-  
+
   // Генерируем контекст на основе размера модели
   const contextSizes = {
     '2B': '8K', '3B': '8K', '4B': '8K',
@@ -237,7 +237,7 @@ function createModelDetails(model) {
     '109B': '128K', '235B': '128K', '405B': '128K',
     '480B': '128K', '671B': '128K'
   };
-  
+
   let context = '8K'; // по умолчанию
   for (const [size, ctx] of Object.entries(contextSizes)) {
     if (model.modelName.includes(size)) {
@@ -245,7 +245,7 @@ function createModelDetails(model) {
       break;
     }
   }
-  
+
   // Генерируем описание на основе провайдера и модели
   const descriptions = {
     'Google': `${model.modelName} - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.`,
@@ -284,9 +284,9 @@ function createModelDetails(model) {
     'NousResearch': `${model.modelName} - исследовательская модель от NousResearch.`,
     'AlfredPros': `${model.modelName} - профессиональная модель от AlfredPros.`
   };
-  
+
   const baseDescription = descriptions[model.provider] || `${model.modelName} - мощная языковая модель с отличными возможностями.`;
-  
+
   return {
     name: model.name,
     id: modelId,
@@ -557,24 +557,24 @@ function createHTMLFile(models) {
             .container {
                 padding: 15px;
             }
-            
+
             .header h1 {
                 font-size: 2em;
             }
-            
+
             .controls {
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+
             .search-box {
                 min-width: auto;
             }
-            
+
             table {
                 font-size: 0.9em;
             }
-            
+
             th, td {
                 padding: 10px 8px;
             }
@@ -674,11 +674,11 @@ function createHTMLFile(models) {
             const contextFilter = document.getElementById('contextFilter').value;
 
             return allModels.filter(model => {
-                const matchesSearch = !searchTerm || 
+                const matchesSearch = !searchTerm ||
                     model.name.toLowerCase().includes(searchTerm) ||
                     model.provider.toLowerCase().includes(searchTerm) ||
                     model.description.toLowerCase().includes(searchTerm);
-                
+
                 const matchesProvider = !providerFilter || model.provider === providerFilter;
                 const matchesContext = !contextFilter || model.context === contextFilter;
 
@@ -688,7 +688,7 @@ function createHTMLFile(models) {
 
         function sortTable(column) {
             const filteredModels = filterModels();
-            
+
             if (currentSort.column === column) {
                 currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
             } else {
@@ -740,7 +740,7 @@ function createHTMLFile(models) {
         function updatePagination(totalItems) {
             const totalPages = Math.ceil(totalItems / itemsPerPage);
             const pagination = document.getElementById('pagination');
-            
+
             let paginationHTML = \`
                 <button onclick="changePage(1)" \${currentPage === 1 ? 'disabled' : ''}>First</button>
                 <button onclick="changePage(\${currentPage - 1})" \${currentPage === 1 ? 'disabled' : ''}>Previous</button>
@@ -761,7 +761,7 @@ function createHTMLFile(models) {
         function changePage(page) {
             const filteredModels = filterModels();
             const totalPages = Math.ceil(filteredModels.length / itemsPerPage);
-            
+
             if (page >= 1 && page <= totalPages) {
                 currentPage = page;
                 displayModels(filteredModels);
@@ -775,7 +775,7 @@ function createHTMLFile(models) {
                 totalModels: filteredModels.length,
                 models: filteredModels
             };
-            
+
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -855,13 +855,13 @@ function main() {
   // Статистика
   const providers = new Set(detailedModels.map(m => m.provider));
   const contextSizes = new Set(detailedModels.map(m => m.context));
-  
+
   console.log('\n📈 Статистика:');
   console.log(`   Всего моделей: ${detailedModels.length}`);
   console.log(`   Провайдеров: ${providers.size}`);
   console.log(`   Размеры контекста: ${Array.from(contextSizes).sort().join(', ')}`);
   console.log(`   Все модели: FREE (бесплатные)`);
-  
+
   console.log('\n🎉 ПОЛНЫЙ парсинг завершен успешно!');
   console.log('📁 Файлы созданы:');
   console.log('   - openrouter-all-models.html (интерактивная таблица)');

@@ -1,0 +1,556 @@
+{
+  "lastUpdated": "2025-10-28T22:04:32.675Z",
+  "totalUnmatched": 55,
+  "unmatchedModels": [
+    {
+      "name": "Google: Gemini 2.5 Flash Image Preview (Nano Banana)",
+      "id": "google/gemini-25-flash-image-preview-nano-banana:free",
+      "provider": "Google",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Gemini 2.5 Flash Image Preview (Nano Banana) - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+      "url": "https://openrouter.ai/google/gemini-25-flash-image-preview-nano-banana:free"
+    },
+    {
+      "name": "Microsoft: Phi 4 Reasoning Plus (free)",
+      "id": "microsoft/phi-4-reasoning-plus:free",
+      "provider": "Microsoft",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Phi 4 Reasoning Plus - эффективная модель от Microsoft с хорошими возможностями рассуждения.",
+      "url": "https://openrouter.ai/microsoft/phi-4-reasoning-plus:free"
+    },
+    {
+      "name": "Morph: Morph V3 Large (free)",
+      "id": "morph/morph-v3-large:free",
+      "provider": "Morph",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Morph V3 Large - передовая модель от Morph.",
+      "url": "https://openrouter.ai/morph/morph-v3-large:free"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Lite Preview 06-17 (free)",
+      "id": "google/gemini-25-flash-lite-preview-06-17:free",
+      "provider": "Google",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Gemini 2.5 Flash Lite Preview 06-17 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+      "url": "https://openrouter.ai/google/gemini-25-flash-lite-preview-06-17:free"
+    },
+    {
+      "name": "Google: Gemini 2.5 Pro Preview 06-05 (free)",
+      "id": "google/gemini-25-pro-preview-06-05:free",
+      "provider": "Google",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Gemini 2.5 Pro Preview 06-05 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+      "url": "https://openrouter.ai/google/gemini-25-pro-preview-06-05:free"
+    },
+    {
+      "name": "Google: Gemini 2.5 Pro Preview 05-06 (free)",
+      "id": "google/gemini-25-pro-preview-05-06:free",
+      "provider": "Google",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Gemini 2.5 Pro Preview 05-06 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+      "url": "https://openrouter.ai/google/gemini-25-pro-preview-05-06:free"
+    },
+    {
+      "name": "OpenAI: GPT-4o-mini Search Preview (free)",
+      "id": "openai/gpt-4o-mini-search-preview:free",
+      "provider": "OpenAI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "GPT-4o-mini Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+      "url": "https://openrouter.ai/openai/gpt-4o-mini-search-preview:free"
+    },
+    {
+      "name": "OpenAI: GPT-4o Search Preview (free)",
+      "id": "openai/gpt-4o-search-preview:free",
+      "provider": "OpenAI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "GPT-4o Search Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+      "url": "https://openrouter.ai/openai/gpt-4o-search-preview:free"
+    },
+    {
+      "name": "Qwen: Qwen2.5 Coder 32B Instruct (free)",
+      "id": "qwen/qwen25-coder-32b-instruct:free",
+      "provider": "Qwen",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Qwen2.5 Coder 32B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+      "url": "https://openrouter.ai/qwen/qwen25-coder-32b-instruct:free"
+    },
+    {
+      "name": "Qwen: Qwen2.5 72B Instruct (free)",
+      "id": "qwen/qwen25-72b-instruct:free",
+      "provider": "Qwen",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Qwen2.5 72B Instruct - многоязычная модель от Qwen с сильными возможностями в различных языках и задачах.",
+      "url": "https://openrouter.ai/qwen/qwen25-72b-instruct:free"
+    },
+    {
+      "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity (free)",
+      "id": "alfredpros/codellama-7b-instruct-solidity:free",
+      "provider": "AlfredPros",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "CodeLLaMa 7B Instruct Solidity - профессиональная модель от AlfredPros.",
+      "url": "https://openrouter.ai/alfredpros/codellama-7b-instruct-solidity:free"
+    },
+    {
+      "name": "Deep Cogito: Cogito V2 Preview Deepseek 671B (free)",
+      "id": "deepcogito/cogito-v2-preview-deepseek-671b:free",
+      "provider": "Deep Cogito",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Cogito V2 Preview Deepseek 671B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+      "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-deepseek-671b:free"
+    },
+    {
+      "name": "Deep Cogito: Cogito V2 Preview Llama 405B (free)",
+      "id": "deepcogito/cogito-v2-preview-llama-405b:free",
+      "provider": "Deep Cogito",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Cogito V2 Preview Llama 405B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+      "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-llama-405b:free"
+    },
+    {
+      "name": "Deep Cogito: Cogito V2 Preview Llama 70B (free)",
+      "id": "deepcogito/cogito-v2-preview-llama-70b:free",
+      "provider": "Deep Cogito",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Cogito V2 Preview Llama 70B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+      "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-llama-70b:free"
+    },
+    {
+      "name": "Nous: DeepHermes 3 Mistral 24B Preview (free)",
+      "id": "nous/deephermes-3-mistral-24b-preview:free",
+      "provider": "Nous",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "DeepHermes 3 Mistral 24B Preview - высококачественная модель от Nous с отличными возможностями инструкций.",
+      "url": "https://openrouter.ai/nous/deephermes-3-mistral-24b-preview:free"
+    },
+    {
+      "name": "Arcee AI: Maestro Reasoning (free)",
+      "id": "arceeai/maestro-reasoning:free",
+      "provider": "Arcee AI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Maestro Reasoning - специализированная модель от Arcee AI для конкретных задач.",
+      "url": "https://openrouter.ai/arceeai/maestro-reasoning:free"
+    },
+    {
+      "name": "Arcee AI: Virtuoso Large (free)",
+      "id": "arceeai/virtuoso-large:free",
+      "provider": "Arcee AI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Virtuoso Large - специализированная модель от Arcee AI для конкретных задач.",
+      "url": "https://openrouter.ai/arceeai/virtuoso-large:free"
+    },
+    {
+      "name": "Arcee AI: Coder Large (free)",
+      "id": "arceeai/coder-large:free",
+      "provider": "Arcee AI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Coder Large - специализированная модель от Arcee AI для конкретных задач.",
+      "url": "https://openrouter.ai/arceeai/coder-large:free"
+    },
+    {
+      "name": "NousResearch: Hermes 2 Pro - Llama-3 8B (free)",
+      "id": "nousresearch/hermes-2-pro-llama-3-8b:free",
+      "provider": "NousResearch",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Hermes 2 Pro - Llama-3 8B - исследовательская модель от NousResearch.",
+      "url": "https://openrouter.ai/nousresearch/hermes-2-pro-llama-3-8b:free"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.2 Exp (free)",
+      "id": "deepseek/deepseek-v32-exp:free",
+      "provider": "DeepSeek",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "DeepSeek V3.2 Exp - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+      "url": "https://openrouter.ai/deepseek/deepseek-v32-exp:free"
+    },
+    {
+      "name": "Relace: Relace Apply 3 (free)",
+      "id": "relace/relace-apply-3:free",
+      "provider": "Relace",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Relace Apply 3 - специализированная модель от Relace.",
+      "url": "https://openrouter.ai/relace/relace-apply-3:free"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1 Terminus (free)",
+      "id": "deepseek/deepseek-v31-terminus:free",
+      "provider": "DeepSeek",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "DeepSeek V3.1 Terminus - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+      "url": "https://openrouter.ai/deepseek/deepseek-v31-terminus:free"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1 Terminus (exacto) (free)",
+      "id": "deepseek/deepseek-v31-terminus-exacto:free",
+      "provider": "DeepSeek",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "DeepSeek V3.1 Terminus (exacto) - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+      "url": "https://openrouter.ai/deepseek/deepseek-v31-terminus-exacto:free"
+    },
+    {
+      "name": "Arcee AI: AFM 4.5B (free)",
+      "id": "arceeai/afm-45b:free",
+      "provider": "Arcee AI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "AFM 4.5B - специализированная модель от Arcee AI для конкретных задач.",
+      "url": "https://openrouter.ai/arceeai/afm-45b:free"
+    },
+    {
+      "name": "Cogito V2 Preview Llama 109B (free)",
+      "id": "deepcogito/cogito-v2-preview-llama-109b:free",
+      "provider": "Deep Cogito",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Cogito V2 Preview Llama 109B - передовая модель от Deep Cogito с отличными возможностями рассуждения.",
+      "url": "https://openrouter.ai/deepcogito/cogito-v2-preview-llama-109b:free"
+    },
+    {
+      "name": "Nous: Hermes 4 70B (free)",
+      "id": "nous/hermes-4-70b:free",
+      "provider": "Nous",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Hermes 4 70B - высококачественная модель от Nous с отличными возможностями инструкций.",
+      "url": "https://openrouter.ai/nous/hermes-4-70b:free"
+    },
+    {
+      "name": "Nous: Hermes 4 405B (free)",
+      "id": "nous/hermes-4-405b:free",
+      "provider": "Nous",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Hermes 4 405B - высококачественная модель от Nous с отличными возможностями инструкций.",
+      "url": "https://openrouter.ai/nous/hermes-4-405b:free"
+    },
+    {
+      "name": "Arcee AI: Spotlight (free)",
+      "id": "arceeai/spotlight:free",
+      "provider": "Arcee AI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Spotlight - специализированная модель от Arcee AI для конкретных задач.",
+      "url": "https://openrouter.ai/arceeai/spotlight:free"
+    },
+    {
+      "name": "DeepSeek: DeepSeek Prover V2 (free)",
+      "id": "deepseek/deepseek-prover-v2:free",
+      "provider": "DeepSeek",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "DeepSeek Prover V2 - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+      "url": "https://openrouter.ai/deepseek/deepseek-prover-v2:free"
+    },
+    {
+      "name": "Cohere: Command A (free)",
+      "id": "cohere/command-a:free",
+      "provider": "Cohere",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Command A - мощная модель от Cohere с сильными возможностями в различных задачах.",
+      "url": "https://openrouter.ai/cohere/command-a:free"
+    },
+    {
+      "name": "DeepSeek: R1 Distill Qwen 32B (free)",
+      "id": "deepseek/r1-distill-qwen-32b:free",
+      "provider": "DeepSeek",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "R1 Distill Qwen 32B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+      "url": "https://openrouter.ai/deepseek/r1-distill-qwen-32b:free"
+    },
+    {
+      "name": "DeepSeek: R1 Distill Qwen 14B (free)",
+      "id": "deepseek/r1-distill-qwen-14b:free",
+      "provider": "DeepSeek",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "R1 Distill Qwen 14B - высокопроизводительная модель от DeepSeek с отличными возможностями кодирования и рассуждения.",
+      "url": "https://openrouter.ai/deepseek/r1-distill-qwen-14b:free"
+    },
+    {
+      "name": "Cohere: Command R7B (12-2024) (free)",
+      "id": "cohere/command-r7b-12-2024:free",
+      "provider": "Cohere",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Command R7B (12-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.",
+      "url": "https://openrouter.ai/cohere/command-r7b-12-2024:free"
+    },
+    {
+      "name": "SorcererLM 8x22B (free)",
+      "id": "sorcererlm/8x22b:free",
+      "provider": "SorcererLM",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "8x22B - передовая модель от SorcererLM.",
+      "url": "https://openrouter.ai/sorcererlm/8x22b:free"
+    },
+    {
+      "name": "Inflection: Inflection 3 Productivity (free)",
+      "id": "inflection/inflection-3-productivity:free",
+      "provider": "Inflection",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Inflection 3 Productivity - инновационная модель от Inflection с уникальными возможностями.",
+      "url": "https://openrouter.ai/inflection/inflection-3-productivity:free"
+    },
+    {
+      "name": "Inflection: Inflection 3 Pi (free)",
+      "id": "inflection/inflection-3-pi:free",
+      "provider": "Inflection",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Inflection 3 Pi - инновационная модель от Inflection с уникальными возможностями.",
+      "url": "https://openrouter.ai/inflection/inflection-3-pi:free"
+    },
+    {
+      "name": "NeverSleep: Lumimaid v0.2 8B (free)",
+      "id": "neversleep/lumimaid-v02-8b:free",
+      "provider": "NeverSleep",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Lumimaid v0.2 8B - эффективная модель от NeverSleep.",
+      "url": "https://openrouter.ai/neversleep/lumimaid-v02-8b:free"
+    },
+    {
+      "name": "Cohere: Command R+ (08-2024) (free)",
+      "id": "cohere/command-r-08-2024:free",
+      "provider": "Cohere",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Command R+ (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.",
+      "url": "https://openrouter.ai/cohere/command-r-08-2024:free"
+    },
+    {
+      "name": "Cohere: Command R (08-2024) (free)",
+      "id": "cohere/command-r-08-2024:free",
+      "provider": "Cohere",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Command R (08-2024) - мощная модель от Cohere с сильными возможностями в различных задачах.",
+      "url": "https://openrouter.ai/cohere/command-r-08-2024:free"
+    },
+    {
+      "name": "Nous: Hermes 3 70B Instruct (free)",
+      "id": "nous/hermes-3-70b-instruct:free",
+      "provider": "Nous",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Hermes 3 70B Instruct - высококачественная модель от Nous с отличными возможностями инструкций.",
+      "url": "https://openrouter.ai/nous/hermes-3-70b-instruct:free"
+    },
+    {
+      "name": "OpenAI: o3 Deep Research (free)",
+      "id": "openai/o3-deep-research:free",
+      "provider": "OpenAI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "o3 Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+      "url": "https://openrouter.ai/openai/o3-deep-research:free"
+    },
+    {
+      "name": "OpenAI: o4 Mini Deep Research (free)",
+      "id": "openai/o4-mini-deep-research:free",
+      "provider": "OpenAI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "o4 Mini Deep Research - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+      "url": "https://openrouter.ai/openai/o4-mini-deep-research:free"
+    },
+    {
+      "name": "Perplexity: Sonar Deep Research (free)",
+      "id": "perplexity/sonar-deep-research:free",
+      "provider": "Perplexity",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Sonar Deep Research - специализированная модель от Perplexity для исследовательских задач.",
+      "url": "https://openrouter.ai/perplexity/sonar-deep-research:free"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Preview 09-2025 (free)",
+      "id": "google/gemini-25-flash-preview-09-2025:free",
+      "provider": "Google",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Gemini 2.5 Flash Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+      "url": "https://openrouter.ai/google/gemini-25-flash-preview-09-2025:free"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025 (free)",
+      "id": "google/gemini-25-flash-lite-preview-09-2025:free",
+      "provider": "Google",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Gemini 2.5 Flash Lite Preview 09-2025 - мощная языковая модель от Google с отличными возможностями понимания и генерации текста.",
+      "url": "https://openrouter.ai/google/gemini-25-flash-lite-preview-09-2025:free"
+    },
+    {
+      "name": "AI21: Jamba Large 1.7 (free)",
+      "id": "ai21/jamba-large-17:free",
+      "provider": "AI21",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Jamba Large 1.7 - мощная модель от AI21.",
+      "url": "https://openrouter.ai/ai21/jamba-large-17:free"
+    },
+    {
+      "name": "Perplexity: Sonar Reasoning Pro (free)",
+      "id": "perplexity/sonar-reasoning-pro:free",
+      "provider": "Perplexity",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Sonar Reasoning Pro - специализированная модель от Perplexity для исследовательских задач.",
+      "url": "https://openrouter.ai/perplexity/sonar-reasoning-pro:free"
+    },
+    {
+      "name": "Perplexity: Sonar Reasoning (free)",
+      "id": "perplexity/sonar-reasoning:free",
+      "provider": "Perplexity",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Sonar Reasoning - специализированная модель от Perplexity для исследовательских задач.",
+      "url": "https://openrouter.ai/perplexity/sonar-reasoning:free"
+    },
+    {
+      "name": "Mistral Large 2411 (free)",
+      "id": "mistral/large-2411:free",
+      "provider": "Mistral",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+      "url": "https://openrouter.ai/mistral/large-2411:free"
+    },
+    {
+      "name": "Mistral Large 2407 (free)",
+      "id": "mistral/large-2407:free",
+      "provider": "Mistral",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Large 2407 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+      "url": "https://openrouter.ai/mistral/large-2407:free"
+    },
+    {
+      "name": "Mistral: Pixtral Large 2411 (free)",
+      "id": "mistral/pixtral-large-2411:free",
+      "provider": "Mistral",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Pixtral Large 2411 - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+      "url": "https://openrouter.ai/mistral/pixtral-large-2411:free"
+    },
+    {
+      "name": "Mistral Large (free)",
+      "id": "mistral/large:free",
+      "provider": "Mistral",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Large - эффективная модель от Mistral с хорошим балансом производительности и скорости.",
+      "url": "https://openrouter.ai/mistral/large:free"
+    },
+    {
+      "name": "OpenAI: GPT-4 Turbo Preview (free)",
+      "id": "openai/gpt-4-turbo-preview:free",
+      "provider": "OpenAI",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "GPT-4 Turbo Preview - передовая модель от OpenAI с выдающимися возможностями рассуждения и генерации.",
+      "url": "https://openrouter.ai/openai/gpt-4-turbo-preview:free"
+    },
+    {
+      "name": "ReMM SLERP 13B (free)",
+      "id": "remm/slerp-13b:free",
+      "provider": "ReMM",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "SLERP 13B - специализированная модель от ReMM.",
+      "url": "https://openrouter.ai/remm/slerp-13b:free"
+    },
+    {
+      "name": "Noromaid 20B (free)",
+      "id": "noromaid/20b:free",
+      "provider": "Noromaid",
+      "context": "32K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "20B - уникальная модель от Noromaid.",
+      "url": "https://openrouter.ai/noromaid/20b:free"
+    }
+  ]
+}
