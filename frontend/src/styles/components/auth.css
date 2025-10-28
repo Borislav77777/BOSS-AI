@@ -276,29 +276,17 @@
   top: 0;
   bottom: 0;
   width: calc(100% - 49px); /* Оставляем больше места для аватарки справа */
-  border: 3px solid #2AABEE; /* Сплошная Telegram синяя рамка */
+  border: 0;
   border-radius: 16px;
-  background: rgba(0, 255, 255, 0.85); /* Яркая голубая заливка */
-  animation: glow-pulse 2s ease-in-out infinite;
+  background: transparent;
+  animation: none;
   pointer-events: none;
   z-index: 0; /* Позади кнопки */
 }
 
 /* Рамка для аватарки (правая часть) - синяя с переливами */
 .auth-telegram-wrapper::after {
-  content: '';
-  position: absolute;
-  right: -1.5px; /* Отступ от края */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 38px;  /* Уменьшен с 45px */
-  height: 38px; /* Уменьшен с 45px */
-  border: 3px solid #2AABEE; /* Сплошная Telegram синяя рамка */
-  border-radius: 50%;
-  background: rgba(42, 171, 238, 0.15); /* Полупрозрачный голубой фон */
-  animation: glow-pulse 2s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
+  content: none; /* полностью скрываем правый круг */
 }
 
 /* Telegram Button Container */
