@@ -1,0 +1,85 @@
+{
+    "id": "settings",
+    "name": "Настройки",
+    "description": "Системные настройки платформы",
+    "icon": "Settings",
+    "version": "1.0.0",
+    "isActive": false,
+    "category": "settings",
+    "priority": 0,
+    "author": "BARSUKOV OS",
+    "tools": [
+        {
+            "id": "appearance",
+            "name": "Внешний вид",
+            "description": "Настройки темы, шрифтов и отображения",
+            "icon": "Eye",
+            "action": "appearance",
+            "isEnabled": true,
+            "category": "settings"
+        },
+        {
+            "id": "interface",
+            "name": "Интерфейс",
+            "description": "Настройки панелей и макета",
+            "icon": "Layout",
+            "action": "interface",
+            "isEnabled": true,
+            "category": "settings"
+        },
+        {
+            "id": "chat",
+            "name": "Чат",
+            "description": "Настройки чата и сообщений",
+            "icon": "MessageSquare",
+            "action": "chat",
+            "isEnabled": true,
+            "category": "settings"
+        },
+        {
+            "id": "notifications",
+            "name": "Уведомления",
+            "description": "Настройки уведомлений",
+            "icon": "Bell",
+            "action": "notifications",
+            "isEnabled": true,
+            "category": "settings"
+        }
+    ],
+    "settings": {
+        "theme": "system",
+        "language": "ru"
+    },
+    "theme": {
+        "id": "settings",
+        "name": "Settings Theme",
+        "description": "Тема для настроек с фиолетовыми акцентами",
+        "colors": {
+            "primary": "#8b5cf6",
+            "secondary": "#7c3aed",
+            "accent": "#a78bfa",
+            "background": "#0f172a",
+            "text": "#f1f5f9",
+            "border": "rgba(139, 92, 246, 0.2)",
+            "muted": "#64748b",
+            "destructive": "#ef4444",
+            "success": "#10b981",
+            "warning": "#f59e0b",
+            "info": "#000000"
+        },
+        "variables": {
+            "--setting-active": "#8b5cf6",
+            "--setting-hover": "rgba(139, 92, 246, 0.1)",
+            "--setting-border": "rgba(139, 92, 246, 0.3)"
+        },
+        "animations": {
+            "setting-focus": "focus 0.3s ease-out",
+            "setting-hover": "hover 0.2s ease-out"
+        },
+        "version": "1.0.0",
+        "author": "BARSUKOV OS Team"
+    },
+    "dependencies": [],
+    "chatButtons": [],
+    "chatFunctions": []
+}

@@ -1,0 +1,99 @@
+{
+  "id": "crm-service",
+  "name": "CRM",
+  "description": "Управление клиентами и продажами с AI-аналитикой",
+  "icon": "Users",
+  "version": "1.0.0",
+  "category": "business",
+  "isActive": true,
+  "author": "Boss AI Team",
+  "priority": 1,
+  "tools": [
+    {
+      "id": "add-lead",
+      "name": "Добавить лид",
+      "description": "Создание нового лида в CRM с автоматической квалификацией",
+      "icon": "UserPlus",
+      "action": "add-lead",
+      "isEnabled": true,
+      "category": "leads",
+      "isChatFunction": true,
+      "chatPrompt": "Добавь нового лида: {userInput}",
+      "chatApiEndpoint": "/api/crm/leads"
+    },
+    {
+      "id": "view-pipeline",
+      "name": "Воронка продаж",
+      "description": "Просмотр и управление воронкой продаж",
+      "icon": "TrendingUp",
+      "action": "view-pipeline",
+      "isEnabled": true,
+      "category": "sales",
+      "isChatFunction": true,
+      "chatPrompt": "Покажи воронку продаж: {userInput}",
+      "chatApiEndpoint": "/api/crm/pipeline"
+    },
+    {
+      "id": "analytics",
+      "name": "Аналитика",
+      "description": "Дашборды и отчеты по продажам",
+      "icon": "BarChart3",
+      "action": "analytics",
+      "isEnabled": true,
+      "category": "analytics",
+      "isChatFunction": true,
+      "chatPrompt": "Покажи аналитику: {userInput}",
+      "chatApiEndpoint": "/api/crm/analytics"
+    },
+    {
+      "id": "ai-scoring",
+      "name": "AI-скоринг лидов",
+      "description": "Автоматическая оценка качества лидов",
+      "icon": "Brain",
+      "action": "ai-scoring",
+      "isEnabled": true,
+      "category": "ai",
+      "isChatFunction": true,
+      "chatPrompt": "Проанализируй лида и дай скоринг: {userInput}",
+      "chatApiEndpoint": "/api/crm/ai-scoring"
+    },
+    {
+      "id": "email-campaigns",
+      "name": "Email-кампании",
+      "description": "Создание и управление email-рассылками",
+      "icon": "Mail",
+      "action": "email-campaigns",
+      "isEnabled": true,
+      "category": "marketing",
+      "isChatFunction": true,
+      "chatPrompt": "Создай email-кампанию: {userInput}",
+      "chatApiEndpoint": "/api/crm/email-campaigns"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "quick-lead",
+      "name": "Быстрый лид",
+      "description": "Добавить лида одним кликом",
+      "position": "top",
+      "action": "add-lead",
+      "isEnabled": true
+    },
+    {
+      "id": "view-dashboard",
+      "name": "Дашборд",
+      "description": "Открыть аналитику",
+      "position": "top",
+      "action": "analytics",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "apiBase": "/api/crm",
+    "webhookUrl": "/api/crm/webhooks",
+    "aiEnabled": true,
+    "autoScoring": true,
+    "emailIntegration": true,
+    "calendarIntegration": true
+  }
+}

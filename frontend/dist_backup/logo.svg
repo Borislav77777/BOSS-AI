@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Внешний круг -->
+  <circle cx="32" cy="32" r="30" stroke="rgba(255, 255, 255, 0.8)" stroke-width="4" fill="none"/>
+
+  <!-- Внутренний вращающийся элемент -->
+  <circle cx="32" cy="32" r="20" stroke="rgba(107, 114, 128, 0.6)" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="31.4">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      values="0 32 32;360 32 32"
+      dur="1.2s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Центральная точка -->
+  <circle cx="32" cy="32" r="4" fill="rgba(255, 255, 255, 0.6)"/>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "id": "photo-studio",
+  "name": "Фотостудия",
+  "description": "Генерация изображений по промпту и с вашей фотографией (Automatic1111)",
+  "icon": "Camera",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "creative",
+  "priority": 7,
+  "author": "BARSUKOV Platform",
+  "tools": [
+    {
+      "id": "studio",
+      "name": "Студия",
+      "description": "Генерация изображений txt2img и img2img",
+      "icon": "Camera",
+      "action": "studio",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "baseUrl": "http://127.0.0.1:7860",
+    "sampler": "Euler a",
+    "steps": 28,
+    "cfgScale": 7,
+    "width": 512,
+    "height": 512
+  },
+  "dependencies": []
+}

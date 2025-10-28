@@ -1,0 +1,1 @@
+{"version":3,"file":"MessageBubble.d.ts","sourceRoot":"","sources":["../../../../src/components/Chat/ChatMessages/MessageBubble.tsx"],"names":[],"mappings":"AAAA;;GAEG;AAIH,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,UAAU,kBAAkB;IACxB,OAAO,EAAE,GAAG,CAAC;IACb,OAAO,EAAE,MAAM,IAAI,CAAC;IACpB,QAAQ,EAAE,MAAM,IAAI,CAAC;CACxB;AAED,eAAO,MAAM,aAAa,EAAE,KAAK,CAAC,EAAE,CAAC,kBAAkB,CAsEtD,CAAC"}

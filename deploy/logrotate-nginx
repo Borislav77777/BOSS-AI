@@ -1,0 +1,15 @@
+# Nginx logrotate config for Boss AI
+# Copy to /etc/logrotate.d/nginx-boss-ai
+
+/var/log/nginx/boss-ai.access.log /var/log/nginx/boss-ai.error.log {
+    daily
+    rotate 14
+    missingok
+    compress
+    delaycompress
+    notifempty
+    sharedscripts
+    postrotate
+        [ -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`
+    endscript
+}

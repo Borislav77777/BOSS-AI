@@ -1,0 +1,131 @@
+{
+  "id": "ai-assistant",
+  "name": "ИИ Помощник",
+  "description": "Искусственный интеллект для помощи в работе",
+  "icon": "Bot",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "ai",
+  "priority": 3,
+  "author": "BARSUKOV OS Team",
+  "tools": [
+    {
+      "id": "ask-question",
+      "name": "Задать вопрос",
+      "description": "Задает вопрос ИИ помощнику",
+      "icon": "MessageCircle",
+      "action": "ask-question",
+      "isEnabled": true,
+      "category": "chat",
+      "isChatFunction": true,
+      "chatPrompt": "Помоги мне с вопросом: {userInput}",
+      "chatApiEndpoint": "/api/chat/ask"
+    },
+    {
+      "id": "analyze-text",
+      "name": "Анализ текста",
+      "description": "Анализирует текст и дает рекомендации",
+      "icon": "FileText",
+      "action": "analyze-text",
+      "isEnabled": true,
+      "category": "analysis",
+      "isChatFunction": true,
+      "chatPrompt": "Проанализируй следующий текст и дай рекомендации: {userInput}",
+      "chatApiEndpoint": "/api/chat/analyze"
+    },
+    {
+      "id": "generate-content",
+      "name": "Генерация контента",
+      "description": "Генерирует текст, код или другие материалы",
+      "icon": "Wand2",
+      "action": "generate-content",
+      "isEnabled": true,
+      "category": "generation",
+      "isChatFunction": true,
+      "chatPrompt": "Сгенерируй контент по запросу: {userInput}",
+      "chatApiEndpoint": "/api/chat/generate"
+    },
+    {
+      "id": "translate-text",
+      "name": "Перевод",
+      "description": "Переводит текст на разные языки",
+      "icon": "Languages",
+      "action": "translate-text",
+      "isEnabled": true,
+      "category": "translation",
+      "isChatFunction": true,
+      "chatPrompt": "Переведи следующий текст: {userInput}",
+      "chatApiEndpoint": "/api/chat/translate"
+    }
+  ],
+  "chatApiBaseUrl": "https://api.openai.com/v1",
+  "chatApiKey": "your-api-key-here",
+  "chatButtons": [
+    {
+      "id": "ai-quick-help",
+      "name": "AI-ассистент",
+      "icon": "Bot",
+      "description": "Быстрая помощь от ИИ",
+      "action": "ask-question",
+      "isEnabled": true,
+      "color": "red",
+      "position": "top"
+    },
+    {
+      "id": "ai-chat",
+      "name": "Чат",
+      "icon": "MessageCircle",
+      "description": "Открыть чат с ИИ",
+      "action": "ask-question",
+      "isEnabled": true,
+      "color": "red",
+      "position": "top"
+    },
+    {
+      "id": "ai-quick",
+      "name": "Быстро",
+      "icon": "Zap",
+      "description": "Быстрые действия",
+      "action": "generate-content",
+      "isEnabled": true,
+      "color": "red",
+      "position": "top"
+    }
+  ],
+  "settings": {
+    "model": "gpt-4",
+    "language": "ru",
+    "autoSuggest": true,
+    "contextAware": true
+  },
+  "theme": {
+    "id": "ai-assistant",
+    "name": "AI Assistant Theme",
+    "description": "Тема для AI ассистента с зелеными акцентами",
+    "colors": {
+      "primary": "#22c55e",
+      "secondary": "#16a34a",
+      "accent": "#d946ef",
+      "background": "#0f172a",
+      "text": "#f1f5f9",
+      "border": "rgba(34, 197, 94, 0.2)",
+      "muted": "#64748b",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#000000"
+    },
+    "variables": {
+      "--ai-glow": "0 0 20px rgba(34, 197, 94, 0.3)",
+      "--ai-pulse": "pulse 2s ease-in-out infinite",
+      "--ai-gradient": "linear-gradient(135deg, #22c55e, #16a34a, #d946ef)"
+    },
+    "animations": {
+      "ai-pulse": "pulse 2s ease-in-out infinite",
+      "ai-glow": "glow 3s ease-in-out infinite"
+    },
+    "version": "1.0.0",
+    "author": "BARSUKOV OS Team"
+  },
+  "dependencies": []
+}

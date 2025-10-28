@@ -1,0 +1,1 @@
+{"version":3,"file":"AccentColorState.d.ts","sourceRoot":"","sources":["../../../src/services/accent-color/AccentColorState.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,MAAM,WAAW,gBAAgB;IAC/B,aAAa,EAAE,MAAM,CAAC;IACtB,cAAc,EAAE,MAAM,CAAC;IACvB,cAAc,EAAE,MAAM,CAAC;IACvB,eAAe,EAAE,MAAM,CAAC;IACxB,SAAS,EAAE,OAAO,CAAC;IACnB,iBAAiB,EAAE,OAAO,CAAC;CAC5B"}

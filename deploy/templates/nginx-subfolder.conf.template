@@ -1,0 +1,120 @@
+# Boss AI Platform - Nginx location блоки для подпапки
+# Добавить в существующий server блок для {{DOMAIN}}
+#
+# Использование:
+# sudo nano /etc/nginx/sites-available/{{DOMAIN}}
+# # Добавить содержимое этого файла в server блок
+# sudo nginx -t
+# sudo systemctl reload nginx
+
+# ============================================
+# BOSS AI PLATFORM LOCATION BLOCKS
+# ============================================
+
+# Frontend для подпапки /app/
+location /app/ {
+    alias {{FRONTEND_PATH}}/;
+    try_files $uri $uri/ /app/index.html;
+
+    # Заголовки безопасности
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+
+    # Кэширование статических файлов
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        add_header X-Content-Type-Options "nosniff";
+        gzip_static on;
+    }
+
+    # Не кэшировать HTML файлы
+    location ~* \.(html|htm)$ {
+        expires -1;
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        add_header Pragma "no-cache";
+    }
+}
+
+# API Gateway для подпапки /app/api
+location /app/api {
+    proxy_pass http://localhost:{{API_PORT}};
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_cache_bypass $http_upgrade;
+
+    # Таймауты
+    proxy_connect_timeout 60s;
+    proxy_send_timeout 60s;
+    proxy_read_timeout 60s;
+
+    # Ограничение скорости для API
+    limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;
+    limit_req zone=api burst=20 nodelay;
+}
+
+# WebSocket для подпапки /app/socket.io/
+location /app/socket.io/ {
+    proxy_pass http://localhost:{{API_PORT}};
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    # WebSocket специфичные настройки
+    proxy_buffering off;
+    proxy_cache off;
+}
+
+# ============================================
+# SECURITY FOR APP ROUTES
+# ============================================
+
+# Ограничение скорости для авторизации
+location /app/api/auth {
+    limit_req_zone $binary_remote_addr zone=login:10m rate=1r/s;
+    limit_req zone=login burst=5 nodelay;
+
+    proxy_pass http://localhost:{{API_PORT}};
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+# ============================================
+# LOGGING FOR APP ROUTES
+# ============================================
+
+# Логирование для приложения
+location /app {
+    access_log /var/log/nginx/{{DOMAIN}}_app_access.log;
+    error_log /var/log/nginx/{{DOMAIN}}_app_error.log;
+}
+
+# ============================================
+# NOTES
+# ============================================
+
+# Требования:
+# - Существующий server блок для {{DOMAIN}}
+# - Node.js приложение на порту {{API_PORT}}
+# - Frontend собран в {{FRONTEND_PATH}}
+#
+# URL доступа:
+# https://{{DOMAIN}}/app/
+#
+# Проверка:
+# nginx -t
+# systemctl reload nginx
+# curl -I https://{{DOMAIN}}/app/

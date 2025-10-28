@@ -1,0 +1,36 @@
+{
+  "id": "anti-procrastination",
+  "name": "Anti-Procrastination OS",
+  "version": "1.0.0",
+  "description": "Система борьбы с прокрастинацией через микро-действия и временные блоки",
+  "icon": "⚡",
+  "component": "AntiProcrastinationService",
+  "category": "productivity",
+  "author": "PULS Platform",
+  "features": [
+    "AI декомпозиция задач на микро-действия",
+    "Временные блоки 10-40 минут",
+    "Таймеры Pomodoro (25/5)",
+    "Умные уведомления и напоминания",
+    "Отслеживание прогресса",
+    "Геймификация и достижения",
+    "Детокс-режим",
+    "Ежедневная статистика"
+  ],
+  "screenshots": [],
+  "tags": ["productivity", "time-management", "pomodoro", "AI", "focus"],
+  "enabled": true,
+  "settings": {
+    "pomodoroDuration": 25,
+    "shortBreak": 5,
+    "longBreak": 15,
+    "autoStart": false,
+    "notifications": true,
+    "sound": true
+  },
+  "integrations": {
+    "ai": true,
+    "notifications": true,
+    "localStorage": true
+  }
+}

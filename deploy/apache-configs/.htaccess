@@ -1,0 +1,134 @@
+# Boss AI Platform - Apache .htaccess конфигурация
+# Для размещения в подпапке: boss-ai.online/app/
+
+RewriteEngine On
+
+# ============================================
+# FRONTEND ROUTING (SPA)
+# ============================================
+
+# Обработка SPA маршрутов
+# Все запросы к /app/ должны возвращать index.html для React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/app/api
+RewriteCond %{REQUEST_URI} !^/app/socket.io
+RewriteRule ^app/(.*)$ /app/index.html [L]
+
+# ============================================
+# API GATEWAY PROXY
+# ============================================
+
+# Проксирование API запросов к Node.js API Gateway
+RewriteRule ^app/api/(.*)$ http://localhost:3000/api/$1 [P,L]
+
+# ============================================
+# WEBSOCKET PROXY
+# ============================================
+
+# Проксирование WebSocket соединений для Socket.IO
+RewriteRule ^app/socket.io/(.*)$ http://localhost:3000/socket.io/$1 [P,L]
+
+# ============================================
+# CORS HEADERS
+# ============================================
+
+# Разрешить CORS для всех доменов (для разработки)
+# В продакшене замените * на конкретный домен
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+Header always set Access-Control-Allow-Credentials "true"
+
+# ============================================
+# PREFLIGHT REQUESTS
+# ============================================
+
+# Обработка OPTIONS запросов (CORS preflight)
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# ============================================
+# SECURITY HEADERS
+# ============================================
+
+# Заголовки безопасности
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "no-referrer-when-downgrade"
+
+# ============================================
+# CACHING
+# ============================================
+
+# Кэширование статических файлов
+<FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, immutable"
+</FilesMatch>
+
+# Не кэшировать HTML файлы
+<FilesMatch "\.(html|htm)$">
+    ExpiresActive Off
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+
+# ============================================
+# COMPRESSION
+# ============================================
+
+# Сжатие файлов
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# ============================================
+# ERROR PAGES
+# ============================================
+
+# Кастомные страницы ошибок (опционально)
+# ErrorDocument 404 /app/index.html
+# ErrorDocument 500 /app/index.html
+
+# ============================================
+# DEBUGGING
+# ============================================
+
+# Включить логирование для отладки (отключить в продакшене)
+# RewriteLog /var/log/apache2/rewrite.log
+# RewriteLogLevel 3
+
+# ============================================
+# NOTES
+# ============================================
+
+# Этот .htaccess файл предназначен для размещения Boss AI Platform
+# в подпапке существующего Apache сайта.
+#
+# Требования:
+# - mod_rewrite включен
+# - mod_proxy включен
+# - mod_headers включен
+# - mod_deflate включен (опционально)
+#
+# Команды для включения модулей:
+# sudo a2enmod rewrite
+# sudo a2enmod proxy
+# sudo a2enmod proxy_http
+# sudo a2enmod headers
+# sudo a2enmod deflate
+#
+# После изменений перезапустите Apache:
+# sudo systemctl reload apache2

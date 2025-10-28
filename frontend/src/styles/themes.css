@@ -1,0 +1,138 @@
+/* ========================================
+   BARSUKOV PLATFORM - УПРОЩЕННЫЕ ТЕМЫ
+   ======================================== */
+
+/* ========================================
+   СВЕТЛАЯ ТЕМА
+   ======================================== */
+[data-theme="light"] {
+  /* Базовые цвета */
+  --primary: #000000;
+  --background: #ffffff;
+  --surface: #ffffff;
+  --text: #000000;
+  --text-secondary: #666666;
+  --border: rgba(0,0,0,0.1);
+
+  /* Простые производные */
+  --accent: var(--primary);
+  --muted: rgba(0,0,0,0.1);
+  --hover: rgba(0,0,0,0.05);
+
+  /* Кнопки */
+  --button-primary: #15803d;
+  --button-primary-text: #ffffff;
+  --button-primary-hover: #16a34a;
+  --button-primary-inactive: transparent;
+  --button-secondary: var(--surface);
+  --button-secondary-text: var(--text);
+  --button-secondary-hover: rgba(0,0,0,0.1);
+  --button-secondary-inactive: transparent;
+  --focus-ring: #000000;
+
+  /* Панели */
+  --card-bg: #ffffff;
+  --panel-bg: var(--surface);
+  --sidebar-bg: #ffffff;
+
+  /* Дополнительные переменные для совместимости */
+  --button-text: var(--button-primary-text);
+  --background: var(--background);
+  --text-muted: var(--text-secondary);
+  --surface-hover: rgba(0,0,0,0.05);
+
+  /* Убираем глобальные переопределения кнопок - используем CSS классы */
+}
+
+/* ========================================
+   ТЕМНАЯ ТЕМА
+   ======================================== */
+[data-theme="dark"] {
+  /* Базовые цвета (наоборот) */
+  --primary: #ffffff;
+  --background: #121212;
+  --surface: #1a1a1a;
+  --text: #ffffff;
+  --text-secondary: #cccccc;
+  --border: rgba(255,255,255,0.1);
+
+  /* Простые производные */
+  --accent: var(--primary);
+  --muted: rgba(255,255,255,0.1);
+  --hover: rgba(255,255,255,0.05);
+
+  /* Кнопки */
+  --button-primary: #15803d;
+  --button-primary-text: #ffffff;
+  --button-primary-hover: #16a34a;
+  --button-primary-inactive: transparent;
+  --button-secondary: var(--surface);
+  --button-secondary-text: var(--text);
+  --button-secondary-hover: rgba(255,255,255,0.1);
+  --button-secondary-inactive: transparent;
+  --focus-ring: #ffffff;
+
+  /* Панели */
+  --card-bg: #1a1a1a;
+  --panel-bg: var(--surface);
+  --sidebar-bg: #121212;
+
+  /* Дополнительные переменные для совместимости */
+  --button-text: var(--button-primary-text);
+  --background: var(--background);
+  --text-muted: #999999;
+  --surface-hover: rgba(255,255,255,0.1);
+
+  /* Убираем глобальные переопределения кнопок - используем CSS классы */
+}
+
+/* ========================================
+   ОБЩИЕ СТИЛИ
+   ======================================== */
+:root {
+  /* Переходы */
+  --transition: all 0.2s ease;
+
+  /* Тени */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-lg: 0 4px 8px rgba(0,0,0,0.15);
+
+  /* Радиусы */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* ========================================
+   ГЛОБАЛЬНОЕ ПЕРЕОПРЕДЕЛЕНИЕ СИНИХ ЦВЕТОВ
+   ======================================== */
+
+/* Убираем все синие цвета браузера по умолчанию */
+* {
+  accent-color: var(--primary) !important;
+}
+
+/* Переопределяем фокус для всех элементов */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: none !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px var(--focus-ring) !important;
+}
+
+/* Убираем синие цвета из всех активных состояний */
+/* Убираем глобальные переопределения активных состояний */
+
+/* Агрессивное переопределение всех синих цветов браузера */
+* {
+  accent-color: var(--primary) !important;
+  color-scheme: light dark;
+}
+
+/* Переопределяем все возможные синие цвета */
+/* Убираем все глобальные переопределения кнопок - используем CSS классы */

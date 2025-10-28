@@ -1,0 +1,1 @@
+{"version":3,"file":"VoiceInterface.d.ts","sourceRoot":"","sources":["../../../src/components/Chat/VoiceInterface.tsx"],"names":[],"mappings":"AAEA,OAAO,KAAmD,MAAM,OAAO,CAAC;AAExE,UAAU,mBAAmB;IACzB,uBAAuB,EAAE,CAAC,IAAI,EAAE,MAAM,KAAK,IAAI,CAAC;IAChD,OAAO,EAAE,MAAM,IAAI,CAAC;IACpB,SAAS,EAAE,OAAO,CAAC;CACtB;AAOD,eAAO,MAAM,cAAc,EAAE,KAAK,CAAC,EAAE,CAAC,mBAAmB,CAgWxD,CAAC"}

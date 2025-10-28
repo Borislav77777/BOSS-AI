@@ -1,0 +1,112 @@
+{
+  "id": "whisper-service",
+  "name": "Whisper AI",
+  "description": "Сервис транскрипции речи в реальном времени",
+  "icon": "Mic",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "ai",
+  "priority": 8,
+  "author": "BARSUKOV Platform",
+  "tools": [
+    {
+      "id": "realtime-transcription",
+      "name": "Транскрипция в реальном времени",
+      "description": "Преобразует речь в текст в реальном времени",
+      "icon": "Mic",
+      "action": "startRealtimeTranscription",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Shift+V",
+      "category": "transcription",
+      "isChatFunction": true,
+      "chatPrompt": "Транскрибируй речь: {userInput}",
+      "chatApiEndpoint": "/api/whisper/transcribe"
+    },
+    {
+      "id": "audio-transcription",
+      "name": "Транскрипция аудио",
+      "description": "Преобразует аудиофайл в текст",
+      "icon": "FileAudio",
+      "action": "transcribeAudio",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+T",
+      "category": "transcription",
+      "isChatFunction": false
+    },
+    {
+      "id": "voice-commands",
+      "name": "Голосовые команды",
+      "description": "Обрабатывает голосовые команды",
+      "icon": "Command",
+      "action": "processVoiceCommand",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Shift+C",
+      "category": "commands",
+      "isChatFunction": true,
+      "chatPrompt": "Обработай голосовую команду: {userInput}",
+      "chatApiEndpoint": "/api/whisper/command"
+    }
+  ],
+  "settings": {
+    "language": "ru",
+    "model": "whisper-1",
+    "temperature": 0.0,
+    "enableRealtime": true,
+    "enableCommands": true,
+    "sensitivity": 0.5
+  },
+  "dependencies": [],
+  "chatApiBaseUrl": "https://api.openai.com/v1",
+  "chatApiKey": null,
+  "chatFunctions": [
+    {
+      "id": "realtime-transcription",
+      "name": "Транскрипция в реальном времени",
+      "description": "Преобразует речь в текст в реальном времени",
+      "isChatFunction": true,
+      "chatPrompt": "Транскрибируй речь: {userInput}",
+      "chatApiEndpoint": "/api/whisper/transcribe"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "start-voice-input",
+      "name": "Голосовой ввод",
+      "description": "Начать голосовой ввод с транскрипцией",
+      "icon": "Mic",
+      "action": "startRealtimeTranscription",
+      "isEnabled": true,
+      "color": "primary",
+      "position": "top"
+    }
+  ],
+  "theme": {
+    "id": "whisper-theme",
+    "name": "Whisper Theme",
+    "description": "Тема для сервиса транскрипции",
+    "colors": {
+      "primary": "#10b981",
+      "secondary": "#059669",
+      "accent": "#34d399",
+      "background": "#064e3b",
+      "text": "#ffffff",
+      "border": "#065f46",
+      "muted": "#047857",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#3b82f6"
+    },
+    "variables": {
+      "--whisper-glow": "0 0 20px rgba(16, 185, 129, 0.3)",
+      "--whisper-pulse": "whisper-pulse 2s infinite"
+    },
+    "animations": {
+      "whisper-pulse": {
+        "0%": { "opacity": "1", "transform": "scale(1)" },
+        "50%": { "opacity": "0.7", "transform": "scale(1.05)" },
+        "100%": { "opacity": "1", "transform": "scale(1)" }
+      }
+    }
+  }
+}

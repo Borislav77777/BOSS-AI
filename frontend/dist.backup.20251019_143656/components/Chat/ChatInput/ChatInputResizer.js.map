@@ -1,0 +1,1 @@
+{"version":3,"file":"ChatInputResizer.js","sourceRoot":"","sources":["../../../../src/components/Chat/ChatInput/ChatInputResizer.tsx"],"names":[],"mappings":";AAAA;;GAEG;AAEH,OAAO,KAAK,MAAM,OAAO,CAAC;AAM1B,MAAM,CAAC,MAAM,gBAAgB,GAAoC,CAAC,EAAE,QAAQ,EAAE,EAAE,EAAE;IAC9E,OAAO,CACH,cACI,SAAS,EAAC,uGAAuG,EACjH,WAAW,EAAE,QAAQ,EACrB,KAAK,EAAC,+IAA4B,GAGhC,CACT,CAAC;AACN,CAAC,CAAC"}

@@ -1,0 +1,55 @@
+{
+  "id": "file-manager",
+  "name": "Файловый менеджер",
+  "description": "Управление файлами и папками",
+  "icon": "FileText",
+  "version": "1.0.0",
+  "isActive": false,
+  "category": "file",
+  "priority": 4,
+  "author": "BARSUKOV OS Team",
+  "tools": [
+    {
+      "id": "create-folder",
+      "name": "Создать папку",
+      "description": "Создает новую папку",
+      "icon": "FolderPlus",
+      "action": "create-folder",
+      "isEnabled": true,
+      "category": "create"
+    },
+    {
+      "id": "upload-file",
+      "name": "Загрузить файл",
+      "description": "Загружает файл в рабочее пространство",
+      "icon": "Upload",
+      "action": "upload-file",
+      "isEnabled": true,
+      "category": "upload"
+    },
+    {
+      "id": "search-files",
+      "name": "Поиск файлов",
+      "description": "Ищет файлы по имени и содержимому",
+      "icon": "Search",
+      "action": "search-files",
+      "isEnabled": true,
+      "category": "search"
+    },
+    {
+      "id": "organize-files",
+      "name": "Организовать",
+      "description": "Автоматически организует файлы по папкам",
+      "icon": "Archive",
+      "action": "organize-files",
+      "isEnabled": true,
+      "category": "organize"
+    }
+  ],
+  "settings": {
+    "autoOrganize": false,
+    "showHiddenFiles": false,
+    "defaultView": "grid"
+  },
+  "dependencies": []
+}

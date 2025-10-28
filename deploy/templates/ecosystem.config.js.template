@@ -1,0 +1,154 @@
+// Boss AI Platform - PM2 конфигурация
+// Файл: ecosystem.config.js
+//
+// Использование:
+// pm2 start ecosystem.config.js
+// pm2 save
+// pm2 startup
+
+module.exports = {
+  apps: [
+    // ============================================
+    // API GATEWAY
+    // ============================================
+    {
+      name: 'boss-ai-api-gateway',
+      script: './backend/main/src/index.js',
+      cwd: '{{APP_PATH}}',
+      instances: 1,
+      exec_mode: 'fork',
+      watch: false,
+      max_memory_restart: '1G',
+      restart_delay: 4000,
+      max_restarts: 10,
+      min_uptime: '10s',
+
+      // Переменные окружения
+      env: {
+        NODE_ENV: 'production',
+        PORT: {{API_PORT}},
+        HOST: '0.0.0.0',
+        CORS_ORIGIN: 'https://{{DOMAIN}}',
+        JWT_SECRET: '{{JWT_SECRET}}',
+        OZON_MANAGER_URL: 'http://localhost:{{OZON_PORT}}',
+        AI_SERVICES_URL: 'http://localhost:5000'
+      },
+
+      // Логирование
+      error_file: './logs/pm2/api-gateway-error.log',
+      out_file: './logs/pm2/api-gateway-out.log',
+      log_file: './logs/pm2/api-gateway.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+
+      // Мониторинг
+      monitoring: true,
+      pmx: true,
+
+      // Автозапуск
+      autorestart: true,
+      watch_options: {
+        followSymlinks: false
+      }
+    },
+
+    // ============================================
+    // OZON MANAGER
+    // ============================================
+    {
+      name: 'boss-ai-ozon-manager',
+      script: './backend/ozon-manager/src/index.js',
+      cwd: '{{APP_PATH}}',
+      instances: 1,
+      exec_mode: 'fork',
+      watch: false,
+      max_memory_restart: '512M',
+      restart_delay: 4000,
+      max_restarts: 10,
+      min_uptime: '10s',
+
+      // Переменные окружения
+      env: {
+        NODE_ENV: 'production',
+        PORT: {{OZON_PORT}},
+        HOST: '0.0.0.0',
+        API_GATEWAY_URL: 'http://localhost:{{API_PORT}}',
+        OZON_CLIENT_ID: '',
+        OZON_API_KEY: ''
+      },
+
+      // Логирование
+      error_file: './logs/pm2/ozon-manager-error.log',
+      out_file: './logs/pm2/ozon-manager-out.log',
+      log_file: './logs/pm2/ozon-manager.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+
+      // Мониторинг
+      monitoring: true,
+      pmx: true,
+
+      // Автозапуск
+      autorestart: true,
+      watch_options: {
+        followSymlinks: false
+      }
+    },
+
+    // ============================================
+    // AI SERVICES (заглушка для будущего)
+    // ============================================
+    {
+      name: 'boss-ai-ai-services',
+      script: './backend/ai-services/src/index.js',
+      cwd: '{{APP_PATH}}',
+      instances: 1,
+      exec_mode: 'fork',
+      watch: false,
+      max_memory_restart: '1G',
+      restart_delay: 4000,
+      max_restarts: 10,
+      min_uptime: '10s',
+
+      // Переменные окружения
+      env: {
+        NODE_ENV: 'production',
+        PORT: 5000,
+        HOST: '0.0.0.0',
+        API_GATEWAY_URL: 'http://localhost:{{API_PORT}}'
+      },
+
+      // Логирование
+      error_file: './logs/pm2/ai-services-error.log',
+      out_file: './logs/pm2/ai-services-out.log',
+      log_file: './logs/pm2/ai-services.log',
+      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
+
+      // Мониторинг
+      monitoring: true,
+      pmx: true,
+
+      // Автозапуск
+      autorestart: true,
+      watch_options: {
+        followSymlinks: false
+      },
+
+      // Отключен по умолчанию
+      disabled: true
+    }
+  ],
+
+  // ============================================
+  // НАСТРОЙКИ PM2
+  // ============================================
+
+  deploy: {
+    production: {
+      user: 'www-data',
+      host: '{{DOMAIN}}',
+      ref: 'origin/main',
+      repo: 'git@github.com:your-repo/boss-ai-platform.git',
+      path: '{{APP_PATH}}',
+      'post-deploy': 'npm install && npm run build && pm2 reload ecosystem.config.js --env production'
+    }
+  }
+};

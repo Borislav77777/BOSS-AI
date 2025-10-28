@@ -1,0 +1,1 @@
+{"version":3,"file":"LogsViewer.d.ts","sourceRoot":"","sources":["../../../../src/components/Services/OzonManager/LogsViewer.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAsC,MAAM,OAAO,CAAC;AAE3D,UAAU,eAAe;IACrB,SAAS,EAAE,MAAM,IAAI,CAAC;IACtB,gBAAgB,EAAE,MAAM,IAAI,CAAC;IAC7B,SAAS,EAAE,OAAO,CAAC;CACtB;AAED;;;GAGG;AACH,eAAO,MAAM,UAAU,EAAE,KAAK,CAAC,EAAE,CAAC,eAAe,CAgNhD,CAAC"}

@@ -1,0 +1,110 @@
+{
+  "id": "your-service-id",
+  "name": "Название вашего сервиса",
+  "description": "Подробное описание функционала сервиса",
+  "icon": "Zap",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "utility",
+  "priority": 5,
+  "author": "Ваше имя",
+  "tools": [
+    {
+      "id": "main-function",
+      "name": "Основная функция",
+      "description": "Описание основной функции сервиса",
+      "icon": "Settings",
+      "action": "mainFunction",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+M",
+      "category": "main",
+      "isChatFunction": true,
+      "chatPrompt": "Выполни основную функцию: {userInput}",
+      "chatApiEndpoint": "/api/your-service/main"
+    },
+    {
+      "id": "secondary-function",
+      "name": "Вторичная функция",
+      "description": "Описание вторичной функции",
+      "icon": "Tool",
+      "action": "secondaryFunction",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+S",
+      "category": "secondary"
+    }
+  ],
+  "chatApiBaseUrl": "https://your-api.com",
+  "chatApiKey": "",
+  "chatFunctions": [
+    {
+      "id": "chat-main",
+      "name": "Чат функция",
+      "description": "Основная чат функция",
+      "icon": "MessageCircle",
+      "action": "chatMain",
+      "isEnabled": true,
+      "isChatFunction": true,
+      "chatPrompt": "Обработай запрос: {userInput}",
+      "chatApiEndpoint": "/api/your-service/chat"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "quick-action",
+      "name": "Быстрое действие",
+      "icon": "Zap",
+      "description": "Быстрый доступ к сервису",
+      "action": "quickAction",
+      "isEnabled": true,
+      "color": "blue",
+      "position": "top"
+    },
+    {
+      "id": "settings-button",
+      "name": "Настройки",
+      "icon": "Settings",
+      "description": "Открыть настройки сервиса",
+      "action": "openSettings",
+      "isEnabled": true,
+      "color": "gray",
+      "position": "bottom"
+    }
+  ],
+  "settings": {
+    "apiKey": "",
+    "timeout": 30000,
+    "retries": 3,
+    "debugMode": false,
+    "autoStart": true
+  },
+  "theme": {
+    "id": "your-service-theme",
+    "name": "Your Service Theme",
+    "description": "Тема для вашего сервиса",
+    "colors": {
+      "primary": "#3b82f6",
+      "secondary": "#1d4ed8",
+      "accent": "#06b6d4",
+      "background": "#0f172a",
+      "text": "#f1f5f9",
+      "border": "rgba(59, 130, 246, 0.2)",
+      "muted": "#64748b",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#3b82f6"
+    },
+    "variables": {
+      "--service-glow": "0 0 20px rgba(59, 130, 246, 0.3)",
+      "--service-pulse": "pulse 2s ease-in-out infinite",
+      "--service-gradient": "linear-gradient(135deg, #3b82f6, #1d4ed8, #06b6d4)"
+    },
+    "animations": {
+      "service-pulse": "pulse 2s ease-in-out infinite",
+      "service-glow": "glow 3s ease-in-out infinite"
+    },
+    "version": "1.0.0",
+    "author": "BARSUKOV OS Team"
+  },
+  "dependencies": []
+}

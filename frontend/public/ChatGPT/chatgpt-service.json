@@ -1,0 +1,159 @@
+{
+  "id": "chatgpt-service",
+  "name": "ChatGPT",
+  "description": "Интеграция с OpenAI ChatGPT для переписок и чата",
+  "icon": "Bot",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "ai",
+  "priority": 1,
+  "author": "BARSUKOV OS Team",
+  "tools": [
+    {
+      "id": "chat-completion",
+      "name": "Чат-запрос",
+      "description": "Отправляет запрос в ChatGPT и получает ответ",
+      "icon": "MessageCircle",
+      "action": "chatCompletion",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+C",
+      "category": "chat",
+      "isChatFunction": true,
+      "chatPrompt": "Ответь на вопрос: {userInput}",
+      "chatApiEndpoint": "/api/chatgpt/completion"
+    },
+    {
+      "id": "text-rewrite",
+      "name": "Переписать текст",
+      "description": "Переписывает текст с улучшениями",
+      "icon": "Edit3",
+      "action": "rewriteText",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+R",
+      "category": "rewrite",
+      "isChatFunction": true,
+      "chatPrompt": "Перепиши следующий текст, улучшив его: {userInput}",
+      "chatApiEndpoint": "/api/chatgpt/rewrite"
+    },
+    {
+      "id": "summarize-text",
+      "name": "Краткое изложение",
+      "description": "Создает краткое изложение текста",
+      "icon": "FileText",
+      "action": "summarizeText",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+S",
+      "category": "summary",
+      "isChatFunction": true,
+      "chatPrompt": "Создай краткое изложение: {userInput}",
+      "chatApiEndpoint": "/api/chatgpt/summarize"
+    },
+    {
+      "id": "translate-chatgpt",
+      "name": "Перевод ChatGPT",
+      "description": "Переводит текст с помощью ChatGPT",
+      "icon": "Languages",
+      "action": "translateWithChatGPT",
+      "isEnabled": true,
+      "shortcut": "Ctrl+Alt+T",
+      "category": "translation",
+      "isChatFunction": true,
+      "chatPrompt": "Переведи на русский язык: {userInput}",
+      "chatApiEndpoint": "/api/chatgpt/translate"
+    }
+  ],
+  "chatApiBaseUrl": "https://api.openai.com/v1",
+  "chatApiKey": "",
+  "chatButtons": [
+    {
+      "id": "chatgpt-quick",
+      "name": "ChatGPT",
+      "icon": "Bot",
+      "description": "Быстрый доступ к ChatGPT",
+      "action": "quickChatGPT",
+      "isEnabled": true,
+      "color": "blue",
+      "position": "top"
+    },
+    {
+      "id": "chatgpt-rewrite",
+      "name": "Переписать",
+      "icon": "Edit3",
+      "description": "Переписать текст с ChatGPT",
+      "action": "rewriteWithChatGPT",
+      "isEnabled": true,
+      "color": "blue",
+      "position": "top"
+    }
+  ],
+  "settings": {
+    "model": "gpt-3.5-turbo",
+    "maxTokens": 1000,
+    "temperature": 0.7,
+    "language": "ru",
+    "autoSuggest": true,
+    "contextAware": true,
+    "streaming": false
+  },
+  "configuration": {
+    "apiKeyRequired": true,
+    "apiKeyField": "chatApiKey",
+    "apiKeyLabel": "OpenAI API ключ",
+    "apiKeyPlaceholder": "sk-...",
+    "apiKeyHelp": "Получите API ключ на https://platform.openai.com/api-keys",
+    "modelSelection": true,
+    "models": [
+      {
+        "id": "gpt-3.5-turbo",
+        "name": "GPT-3.5 Turbo",
+        "description": "Быстрая и экономичная модель",
+        "cost": "low"
+      },
+      {
+        "id": "gpt-4",
+        "name": "GPT-4",
+        "description": "Самая мощная модель",
+        "cost": "high"
+      },
+      {
+        "id": "gpt-4-turbo",
+        "name": "GPT-4 Turbo",
+        "description": "Улучшенная версия GPT-4",
+        "cost": "medium"
+      }
+    ]
+  },
+  "theme": {
+    "id": "chatgpt-service",
+    "name": "ChatGPT Service Theme",
+    "description": "Тема для ChatGPT сервиса с синими акцентами",
+    "colors": {
+      "primary": "#3b82f6",
+      "secondary": "#1d4ed8",
+      "accent": "#06b6d4",
+      "background": "#0f172a",
+      "text": "#f1f5f9",
+      "border": "rgba(59, 130, 246, 0.2)",
+      "muted": "#64748b",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#3b82f6"
+    },
+    "variables": {
+      "--chatgpt-glow": "0 0 20px rgba(59, 130, 246, 0.3)",
+      "--chatgpt-pulse": "pulse 2s ease-in-out infinite",
+      "--chatgpt-gradient": "linear-gradient(135deg, #3b82f6, #1d4ed8, #06b6d4)"
+    },
+    "animations": {
+      "chatgpt-pulse": "pulse 2s ease-in-out infinite",
+      "chatgpt-glow": "glow 3s ease-in-out infinite"
+    },
+    "version": "1.0.0",
+    "author": "BARSUKOV OS Team"
+  },
+  "dependencies": [
+    "openai",
+    "axios"
+  ]
+}

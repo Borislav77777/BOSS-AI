@@ -1,0 +1,1 @@
+export { PluginManagerComponent } from './PluginManager';

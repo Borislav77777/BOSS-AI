@@ -1,0 +1,75 @@
+{
+  "id": "ozon-manager",
+  "name": "Ozon Manager",
+  "description": "Автоматизация управления товарами на Ozon - удаление из невыгодных акций и разархивация товаров",
+  "icon": "ShoppingCart",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "business",
+  "priority": 10,
+  "tools": [
+    {
+      "id": "manage-stores",
+      "name": "Магазины",
+      "description": "Управление магазинами Ozon",
+      "icon": "Store",
+      "action": "manage-stores",
+      "isEnabled": true
+    },
+    {
+      "id": "remove-promotions",
+      "name": "Удалить из акций",
+      "description": "Удаление товаров из невыгодных акций",
+      "icon": "Trash2",
+      "action": "remove-promotions",
+      "isEnabled": true
+    },
+    {
+      "id": "unarchive-products",
+      "name": "Разархивация",
+      "description": "Извлечение товаров из автоархива",
+      "icon": "Archive",
+      "action": "unarchive-products",
+      "isEnabled": true
+    },
+    {
+      "id": "schedule-tasks",
+      "name": "Расписание",
+      "description": "Настройка автоматических задач",
+      "icon": "Calendar",
+      "action": "schedule-tasks",
+      "isEnabled": true
+    },
+    {
+      "id": "view-logs",
+      "name": "Логи",
+      "description": "Просмотр логов операций",
+      "icon": "FileText",
+      "action": "view-logs",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "apiUrl": {
+      "type": "string",
+      "label": "URL API сервера",
+      "default": "http://localhost:4200/api",
+      "description": "Адрес бэкенд API сервера Ozon Manager"
+    },
+    "autoRefresh": {
+      "type": "boolean",
+      "label": "Автообновление",
+      "default": true,
+      "description": "Автоматическое обновление данных каждые 30 секунд"
+    },
+    "refreshInterval": {
+      "type": "number",
+      "label": "Интервал обновления (сек)",
+      "default": 30,
+      "min": 10,
+      "max": 300,
+      "description": "Интервал автоматического обновления в секундах"
+    }
+  },
+  "dependencies": []
+}

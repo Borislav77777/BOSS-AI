@@ -1,0 +1,224 @@
+/* Agent Selection - Круговое расположение агентов */
+
+.agent-selection-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.9) 70%);
+    overflow: hidden;
+}
+
+/* Центральный логотип */
+.central-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.central-logo img {
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.central-logo:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+}
+
+/* Круги агентов */
+.agent-circle {
+    position: relative;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.agent-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    border-color: #00ffff;
+}
+
+.agent-circle:active {
+    transform: scale(0.95);
+}
+
+/* Соединительные линии */
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.connection-line {
+    stroke: #00ffff;
+    stroke-width: 2;
+    opacity: 0.3;
+    filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.5));
+}
+
+.connection-line:hover {
+    opacity: 0.6;
+    stroke-width: 3;
+}
+
+/* Анимации */
+@keyframes fadeInOrbit {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Пульсирующий эффект для центрального логотипа */
+.pulse-ring {
+    animation: pulse 2s infinite;
+}
+
+/* Плавающий эффект для агентов */
+.agent-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.agent-float:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.agent-float:nth-child(even) {
+    animation-delay: 1s;
+}
+
+/* Адаптивные размеры */
+@media (max-width: 768px) {
+    .central-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .agent-circle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .connection-line {
+        stroke-width: 1.5;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .central-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .agent-circle {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .central-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .agent-circle {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Частицы */
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #00ffff;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Градиенты */
+.gradient-bg {
+    background: radial-gradient(
+        circle at center,
+        rgba(0, 255, 255, 0.1) 0%,
+        rgba(0, 0, 0, 0.95) 70%
+    );
+}
+
+/* Неоновые эффекты */
+.neon-glow {
+    box-shadow:
+        0 0 5px rgba(0, 255, 255, 0.5),
+        0 0 10px rgba(0, 255, 255, 0.3),
+        0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.neon-glow:hover {
+    box-shadow:
+        0 0 10px rgba(0, 255, 255, 0.8),
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+/* Текст агентов */
+.agent-name {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+.agent-name:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Центральный заголовок */
+.central-title {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.central-title:hover {
+    text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+}

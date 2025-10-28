@@ -1,0 +1,364 @@
+/* Saber-эффекты для BOSS AI v2.0 - неоновое свечение */
+
+/* Основной Saber-эффект для cyan цвета - мягкое свечение */
+.saber-glow-cyan {
+    filter: drop-shadow(0 0 1px rgba(0, 255, 255, 0.3))
+            drop-shadow(0 0 3px rgba(0, 255, 255, 0.2))
+            drop-shadow(0 0 6px rgba(0, 255, 255, 0.1));
+}
+
+/* Hover эффект для мягкого свечения */
+.saber-hover:hover {
+    filter: drop-shadow(0 0 2px rgba(0, 255, 255, 0.4))
+            drop-shadow(0 0 5px rgba(0, 255, 255, 0.3))
+            drop-shadow(0 0 10px rgba(0, 255, 255, 0.15));
+    transition: filter 0.3s ease;
+}
+
+/* Saber-эффект для белого цвета */
+.saber-glow-white {
+    filter: drop-shadow(0 0 2px #FFFFFF)
+            drop-shadow(0 0 5px #FFFFFF)
+            drop-shadow(0 0 10px #FFFFFF)
+            drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    animation: saber-pulse-white 2s ease-in-out infinite;
+}
+
+@keyframes saber-pulse-white {
+    0%, 100% {
+        filter: drop-shadow(0 0 2px #FFFFFF)
+                drop-shadow(0 0 5px #FFFFFF)
+                drop-shadow(0 0 10px #FFFFFF);
+    }
+    50% {
+        filter: drop-shadow(0 0 5px #FFFFFF)
+                drop-shadow(0 0 10px #FFFFFF)
+                drop-shadow(0 0 20px #FFFFFF)
+                drop-shadow(0 0 30px rgba(255,255,255,0.8));
+    }
+}
+
+/* Эффект парения с динамической тенью */
+.levitation-shadow {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0, 255, 255, 0.6), transparent);
+    filter: blur(8px);
+    animation: shadow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes shadow-pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: translateX(-50%) scaleX(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(-50%) scaleX(1.2);
+    }
+}
+
+/* Эффект печатной машинки для слоганов */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid #00FFFF;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00FFFF; }
+}
+
+/* Эффект fade-in/fade-out для чередования */
+.fade-in-out {
+    animation: fadeInOut 0.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Эффект парения для иконок */
+.levitation-float {
+    animation: levitation 4s ease-in-out infinite;
+}
+
+@keyframes levitation {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Эффект свечения при hover */
+.saber-hover:hover {
+    filter: drop-shadow(0 0 8px #00FFFF)
+            drop-shadow(0 0 16px #00FFFF)
+            drop-shadow(0 0 24px #00FFFF)
+            drop-shadow(0 0 32px rgba(0,255,255,0.9));
+    transition: filter 0.3s ease;
+}
+
+/* Эффект пульсации для центрального логотипа */
+.center-pulse {
+    animation: center-pulse 3s ease-in-out infinite;
+}
+
+@keyframes center-pulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px #00FFFF)
+                drop-shadow(0 0 10px #00FFFF)
+                drop-shadow(0 0 15px #00FFFF);
+    }
+    50% {
+        filter: drop-shadow(0 0 10px #00FFFF)
+                drop-shadow(0 0 20px #00FFFF)
+                drop-shadow(0 0 30px #00FFFF)
+                drop-shadow(0 0 40px rgba(0,255,255,0.8));
+    }
+}
+
+/* Эффект электрического разряда */
+.electric-discharge {
+    position: relative;
+}
+
+.electric-discharge::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00FFFF, #FFFFFF, #00FFFF);
+    border-radius: inherit;
+    z-index: -1;
+    animation: electric-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes electric-pulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.3; }
+}
+
+/* Эффект неоновой рамки */
+.neon-border {
+    border: 2px solid #00FFFF;
+    box-shadow:
+        0 0 5px #00FFFF,
+        inset 0 0 5px #00FFFF,
+        0 0 10px #00FFFF,
+        inset 0 0 10px #00FFFF;
+    animation: neon-flicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        box-shadow:
+            0 0 5px #00FFFF,
+            inset 0 0 5px #00FFFF,
+            0 0 10px #00FFFF,
+            inset 0 0 10px #00FFFF;
+    }
+    20%, 24%, 55% {
+        box-shadow:
+            0 0 2px #00FFFF,
+            inset 0 0 2px #00FFFF,
+            0 0 5px #00FFFF,
+            inset 0 0 5px #00FFFF;
+    }
+}
+
+/* Эффект свечения текста */
+.glow-text {
+    color: #00FFFF;
+    text-shadow:
+        0 0 5px #00FFFF,
+        0 0 10px #00FFFF,
+        0 0 15px #00FFFF,
+        0 0 20px #00FFFF;
+    animation: text-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+    0% {
+        text-shadow:
+            0 0 5px #00FFFF,
+            0 0 10px #00FFFF,
+            0 0 15px #00FFFF;
+    }
+    100% {
+        text-shadow:
+            0 0 10px #00FFFF,
+            0 0 20px #00FFFF,
+            0 0 30px #00FFFF,
+            0 0 40px #00FFFF;
+    }
+}
+
+/* Эффект частиц */
+.particles {
+    position: relative;
+    overflow: hidden;
+}
+
+.particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #00FFFF, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #00FFFF, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(0,255,255,0.6), transparent),
+        radial-gradient(2px 2px at 160px 30px, #00FFFF, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particles-float 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes particles-float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-100px); }
+}
+
+/* Улучшенная типографика для названий агентов */
+.agent-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #00FFFF;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    transition: all 0.2s ease;
+}
+
+.agent-label:hover {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(0, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+/* Мобильная типографика */
+@media (max-width: 767px) {
+    .agent-label {
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+}
+
+/* Новая структура текста под иконками */
+.orbital-icon-label {
+    position: relative; /* НЕ absolute! */
+    z-index: 10;
+    pointer-events: none; /* Не блокируем клики */
+}
+
+/* Типографика мирового класса */
+.agent-title {
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 600;
+    color: #00FFFF;
+    text-shadow:
+        0 2px 4px rgba(0,0,0,0.5),
+        0 0 8px rgba(0,255,255,0.3);
+    margin-bottom: 4px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.agent-description {
+    font-size: clamp(11px, 1.2vw, 14px);
+    font-weight: 400;
+    color: rgba(0,255,255,0.8);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    line-height: 1.6;
+    letter-spacing: 0.005em;
+    margin-top: 4px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.service-label {
+    font-size: clamp(12px, 1.3vw, 15px);
+    font-weight: 500;
+    color: #00FFFF;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slogan-text {
+    font-size: clamp(14px, 1.8vw, 20px);
+    font-weight: 700;
+    font-style: italic;
+    color: #00FFFF;
+    text-shadow: 0 2px 6px rgba(0,255,255,0.4);
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.countdown-text {
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: #00FFFF;
+    text-shadow: 0 3px 8px rgba(0,255,255,0.5);
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Стабилизация анимаций */
+.orbital-icon {
+    will-change: transform;
+    pointer-events: auto;
+}
+
+.orbital-icon:hover {
+    will-change: transform, filter;
+}
+
+/* Удален конфликтующий класс orbital-icon-border */
+
+/* Оптимизация для мобильных */
+@media (max-width: 767px) {
+    .saber-glow-cyan {
+        filter: drop-shadow(0 0 0.4px #00FFFF)
+                drop-shadow(0 0 1px #00FFFF);
+    }
+
+    .levitation-shadow {
+        display: none; /* Убираем тени на мобильных для производительности */
+    }
+}

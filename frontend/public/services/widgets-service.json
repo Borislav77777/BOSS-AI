@@ -1,0 +1,134 @@
+{
+  "id": "widgets-service",
+  "name": "Виджеты",
+  "description": "Система управления виджетами платформы",
+  "icon": "Monitor",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "system",
+  "priority": 80,
+  "author": "BARSUKOV OS",
+  "tools": [
+    {
+      "id": "create-widget",
+      "name": "Создать виджет",
+      "description": "Создает новый виджет на рабочем столе",
+      "icon": "Plus",
+      "action": "create-widget",
+      "isEnabled": true,
+      "isChatFunction": true,
+      "chatPrompt": "Создай виджет {widgetType}",
+      "chatApiEndpoint": "/api/widgets/create",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "widgetType": {
+            "type": "string",
+            "description": "Тип виджета (voice-widget, time-widget)",
+            "enum": ["voice-widget", "time-widget"]
+          },
+          "position": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" }
+            }
+          }
+        },
+        "required": ["widgetType"]
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "widgetId": {
+            "type": "string",
+            "description": "ID созданного виджета"
+          },
+          "message": {
+            "type": "string",
+            "description": "Сообщение о результате"
+          }
+        }
+      }
+    },
+    {
+      "id": "list-widgets",
+      "name": "Список виджетов",
+      "description": "Показывает все доступные виджеты",
+      "icon": "List",
+      "action": "list-widgets",
+      "isEnabled": true,
+      "isChatFunction": true,
+      "chatPrompt": "Покажи доступные виджеты",
+      "chatApiEndpoint": "/api/widgets/list",
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "widgets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "description": { "type": "string" },
+                "icon": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "defaultWidgetSize",
+      "name": "Размер виджетов по умолчанию",
+      "type": "select",
+      "options": [
+        { "label": "Маленький", "value": "small" },
+        { "label": "Средний", "value": "medium" },
+        { "label": "Большой", "value": "large" }
+      ],
+      "defaultValue": "medium",
+      "description": "Размер новых виджетов по умолчанию"
+    },
+    {
+      "id": "autoArrange",
+      "name": "Автоматическое размещение",
+      "type": "boolean",
+      "defaultValue": true,
+      "description": "Автоматически размещать новые виджеты"
+    }
+  ],
+  "theme": {
+    "id": "widgets-service-theme",
+    "name": "Widgets Service Theme",
+    "description": "Тема для сервиса виджетов с фиолетовыми акцентами",
+    "colors": {
+      "primary": "#000000",
+      "secondary": "#000000",
+      "accent": "#a78bfa",
+      "background": "#1e1b4b",
+      "text": "#e0e7ff",
+      "border": "rgba(139, 92, 246, 0.2)",
+      "muted": "#64748b",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#000000"
+    },
+    "variables": {
+      "--widgets-primary": "#000000",
+      "--widgets-hover": "rgba(139, 92, 246, 0.1)",
+      "--widgets-border": "rgba(139, 92, 246, 0.3)"
+    },
+    "animations": {
+      "widgets-focus": "focus 0.3s ease-out",
+      "widgets-hover": "hover 0.2s ease-out"
+    },
+    "version": "1.0.0",
+    "author": "BARSUKOV OS Team"
+  },
+  "dependencies": []
+}

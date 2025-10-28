@@ -1,0 +1,108 @@
+{
+  "id": "video-generation-service",
+  "name": "Генерация видео",
+  "description": "AI-генерация маркетинговых видео и контента",
+  "icon": "Video",
+  "version": "1.0.0",
+  "category": "content",
+  "isActive": true,
+  "author": "Boss AI Team",
+  "priority": 5,
+  "tools": [
+    {
+      "id": "generate-video",
+      "name": "Сгенерировать видео",
+      "description": "Создание видео из текста или изображений",
+      "icon": "Wand2",
+      "action": "generate-video",
+      "isEnabled": true,
+      "category": "generation",
+      "isChatFunction": true,
+      "chatPrompt": "Создай видео: {userInput}",
+      "chatApiEndpoint": "/api/video/generate"
+    },
+    {
+      "id": "video-templates",
+      "name": "Шаблоны видео",
+      "description": "Готовые шаблоны для разных типов контента",
+      "icon": "Layout",
+      "action": "video-templates",
+      "isEnabled": true,
+      "category": "templates",
+      "isChatFunction": true,
+      "chatPrompt": "Покажи шаблоны видео: {userInput}",
+      "chatApiEndpoint": "/api/video/templates"
+    },
+    {
+      "id": "auto-subtitles",
+      "name": "Авто-субтитры",
+      "description": "Автоматическое создание субтитров",
+      "icon": "Type",
+      "action": "auto-subtitles",
+      "isEnabled": true,
+      "category": "subtitles",
+      "isChatFunction": true,
+      "chatPrompt": "Создай субтитры: {userInput}",
+      "chatApiEndpoint": "/api/video/subtitles"
+    },
+    {
+      "id": "video-optimization",
+      "name": "Оптимизация видео",
+      "description": "Оптимизация для разных платформ",
+      "icon": "Settings",
+      "action": "video-optimization",
+      "isEnabled": true,
+      "category": "optimization",
+      "isChatFunction": true,
+      "chatPrompt": "Оптимизируй видео: {userInput}",
+      "chatApiEndpoint": "/api/video/optimize"
+    },
+    {
+      "id": "social-media-export",
+      "name": "Экспорт в соцсети",
+      "description": "Автоматический экспорт в социальные сети",
+      "icon": "Share2",
+      "action": "social-media-export",
+      "isEnabled": true,
+      "category": "export",
+      "isChatFunction": true,
+      "chatPrompt": "Экспортируй в соцсети: {userInput}",
+      "chatApiEndpoint": "/api/video/export"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "quick-video",
+      "name": "Быстрое видео",
+      "description": "Создать видео за 2 минуты",
+      "position": "top",
+      "action": "generate-video",
+      "isEnabled": true
+    },
+    {
+      "id": "video-templates",
+      "name": "Шаблоны",
+      "description": "Выбрать шаблон",
+      "position": "top",
+      "action": "video-templates",
+      "isEnabled": true
+    },
+    {
+      "id": "export-video",
+      "name": "Экспорт",
+      "description": "Опубликовать в соцсетях",
+      "position": "bottom",
+      "action": "social-media-export",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "apiBase": "/api/video",
+    "aiProvider": "openai",
+    "maxVideoLength": 300,
+    "supportedFormats": ["mp4", "webm", "gif"],
+    "autoSubtitles": true,
+    "autoOptimization": true,
+    "socialMediaIntegration": true
+  }
+}

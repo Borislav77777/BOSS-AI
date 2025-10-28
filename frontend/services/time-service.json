@@ -1,0 +1,107 @@
+{
+  "id": "time-service",
+  "name": "Time Service",
+  "description": "Сервис времени и даты",
+  "icon": "Clock",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "utility",
+  "priority": 9,
+  "author": "BARSUKOV Platform",
+  "tools": [
+    {
+      "id": "get-current-time",
+      "name": "Текущее время",
+      "description": "Получить текущее время",
+      "icon": "Clock",
+      "action": "get-current-time",
+      "isEnabled": true,
+      "category": "time",
+      "isChatFunction": true,
+      "chatPrompt": "Какое сейчас время?",
+      "chatApiEndpoint": "/api/time/current"
+    },
+    {
+      "id": "get-current-date",
+      "name": "Текущая дата",
+      "description": "Получить текущую дату",
+      "icon": "Calendar",
+      "action": "get-current-date",
+      "isEnabled": true,
+      "category": "date",
+      "isChatFunction": true,
+      "chatPrompt": "Какая сегодня дата?",
+      "chatApiEndpoint": "/api/time/date"
+    },
+    {
+      "id": "format-time",
+      "name": "Форматировать время",
+      "description": "Форматировать время в различных форматах",
+      "icon": "Clock",
+      "action": "format-time",
+      "isEnabled": true,
+      "category": "format",
+      "isChatFunction": false
+    }
+  ],
+  "settings": {
+    "timezone": "Europe/Moscow",
+    "format24h": true,
+    "showSeconds": true,
+    "showDate": true,
+    "language": "ru"
+  },
+  "dependencies": [],
+  "chatApiBaseUrl": null,
+  "chatApiKey": null,
+  "chatFunctions": [
+    {
+      "id": "get-current-time",
+      "name": "Текущее время",
+      "description": "Получить текущее время",
+      "isChatFunction": true,
+      "chatPrompt": "Какое сейчас время?",
+      "chatApiEndpoint": "/api/time/current"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "show-time",
+      "name": "Показать время",
+      "description": "Показать текущее время",
+      "icon": "Clock",
+      "action": "get-current-time",
+      "isEnabled": true,
+      "color": "primary",
+      "position": "top"
+    }
+  ],
+  "theme": {
+    "id": "time-theme",
+    "name": "Time Theme",
+    "description": "Тема для сервиса времени",
+    "colors": {
+      "primary": "#ffffff",
+      "secondary": "#e5e7eb",
+      "accent": "#ffffff",
+      "background": "#000000",
+      "text": "#ffffff",
+      "border": "rgba(255,255,255,0.1)",
+      "muted": "#9ca3af",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#ffffff"
+    },
+    "variables": {
+      "--time-pulse": "time-pulse 2s infinite"
+    },
+    "animations": {
+      "time-pulse": {
+        "0%": { "opacity": "1", "transform": "scale(1)" },
+        "50%": { "opacity": "0.7", "transform": "scale(1.02)" },
+        "100%": { "opacity": "1", "transform": "scale(1)" }
+      }
+    }
+  }
+}

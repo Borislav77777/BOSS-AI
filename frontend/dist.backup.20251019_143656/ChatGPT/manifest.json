@@ -1,0 +1,23 @@
+{
+  "name": "ChatGPT Service",
+  "version": "1.0.0",
+  "description": "Интеграция с OpenAI ChatGPT для переписок и чата",
+  "author": "BARSUKOV OS Team",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "chatgpt",
+    "openai",
+    "ai",
+    "chat",
+    "assistant"
+  ],
+  "dependencies": {
+    "openai": "^4.0.0",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT"
+}

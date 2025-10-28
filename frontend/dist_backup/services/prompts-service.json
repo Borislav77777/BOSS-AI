@@ -1,0 +1,64 @@
+{
+  "id": "prompts-service",
+  "name": "Библиотека промптов",
+  "description": "Библиотека промптов с категориями, папками и быстрым доступом",
+  "icon": "LayoutGrid",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "productivity",
+  "priority": 6,
+  "tools": [
+    {
+      "id": "openLibrary",
+      "name": "Открыть библиотеку",
+      "description": "Открыть библиотеку промптов",
+      "icon": "LayoutGrid",
+      "action": "openLibrary",
+      "isEnabled": true
+    },
+    {
+      "id": "insertPrompt",
+      "name": "Вставить промпт",
+      "description": "Быстро вставить выбранный промпт",
+      "icon": "SquarePlus",
+      "action": "insertPrompt",
+      "isEnabled": true,
+      "isChatFunction": true,
+      "chatPrompt": "{promptBody}"
+    },
+    {
+      "id": "improvePrompt",
+      "name": "Улучшить промпт",
+      "description": "Улучшить текущий промпт с помощью AI",
+      "icon": "Wand2",
+      "action": "improvePrompt",
+      "isEnabled": true,
+      "isChatFunction": true,
+      "chatPrompt": "Улучши этот промпт: {userInput}"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "prompts-quick",
+      "name": "Библиотека промптов",
+      "icon": "LayoutGrid",
+      "description": "Заготовленные промпты",
+      "action": "insertPrompt",
+      "isEnabled": true,
+      "position": "top"
+    },
+    {
+      "id": "improve-prompt",
+      "name": "Улучшить промпт",
+      "icon": "Wand2",
+      "description": "Улучшить текущий промпт с помощью AI",
+      "action": "improvePrompt",
+      "isEnabled": true,
+      "position": "bottom"
+    }
+  ],
+  "settings": {
+    "autoSave": true
+  },
+  "dependencies": []
+}

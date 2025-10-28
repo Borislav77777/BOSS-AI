@@ -1,0 +1,274 @@
+name: BOSS AI v2.0 - Deploy to Production
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '18'
+  PYTHON_VERSION: '3.9'
+
+jobs:
+  # Проверка качества кода
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Run ESLint
+        run: |
+          cd frontend
+          npm run lint
+
+      - name: Run TypeScript check
+        run: |
+          cd frontend
+          npm run type-check
+
+      - name: Check for console.log statements
+        run: |
+          if grep -r "console\.log" frontend/src/ --exclude-dir=node_modules; then
+            echo "❌ Found console.log statements in production code"
+            exit 1
+          else
+            echo "✅ No console.log statements found"
+          fi
+
+  # Сборка frontend
+  build-frontend:
+    runs-on: ubuntu-latest
+    needs: quality-check
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Check build output
+        run: |
+          if [ ! -d "frontend/dist" ]; then
+            echo "❌ Build failed - dist directory not found"
+            exit 1
+          fi
+
+          if [ ! -f "frontend/dist/index.html" ]; then
+            echo "❌ Build failed - index.html not found"
+            exit 1
+          fi
+
+          echo "✅ Build successful"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-build
+          path: frontend/dist/
+          retention-days: 7
+
+  # Тестирование микросервисов
+  test-services:
+    runs-on: ubuntu-latest
+    needs: quality-check
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Node.js dependencies
+        run: |
+          cd backend/services/image-processing
+          npm ci
+
+      - name: Install Python dependencies
+        run: |
+          cd backend/services/image-processing
+          pip install -r requirements.txt
+
+      - name: Test Image Processing Service
+        run: |
+          cd backend/services/image-processing
+          # Запускаем сервис в фоне
+          npm start &
+          SERVICE_PID=$!
+
+          # Ждем запуска
+          sleep 10
+
+          # Тестируем API
+          curl -f http://localhost:3005/api/status || exit 1
+
+          # Останавливаем сервис
+          kill $SERVICE_PID
+
+  # Деплой на продакшн сервер
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: [build-frontend, test-services]
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-build
+          path: frontend/dist/
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to server
+        run: |
+          # Создаем временную директорию
+          TEMP_DIR="/tmp/boss-ai-deploy-$(date +%s)"
+
+          # Копируем файлы на сервер
+          scp -o StrictHostKeyChecking=no -r frontend/dist/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:$TEMP_DIR/
+
+          # Подключаемся к серверу и выполняем деплой
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            # Создаем бэкап текущей версии
+            BACKUP_DIR="/var/www/boss-ai/backup-$(date +%Y%m%d-%H%M%S)"
+            mkdir -p "$BACKUP_DIR"
+            cp -r /var/www/boss-ai/frontend/dist/* "$BACKUP_DIR/" 2>/dev/null || true
+
+            # Копируем новую версию
+            cp -r $TEMP_DIR/* /var/www/boss-ai/frontend/dist/
+
+            # Устанавливаем права доступа
+            chown -R www-data:www-data /var/www/boss-ai/frontend/dist/
+            chmod -R 755 /var/www/boss-ai/frontend/dist/
+
+            # Перезагружаем Nginx
+            systemctl reload nginx
+
+            # Проверяем статус
+            if systemctl is-active --quiet nginx; then
+              echo "✅ Nginx перезагружен успешно"
+            else
+              echo "❌ Ошибка перезагрузки Nginx"
+              exit 1
+            fi
+
+            # Очищаем временные файлы
+            rm -rf $TEMP_DIR
+
+            echo "🎉 Деплой завершен успешно!"
+          EOF
+
+      - name: Verify deployment
+        run: |
+          # Ждем обновления
+          sleep 10
+
+          # Проверяем доступность сайта
+          curl -f https://boss-ai.online || exit 1
+
+          echo "✅ Сайт доступен после деплоя"
+
+  # Уведомления
+  notify:
+    runs-on: ubuntu-latest
+    needs: [deploy-production]
+    if: always()
+    steps:
+      - name: Notify on success
+        if: needs.deploy-production.result == 'success'
+        run: |
+          echo "🎉 BOSS AI v2.0 успешно задеплоен!"
+          echo "Сайт: https://boss-ai.online"
+          echo "Время: $(date)"
+
+      - name: Notify on failure
+        if: needs.deploy-production.result == 'failure'
+        run: |
+          echo "❌ Ошибка деплоя BOSS AI v2.0"
+          echo "Проверьте логи для деталей"
+          echo "Время: $(date)"
+
+# Дополнительные workflow для ручных операций
+  # Обработка иконок
+  process-icons:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Process icons on server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            cd /var/www/boss-ai
+            chmod +x scripts/process-icons.sh
+            ./scripts/process-icons.sh
+          EOF
+
+  # Установка микросервиса
+  setup-image-service:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Image Processing Service
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            cd /var/www/boss-ai
+            chmod +x scripts/setup-image-service.sh
+            sudo ./scripts/setup-image-service.sh
+          EOF

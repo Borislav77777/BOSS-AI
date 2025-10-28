@@ -1,0 +1,150 @@
+/* ========================================
+   BARSUKOV PLATFORM - ГЛАВНЫЙ ФАЙЛ СТИЛЕЙ
+   ======================================== */
+
+/* Импорт единой системы стилей */
+@import './platform.css';
+
+/* Глобальные стили */
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background) !important;
+    background: var(--background) !important;
+    color: var(--text) !important;
+    overflow-x: hidden;
+    contain: layout;
+  }
+
+  #root {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  /* Утилитарные классы */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  /* Стили для предотвращения сдвига экрана от анимаций */
+  .loading-container {
+    contain: layout style paint;
+    isolation: isolate;
+    transform: translateZ(0);
+    will-change: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+  }
+
+  .loading-container * {
+    contain: layout;
+    transform: translateZ(0);
+  }
+
+  /* Изоляция анимаций от основного layout */
+  .animate-interface-fade-in,
+  .animate-interface-slide-up,
+  .animate-interface-scale-in,
+  .animate-interface-stagger {
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  /* Стили workspace определены в components.css */
+
+  /* Предотвращение сдвига от анимаций кнопок и элементов */
+  button, .animated-button, .animated-card, .hover-scale {
+    contain: layout;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    isolation: isolate;
+    will-change: transform;
+  }
+
+  /* Дополнительная защита от сдвига при hover эффектах */
+  .hover-scale:hover {
+    transform: translateZ(0) scale(1.02);
+    contain: layout style paint;
+  }
+
+  /* Фиксация layout для предотвращения сдвига */
+  body {
+    overflow-x: hidden;
+    contain: layout;
+  }
+
+  /* Изоляция анимаций от основного потока */
+  .animate-interface-fade-in,
+  .animate-interface-slide-up,
+  .animate-interface-scale-in,
+  .animate-interface-stagger {
+    contain: layout style paint;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    isolation: isolate;
+  }
+
+  /* Chat panel with dynamic width */
+  .chat-panel {
+    width: var(--chat-width, 400px);
+  }
+
+  /* Стили загрузочного экрана - теперь в loading.css */
+
+  /* Стили app-container определены в platform.css */
+
+  /* Удалены дублирующиеся правила - они определены в layout.css */
+
+  .version-delay {
+    animation-delay: 0.5s;
+  }
+
+  /* Chat textarea styles */
+  .chat-textarea {
+    min-height: 256px;
+    /* max-height убран - теперь высота управляется JavaScript */
+  }
+
+  /* Color preview styles for theme editor */
+  .color-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  /* Глобальные стили скроллбаров - теперь в scrollbars.css */

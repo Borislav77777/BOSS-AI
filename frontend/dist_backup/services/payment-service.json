@@ -1,0 +1,89 @@
+{
+  "id": "payment-service",
+  "name": "Платежи",
+  "description": "Интеграция с платежными системами РФ и зарубежья",
+  "icon": "CreditCard",
+  "version": "1.0.0",
+  "category": "business",
+  "isActive": true,
+  "author": "Boss AI Team",
+  "priority": 4,
+  "tools": [
+    {
+      "id": "create-payment",
+      "name": "Создать платеж",
+      "description": "Создание нового платежа или подписки",
+      "icon": "Plus",
+      "action": "create-payment",
+      "isEnabled": true,
+      "category": "payments",
+      "isChatFunction": true,
+      "chatPrompt": "Создай платеж: {userInput}",
+      "chatApiEndpoint": "/api/payments/create"
+    },
+    {
+      "id": "subscription-management",
+      "name": "Управление подписками",
+      "description": "Управление рекуррентными платежами",
+      "icon": "Repeat",
+      "action": "subscription-management",
+      "isEnabled": true,
+      "category": "subscriptions",
+      "isChatFunction": true,
+      "chatPrompt": "Управляй подпиской: {userInput}",
+      "chatApiEndpoint": "/api/payments/subscriptions"
+    },
+    {
+      "id": "payment-analytics",
+      "name": "Аналитика платежей",
+      "description": "Отчеты по платежам и выручке",
+      "icon": "BarChart3",
+      "action": "payment-analytics",
+      "isEnabled": true,
+      "category": "analytics",
+      "isChatFunction": true,
+      "chatPrompt": "Покажи аналитику платежей: {userInput}",
+      "chatApiEndpoint": "/api/payments/analytics"
+    },
+    {
+      "id": "refund-processing",
+      "name": "Возвраты",
+      "description": "Обработка возвратов и отмен",
+      "icon": "Undo",
+      "action": "refund-processing",
+      "isEnabled": true,
+      "category": "refunds",
+      "isChatFunction": true,
+      "chatPrompt": "Обработай возврат: {userInput}",
+      "chatApiEndpoint": "/api/payments/refunds"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "quick-payment",
+      "name": "Быстрый платеж",
+      "description": "Создать платеж",
+      "position": "top",
+      "action": "create-payment",
+      "isEnabled": true
+    },
+    {
+      "id": "payment-stats",
+      "name": "Статистика",
+      "description": "Показать статистику платежей",
+      "position": "bottom",
+      "action": "payment-analytics",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "apiBase": "/api/payments",
+    "yookassaEnabled": true,
+    "cloudpaymentsEnabled": true,
+    "stripeEnabled": true,
+    "paypalEnabled": true,
+    "cryptoEnabled": false,
+    "defaultCurrency": "RUB",
+    "supportedCurrencies": ["RUB", "USD", "EUR"]
+  }
+}

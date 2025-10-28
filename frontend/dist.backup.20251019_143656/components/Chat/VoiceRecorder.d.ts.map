@@ -1,0 +1,1 @@
+{"version":3,"file":"VoiceRecorder.d.ts","sourceRoot":"","sources":["../../../src/components/Chat/VoiceRecorder.tsx"],"names":[],"mappings":"AAAA;;GAEG;AAOH,OAAO,KAAmD,MAAM,OAAO,CAAC;AAExE,UAAU,kBAAkB;IACxB,mBAAmB,EAAE,CAAC,SAAS,EAAE,IAAI,KAAK,IAAI,CAAC;IAC/C,SAAS,CAAC,EAAE,MAAM,CAAC;CACtB;AAUD,eAAO,MAAM,aAAa,EAAE,KAAK,CAAC,EAAE,CAAC,kBAAkB,CA0RtD,CAAC;AAEF,eAAe,aAAa,CAAC"}

@@ -1,0 +1,26 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "skipLibCheck": true,
+        "allowJs": true
+    },
+    "exclude": [
+        "src/test/**/*",
+        "src/**/__tests__/**/*",
+        "src/**/*.test.tsx",
+        "src/**/*.test.ts",
+        "src/services/EnhancedErrorHandlingService.ts",
+        "src/services/EnhancedMonitoringService.ts",
+        "src/services/ChatGenerationService.ts",
+        "src/services/ServiceConnector/**/*",
+        "src/components/Widgets/WidgetsServiceTabs.tsx",
+        "src/components/Workspace/ServiceWorkspaceProvider.tsx",
+        "src/components/Settings/ServiceSettings/ServiceSettingsProvider.tsx",
+        "src/components/Services/AILawyer/Architecture/**/*",
+        "src/components/Services/OzonManager/OzonManager.tsx",
+        "src/components/Services/Prompts/PromptsService.tsx",
+        "src/services/ServiceCommunication/ServiceCommunicationManager.ts",
+        "src/services/ServiceRegistry/ServiceRegistry.ts"
+    ]
+}

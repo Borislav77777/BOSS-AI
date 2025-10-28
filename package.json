@@ -1,0 +1,30 @@
+{
+  "name": "boss-ai-platform",
+  "version": "1.0.0",
+  "description": "Boss AI Platform - Микросервисная платформа для управления бизнесом",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:ozon\" \"npm run dev:gateway\" \"npm run dev:frontend\"",
+    "dev:ozon": "cd backend/ozon-manager && npm run dev",
+    "dev:gateway": "cd backend/main && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend/main && npm install && cd ../ozon-manager && npm install && cd ../../frontend && npm install",
+    "build": "cd backend/main && npm run build && cd ../ozon-manager && npm run build && cd ../../frontend && npm run build",
+    "start": "concurrently \"npm run start:ozon\" \"npm run start:gateway\" \"npm run start:frontend\"",
+    "start:ozon": "cd backend/ozon-manager && npm start",
+    "start:gateway": "cd backend/main && npm start",
+    "start:frontend": "cd frontend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "ai",
+    "platform",
+    "microservices",
+    "ozon",
+    "business"
+  ],
+  "author": "Boss AI Team",
+  "license": "MIT"
+}

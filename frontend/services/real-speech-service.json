@@ -1,0 +1,108 @@
+{
+  "id": "real-speech-service",
+  "name": "Real Speech Recognition",
+  "description": "Сервис реальной транскрипции речи с использованием Web Speech API",
+  "icon": "Mic",
+  "version": "1.0.0",
+  "isActive": true,
+  "category": "ai",
+  "priority": 9,
+  "author": "BARSUKOV Platform",
+  "tools": [
+    {
+      "id": "realtime-speech-recognition",
+      "name": "Распознавание речи в реальном времени",
+      "description": "Преобразует речь в текст в реальном времени с использованием Web Speech API",
+      "icon": "Mic",
+      "action": "realtime-speech-recognition",
+      "isEnabled": true,
+      "category": "transcription",
+      "isChatFunction": true,
+      "chatPrompt": "Распознай речь: {userInput}",
+      "chatApiEndpoint": "/api/speech/recognize"
+    },
+    {
+      "id": "continuous-speech-recognition",
+      "name": "Непрерывное распознавание речи",
+      "description": "Непрерывно распознает речь до остановки пользователем",
+      "icon": "Mic",
+      "action": "continuous-speech-recognition",
+      "isEnabled": true,
+      "category": "transcription",
+      "isChatFunction": true,
+      "chatPrompt": "Начать непрерывное распознавание: {userInput}",
+      "chatApiEndpoint": "/api/speech/continuous"
+    },
+    {
+      "id": "voice-commands-recognition",
+      "name": "Распознавание голосовых команд",
+      "description": "Обрабатывает голосовые команды в реальном времени",
+      "icon": "Command",
+      "action": "voice-commands-recognition",
+      "isEnabled": true,
+      "category": "commands",
+      "isChatFunction": true,
+      "chatPrompt": "Обработай голосовую команду: {userInput}",
+      "chatApiEndpoint": "/api/speech/commands"
+    }
+  ],
+  "settings": {
+    "language": "ru-RU",
+    "continuous": true,
+    "interimResults": true,
+    "maxAlternatives": 1,
+    "enableCommands": true,
+    "sensitivity": 0.5,
+    "autoStart": false
+  },
+  "dependencies": [],
+  "chatApiBaseUrl": null,
+  "chatApiKey": null,
+  "chatFunctions": [
+    {
+      "id": "realtime-speech-recognition",
+      "name": "Распознавание речи в реальном времени",
+      "description": "Преобразует речь в текст в реальном времени",
+      "isChatFunction": true,
+      "chatPrompt": "Распознай речь: {userInput}",
+      "chatApiEndpoint": "/api/speech/recognize"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "start-voice-recognition",
+      "name": "Голосовое распознавание",
+      "description": "Начать распознавание речи с Web Speech API",
+      "icon": "Mic",
+      "action": "realtime-speech-recognition",
+      "isEnabled": true,
+      "color": "primary",
+      "position": "top"
+    }
+  ],
+  "theme": {
+    "id": "real-speech-theme",
+    "name": "Real Speech Theme",
+    "description": "Тема для сервиса реального распознавания речи",
+    "colors": {
+      "primary": "#ffffff",
+      "secondary": "#e5e7eb",
+      "accent": "#ffffff",
+      "background": "#000000",
+      "text": "#ffffff",
+      "border": "rgba(255,255,255,0.1)",
+      "muted": "#9ca3af",
+      "destructive": "#ef4444",
+      "success": "#10b981",
+      "warning": "#f59e0b",
+      "info": "#ffffff"
+    },
+    "variables": {
+      "--speech-glow": "0 0 20px rgba(59, 130, 246, 0.3)",
+      "--speech-pulse": "speech-pulse 2s infinite"
+    },
+    "animations": {
+      "speech-pulse": "speech-pulse 2s ease-in-out infinite"
+    }
+  }
+}

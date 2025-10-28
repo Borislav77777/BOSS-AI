@@ -1,0 +1,1 @@
+{"version":3,"file":"FontSizeSlider.d.ts","sourceRoot":"","sources":["../../../../src/components/common/settings/FontSizeSlider.tsx"],"names":[],"mappings":"AAAA,OAAO,KAA+C,MAAM,OAAO,CAAC;AAGpE,UAAU,mBAAmB;IACzB,KAAK,EAAE,MAAM,CAAC;IACd,QAAQ,EAAE,CAAC,KAAK,EAAE,MAAM,KAAK,IAAI,CAAC;CACrC;AAED;;;GAGG;AACH,eAAO,MAAM,cAAc,EAAE,KAAK,CAAC,EAAE,CAAC,mBAAmB,CAyHvD,CAAC"}

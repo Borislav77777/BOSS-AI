@@ -1,0 +1,615 @@
+/* ========================================
+   УНИФИЦИРОВАННЫЕ СТИЛИ КОМПОНЕНТОВ
+   ======================================== */
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ КНОПКИ
+   ======================================== */
+
+/* Базовые стили для всех кнопок */
+.unified-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  min-width: -webkit-fill-available;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.unified-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.unified-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Основная кнопка */
+.unified-button-primary {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--border);
+}
+
+.unified-button-primary:hover:not(:disabled) {
+  background: var(--button-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Светлая тема - основные кнопки */
+[data-theme="light"] .unified-button-primary {
+  background: var(--button-primary-inactive);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .unified-button-primary:hover:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
+}
+
+[data-theme="light"] .unified-button-primary:active:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
+}
+
+/* Темная тема - неактивные кнопки */
+[data-theme="dark"] .unified-button-primary {
+  background: var(--button-primary-inactive);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .unified-button-primary:hover:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff !important;
+  border-color: var(--button-primary);
+}
+
+/* Активные состояния в темной теме */
+[data-theme="dark"] .unified-button-primary:active:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff !important;
+  border-color: var(--button-primary);
+}
+
+/* Вторичная кнопка */
+.unified-button-secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.unified-button-secondary:hover:not(:disabled) {
+  background: var(--surface);
+  border-color: var(--border);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Светлая тема - вторичные кнопки */
+[data-theme="light"] .unified-button-secondary {
+  background: var(--button-secondary-inactive);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .unified-button-secondary:hover:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
+}
+
+[data-theme="light"] .unified-button-secondary:active:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
+}
+
+/* Темная тема - вторичные кнопки */
+[data-theme="dark"] .unified-button-secondary {
+  background: var(--button-secondary-inactive);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .unified-button-secondary:hover:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
+}
+
+/* Активные состояния вторичных кнопок в темной теме */
+[data-theme="dark"] .unified-button-secondary:active:not(:disabled) {
+  background: var(--button-primary);
+  color: #ffffff;
+  border-color: var(--button-primary);
+}
+
+/* Кнопка успеха */
+.unified-button-success {
+  background: var(--success);
+  color: var(--success-foreground);
+  border-color: var(--success);
+}
+
+.unified-button-success:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--success) 80%, var(--background));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Кнопка предупреждения */
+.unified-button-warning {
+  background: var(--warning);
+  color: var(--warning-foreground);
+  border-color: var(--warning);
+}
+
+.unified-button-warning:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--warning) 80%, var(--background));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Кнопка ошибки */
+.unified-button-error {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+  border-color: var(--destructive);
+}
+
+.unified-button-error:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--destructive) 80%, var(--background));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Кнопка опасности (альтернатива для btn-danger) */
+.btn-danger {
+  background: var(--danger);
+  color: var(--danger-foreground);
+  border-color: var(--danger);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Размеры кнопок */
+.unified-button-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.unified-button-lg {
+  padding: 12px 24px;
+  font-size: 16px;
+  gap: 10px;
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ ПОЛЯ ВВОДА
+   ======================================== */
+
+.unified-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.unified-input:focus {
+  outline: none;
+  border-color: var(--border);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.unified-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.unified-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--surface);
+}
+
+/* Размеры полей ввода */
+.unified-input-sm {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.unified-input-lg {
+  padding: 16px 20px;
+  font-size: 16px;
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ ВЫПАДАЮЩИЕ СПИСКИ
+   ======================================== */
+
+.unified-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.unified-select:focus {
+  outline: none;
+  border-color: var(--border);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.unified-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--surface);
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ ПОЛЗУНКИ
+   ======================================== */
+
+.unified-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+}
+
+.unified-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--button-primary);
+  border: 2px solid var(--background);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.unified-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.unified-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--button-primary);
+  border: 2px solid var(--background);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.unified-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ СКРОЛЛБАРЫ
+   ======================================== */
+
+/* Firefox-only support via feature query */
+@supports (scrollbar-width: thin) {
+  .unified-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+}
+
+.unified-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.unified-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.unified-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.unified-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+.unified-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ ЧЕКБОКСЫ
+   ======================================== */
+
+.unified-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  appearance: none;
+}
+
+.unified-checkbox:checked {
+  background: var(--button-primary);
+  border-color: var(--border);
+}
+
+.unified-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--background);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.unified-checkbox:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.unified-checkbox:hover:not(:disabled) {
+  border-color: var(--border);
+  transform: scale(1.05);
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ КАРТОЧКИ
+   ======================================== */
+
+.unified-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.unified-card:focus-within {
+  border-color: var(--border);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ БЕЙДЖИ
+   ======================================== */
+
+.unified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.unified-badge-primary {
+  background: var(--button-primary);
+  color: var(--background);
+}
+
+.unified-badge-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.unified-badge-success {
+  background: var(--success);
+  color: var(--success-foreground);
+}
+
+.unified-badge-warning {
+  background: var(--warning);
+  color: var(--warning-foreground);
+}
+
+.unified-badge-error {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ РАЗДЕЛИТЕЛИ
+   ======================================== */
+
+.unified-divider {
+  height: 1px;
+  background: var(--border);
+  border: none;
+  margin: 16px 0;
+}
+
+.unified-divider-vertical {
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+  border: none;
+  margin: 0 16px;
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ АНИМАЦИИ
+   ======================================== */
+
+.unified-fade-in {
+  animation: unified-fade-in 0.3s ease-out;
+}
+
+.unified-slide-in {
+  animation: unified-slide-in 0.3s ease-out;
+}
+
+.unified-scale-in {
+  animation: unified-scale-in 0.3s ease-out;
+}
+
+@keyframes unified-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes unified-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes unified-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   УНИФИЦИРОВАННЫЕ УТИЛИТЫ
+   ======================================== */
+
+.unified-text-primary {
+  color: var(--text);
+}
+
+.unified-text-secondary {
+  color: var(--text-secondary);
+}
+
+.unified-text-muted {
+  color: var(--text-muted);
+}
+
+.unified-bg-primary {
+  background: var(--background);
+}
+
+.unified-bg-surface {
+  background: var(--surface);
+}
+
+.unified-border {
+  border-color: var(--border);
+}
+
+.unified-shadow {
+  box-shadow: var(--shadow-md);
+}
+
+.unified-shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   АДАПТИВНОСТЬ
+   ======================================== */
+
+@media (max-width: 768px) {
+  .unified-button {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .unified-input {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .unified-card {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unified-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .unified-input {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .unified-card {
+    padding: 10px;
+  }
+}

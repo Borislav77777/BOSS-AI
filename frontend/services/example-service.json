@@ -1,0 +1,64 @@
+{
+  "id": "example-service",
+  "name": "Пример сервиса",
+  "description": "Демонстрационный сервис для тестирования системы",
+  "icon": "Cog",
+  "version": "1.0.0",
+  "isActive": false,
+  "category": "utility",
+  "priority": 2,
+  "author": "BARSUKOV OS Team",
+  "tools": [
+    {
+      "id": "greet",
+      "name": "Приветствие",
+      "description": "Выводит персонализированное приветствие",
+      "icon": "Smile",
+      "action": "greet",
+      "isEnabled": true,
+      "category": "communication"
+    },
+    {
+      "id": "get-time",
+      "name": "Время",
+      "description": "Показывает текущее время",
+      "icon": "Clock",
+      "action": "get-time",
+      "isEnabled": true,
+      "category": "utility"
+    },
+    {
+      "id": "example-tool-1",
+      "name": "Быстрое действие",
+      "description": "Выполняет быстрое действие",
+      "icon": "Lightning",
+      "action": "example-tool-1",
+      "isEnabled": true,
+      "category": "actions"
+    },
+    {
+      "id": "example-tool-2",
+      "name": "Настройки",
+      "description": "Открывает настройки сервиса",
+      "icon": "Settings",
+      "action": "example-tool-2",
+      "isEnabled": true,
+      "category": "settings"
+    },
+    {
+      "id": "example-tool-3",
+      "name": "Анализ данных",
+      "description": "Анализирует данные в рабочем пространстве",
+      "icon": "BarChart3",
+      "action": "example-tool-3",
+      "isEnabled": true,
+      "category": "analysis"
+    }
+  ],
+  "settings": {
+    "autoStart": true,
+    "notifications": true,
+    "theme": "dark"
+  },
+  "dependencies": []
+}

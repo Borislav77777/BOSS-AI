@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интеллектуальная операционная система Барсукова</title>
+    <meta name="description" content="Интеллектуальная операционная система Барсукова с превосходными возможностями искусственного интеллекта" />
+    <meta name="keywords" content="barsukov, platform, typescript, react, ai, modular" />
+    <meta name="author" content="BARSUKOV OS Team" />
+
+    <!-- Предзагрузка шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Удалено: предзагрузка UMD lucide.js (не используется с ESM) -->
+
+    <!-- Мета-теги для PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="BARSUKOV OS" />
+    <!-- Fallback для браузеров без поддержки theme-color -->
+    <meta name="msapplication-navbutton-color" content="#1e1e1e" />
+    <meta name="msapplication-TileColor" content="#1e1e1e" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Интеллектуальная операционная система Барсукова" />
+    <meta property="og:description" content="Интеллектуальная операционная система Барсукова с превосходными возможностями искусственного интеллекта" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://barsukov.os" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Интеллектуальная операционная система Барсукова" />
+    <meta name="twitter:description" content="Интеллектуальная операционная система Барсукова с превосходными возможностями искусственного интеллекта" />
+
+    <!-- Стили для загрузки -->
+    <style>
+      /* Стили загрузочного экрана */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--background,
+          radial-gradient(circle at 20% 20%, var(--primary, rgba(220, 38, 38, 0.15)) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, var(--secondary, rgba(185, 28, 28, 0.1)) 0%, transparent 50%),
+          radial-gradient(circle at 40% 60%, var(--accent, rgba(239, 68, 68, 0.1)) 0%, transparent 50%),
+          linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #2d2d2d 50%, #1a1a1a 75%, #0f0f0f 100%));
+        background-attachment: fixed;
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+        overflow: hidden;
+      }
+
+      @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px) translateX(0px);
+        }
+        33% {
+          transform: translateY(-15px) translateX(5px);
+        }
+        66% {
+          transform: translateY(-10px) translateX(-5px);
+        }
+      }
+
+      @keyframes glow {
+        0%, 100% {
+          box-shadow: 0 0 20px rgba(220, 38, 38, 0.4),
+                      0 0 40px rgba(220, 38, 38, 0.2),
+                      0 0 60px rgba(220, 38, 38, 0.1);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(220, 38, 38, 0.6),
+                      0 0 60px rgba(220, 38, 38, 0.4),
+                      0 0 90px rgba(220, 38, 38, 0.2);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          background-position: 200% 0;
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes bounce {
+        0%, 20%, 53%, 80%, 100% {
+          transform: translate3d(0,0,0) scale(1);
+        }
+        40%, 43% {
+          transform: translate3d(0, -8px, 0) scale(1.05);
+        }
+        70% {
+          transform: translate3d(0, -4px, 0) scale(1.02);
+        }
+        90% {
+          transform: translate3d(0, -2px, 0) scale(1.01);
+        }
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 0.8; }
+        50% { opacity: 1; }
+      }
+
+      /* Плавающий фон */
+      .floating-bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .floating-bg div {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        animation: float 8s ease-in-out infinite;
+        opacity: 0.6;
+      }
+
+      .floating-bg div:nth-child(1) {
+        top: 20%;
+        left: 15%;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, var(--primary, rgba(220, 38, 38, 0.2)), var(--primary, rgba(220, 38, 38, 0.05)));
+        animation-delay: 0s;
+      }
+
+      .floating-bg div:nth-child(2) {
+        bottom: 20%;
+        right: 15%;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, var(--secondary, rgba(185, 28, 28, 0.18)), var(--secondary, rgba(185, 28, 28, 0.04)));
+        animation-delay: 2.5s;
+      }
+
+      .floating-bg div:nth-child(3) {
+        top: 60%;
+        left: 70%;
+        width: 180px;
+        height: 180px;
+        background: radial-gradient(circle, var(--accent, rgba(239, 68, 68, 0.15)), var(--accent, rgba(239, 68, 68, 0.03)));
+        animation-delay: 5s;
+      }
+
+
+
+
+
+
+
+      .loading-text {
+        color: var(--text, #e2e8f0);
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0.8rem;
+        position: relative;
+        animation: fadeIn 0.8s ease-in-out;
+        letter-spacing: 0.05em;
+      }
+
+      .loading-text span {
+        background: linear-gradient(90deg,
+          var(--primary, rgba(220, 38, 38, 1)),
+          var(--secondary, rgba(185, 28, 28, 1)),
+          var(--accent, rgba(239, 68, 68, 1)),
+          var(--primary, rgba(220, 38, 38, 1)));
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 3s ease-in-out infinite;
+        filter: drop-shadow(0 0 8px var(--primary, rgba(220, 38, 38, 0.3)));
+      }
+
+      .loading-subtext {
+        color: var(--text-secondary, #94a3b8);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        animation: fadeIn 0.8s ease-in-out;
+        animation-delay: 0.3s;
+        animation-fill-mode: both;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+      }
+
+      .simple-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) translateY(-0.6rem);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loading-text {
+        font-size: 2.25rem;
+        font-weight: normal;
+        letter-spacing: 0.22em;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        color: var(--text, #e5e7eb);
+      }
+
+      .loading-spinner {
+        width: 66.5px;
+        height: 66.5px;
+        transform: translateY(-0.5rem) translateX(0.15rem);
+      }
+
+      /* Контент */
+      .content {
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        animation: fadeIn 0.6s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      /* Скрытие загрузочного экрана */
+      #loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Минимальный прелоадер */
+      #loading-screen {
+        position: fixed;
+        inset: 0;
+        background: #000;
+        z-index: 9999;
+      }
+
+      #loading-screen .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #15803d, #16a34a);
+        background-size: 200% 100%;
+        animation: stripeFlow 5s linear infinite;
+      }
+
+      @keyframes stripeFlow {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+    </style>
+    <!-- Telegram Login Widget Script -->
+    <script async src="https://telegram.org/js/telegram-widget.js?22"></script>
+    
+    <!-- Vite dev entry -->
+    
+    <script type="module" crossorigin src="/assets/index-f07797dc.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-d3a444f7.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-0f47df3d.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-2cc12d2a.js">
+    <link rel="stylesheet" href="/assets/index-5a3fd7cc.css">
+  </head>
+  <body>
+    <!-- Минимальный статический прелоадер (без текста) -->
+    <div id="loading-screen">
+      <div class="progress-bar"></div>
+    </div>
+
+    <!-- Корневой элемент приложения -->
+    <div id="root"></div>
+
+    <!-- Скрипт для скрытия загрузочного экрана -->
+    <script>
+      // Установка theme-color только в поддерживающих браузерах
+      (function() {
+        const isSupported = 'theme-color' in document.createElement('meta');
+        if (isSupported) {
+          const lightTheme = document.createElement('meta');
+          lightTheme.name = 'theme-color';
+          lightTheme.content = '#22c55e';
+          lightTheme.media = '(prefers-color-scheme: light)';
+          document.head.appendChild(lightTheme);
+
+          const darkTheme = document.createElement('meta');
+          darkTheme.name = 'theme-color';
+          darkTheme.content = '#1e1e1e';
+          darkTheme.media = '(prefers-color-scheme: dark)';
+          document.head.appendChild(darkTheme);
+        }
+      })();
+
+      // Инициализация CSS переменных для загрузочного экрана
+      (function() {
+        const root = document.documentElement;
+        root.style.setProperty('--primary', '#000000');
+        root.style.setProperty('--secondary', '#000000');
+        root.style.setProperty('--accent', '#000000');
+        root.style.setProperty('--background', 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #2d2d2d 50%, #1a1a1a 75%, #0f0f0f 100%)');
+        root.style.setProperty('--text', '#e2e8f0');
+        root.style.setProperty('--text-secondary', '#94a3b8');
+        root.style.setProperty('--border', 'rgba(51, 65, 85, 0.2)');
+      })();
+
+      // Скрытие минимального прелоадера после загрузки React
+      window.addEventListener('load', function() {
+        // Ждем инициализации React и скрываем HTML загрузку
+        const checkReactReady = () => {
+          const reactRoot = document.getElementById('root');
+          if (reactRoot && reactRoot.children.length > 0) {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+              loadingScreen.classList.add('hidden');
+              setTimeout(function() {
+                loadingScreen.remove();
+              }, 500);
+            }
+          } else {
+            // Проверяем каждые 100ms
+            setTimeout(checkReactReady, 100);
+          }
+        };
+
+        // Начинаем проверку через 500ms
+        setTimeout(checkReactReady, 500);
+      });
+
+      // Без расширенной обработки ошибок для минимального прелоадера
+    </script>
+
+    <!-- Подключение основного скрипта -->
+
+  </body>
+</html>

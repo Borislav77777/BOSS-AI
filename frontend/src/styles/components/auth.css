@@ -1,0 +1,720 @@
+/* ========================================
+   AUTH COMPONENTS STYLES
+   ======================================== */
+
+/* === AuthWidget === */
+
+.auth-widget-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Отдельный слой для анимированного фона - Boss AI Signature (быстрая вспышка) */
+.auth-widget-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle 500px at 50% 50%, rgba(16, 185, 129, 0.2) 0%, transparent 70%),
+    radial-gradient(circle 420px at 50% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 70%),
+    radial-gradient(circle 350px at 50% 50%, rgba(52, 211, 153, 0.12) 0%, transparent 70%),
+    rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(12px);
+  animation: breathingGlow 5s ease-in-out infinite;
+  z-index: -1;
+}
+
+.auth-widget-card {
+  background: rgba(0, 0, 0, 0.98);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  max-width: 480px;
+  width: 90%;
+  box-shadow:
+    0 0 40px rgba(3, 173, 65, 0.295),
+    0 20px 60px rgba(0, 0, 0, 0.6);
+  animation:
+    slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    cardGlow 5s ease-in-out 0.4s infinite;
+}
+
+/* Градиентная рамка для карточки */
+.auth-widget-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg,
+    #22c55e 0%,
+    #15803d 50%,
+    #166534 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0.6;
+}
+
+/* Анимация появления букв логотипа */
+@keyframes letter-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.3) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(10px) scale(1.2) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+.auth-logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Каждая буква появляется с задержкой */
+.auth-logo span {
+  display: inline-block;
+  opacity: 0;
+  /* Градиент для каждой буквы */
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Свечение */
+  filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.5));
+}
+
+.auth-logo span:nth-child(1) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s both; }
+.auth-logo span:nth-child(2) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.08s both; }
+.auth-logo span:nth-child(3) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.16s both; }
+.auth-logo span:nth-child(4) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.24s both; }
+.auth-logo span:nth-child(5) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.32s both; }
+.auth-logo span:nth-child(6) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s both; }
+.auth-logo span:nth-child(7) { animation: letter-pop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.48s both; }
+
+/* Анимация печати */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+.auth-title {
+  color: rgb(255, 255, 255);
+  font-family: 'bold';
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  /* Тени как у demo-текста */
+  text-shadow:
+    0 2px 4px rgb(0, 0, 0),
+    0 0 10px rgb(255, 255, 255);
+
+  /* Typing effect */
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  border-right: 3px solid var(--button-primary, #15803d);
+  animation:
+    typing 2.5s steps(30, end) 0.5s 1 normal both,
+    blink-caret 0.75s step-end 0.5s 4 normal forwards,
+    remove-caret 0s linear 3.5s 1 normal forwards;
+}
+
+/* Убираем курсор после завершения */
+@keyframes remove-caret {
+  to {
+    border-right-color: transparent;
+  }
+}
+
+/* Анимация появления слов */
+@keyframes word-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-description {
+  color: rgb(255, 255, 255);
+  font-family: 'bold';
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  /* Тени как у demo-текста */
+  text-shadow:
+    0 2px 4px rgb(0, 0, 0),
+    0 0 15px rgb(255, 255, 255);
+}
+
+/* Каждое слово появляется с задержкой */
+.auth-description span {
+  display: inline-block;
+  opacity: 0;
+}
+
+.auth-description span:nth-child(1) { animation: word-appear 0.4s ease 3.0s both; }
+.auth-description span:nth-child(2) { animation: word-appear 0.4s ease 3.15s both; }
+.auth-description span:nth-child(3) { animation: word-appear 0.4s ease 3.3s both; }
+.auth-description span:nth-child(4) { animation: word-appear 0.4s ease 3.45s both; }
+.auth-description span:nth-child(5) { animation: word-appear 0.4s ease 3.6s both; }
+.auth-description span:nth-child(6) { animation: word-appear 0.4s ease 3.75s both; }
+.auth-description span:nth-child(7) { animation: word-appear 0.4s ease 3.9s both; }
+
+/* Анимация появления */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Анимация движущихся линий */
+@keyframes moving-lines {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Анимация переливающихся теней - размер уменьшен на 50% */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 12px rgba(42, 171, 238, 0.6),
+      0 0 25px rgba(42, 171, 238, 0.5),
+      0 0 37px rgba(0, 136, 204, 0.4),
+      0 0 50px rgba(42, 171, 238, 0.4),
+      0 10px 40px rgba(0, 0, 0, 0.8),
+      inset 0 0 12px rgba(42, 171, 238, 0.4);
+  }
+  25% {
+    box-shadow:
+      0 0 15px rgba(0, 136, 204, 0.6),
+      0 0 30px rgba(0, 136, 204, 0.54),
+      0 0 45px rgba(42, 171, 238, 0.48),
+      0 0 60px rgba(0, 136, 204, 0.36),
+      0 10px 40px rgba(0, 0, 0, 0.8),
+      inset 0 0 15px rgba(0, 136, 204, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 17px rgba(84, 179, 244, 0.6),
+      0 0 35px rgba(42, 171, 238, 0.6),
+      0 0 50px rgba(84, 179, 244, 0.54),
+      0 0 65px rgba(42, 171, 238, 0.42),
+      0 10px 40px rgba(0, 0, 0, 0.8),
+      inset 0 0 17px rgba(84, 179, 244, 0.36);
+  }
+  75% {
+    box-shadow:
+      0 0 15px rgba(0, 136, 204, 0.6),
+      0 0 30px rgba(0, 136, 204, 0.54),
+      0 0 45px rgba(42, 171, 238, 0.48),
+      0 0 60px rgba(0, 136, 204, 0.36),
+      0 10px 40px rgba(0, 0, 0, 0.8),
+      inset 0 0 15px rgba(0, 136, 204, 0.3);
+  }
+}
+
+/* Обёртка для Telegram виджета с рамками */
+.auth-telegram-wrapper {
+  position: relative;
+  margin: 2rem auto;
+  margin-left: calc(50% - 110px); /* Сдвиг вправо для центрирования с аватаркой */
+  transform: translateX(-50%);
+  width: fit-content;
+  opacity: 0;
+  animation: fade-in-up 0.8s ease-out 4.2s 1 normal forwards;
+}
+
+/* Рамка для кнопки (левая часть) */
+.auth-telegram-wrapper::before {
+  content: '';
+  position: absolute;
+  left: -1.5px;
+  top: 0;
+  bottom: 0;
+  width: calc(100% - 49px); /* Оставляем больше места для аватарки справа */
+  border: 3px solid #2AABEE; /* Сплошная Telegram синяя рамка */
+  border-radius: 16px;
+  background: rgba(9, 192, 238, 0.842); /* Более яркая голубая заливка */
+  animation: glow-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0; /* Позади кнопки */
+}
+
+/* Рамка для аватарки (правая часть) - синяя с переливами */
+.auth-telegram-wrapper::after {
+  content: '';
+  position: absolute;
+  right: -1.5px; /* Отступ от края */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;  /* Уменьшен с 45px */
+  height: 38px; /* Уменьшен с 45px */
+  border: 3px solid #2AABEE; /* Сплошная Telegram синяя рамка */
+  border-radius: 50%;
+  background: rgba(42, 171, 238, 0.15); /* Полупрозрачный голубой фон */
+  animation: glow-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Telegram Button Container */
+.auth-telegram-wrapper [data-testid="telegram-auth-button"] {
+  position: relative;
+  z-index: 2; /* Поверх рамки */
+}
+
+/* Кастомная обёртка для Telegram iframe */
+.auth-widget-card iframe {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 136, 204, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.auth-widget-card iframe:hover {
+  box-shadow: 0 6px 16px rgba(0, 136, 204, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Demo режим секция */
+.demo-section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fade-in-up 0.8s ease-out 4.4s 1 normal forwards;
+}
+
+/* Demo режим текст */
+.demo-section .text-text-muted {
+  color: rgb(255, 255, 255);
+  font-family: 'bold';
+  font-size: 1.2rem;
+  /* Тень */
+  text-shadow:
+    0 2px 4px rgb(0, 0, 0),
+    0 0 15px rgb(255, 255, 255);
+}
+
+/* Кнопка демо-режима - в стиле текста */
+.demo-button {
+  position: relative;
+  background: linear-gradient(135deg, #22c55e 0%, #15803d 50%, #166534 100%);
+  color: rgb(255, 255, 255);
+  border: 1px solid #22c55e;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-family: 'bold';
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 0 15px rgba(34, 197, 94, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow:
+    0 2px 4px rgb(0, 0, 0),
+    0 0 15px rgb(255, 255, 255);
+  margin: 0 auto;
+  display: block;
+}
+
+.demo-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 30px rgba(34, 197, 94, 0.5),
+    0 6px 16px rgba(0, 0, 0, 0.6);
+  border-color: #34d399;
+}
+
+.demo-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow:
+    0 0 15px rgba(34, 197, 94, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.demo-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Разделительная линия перед demo-режимом */
+.auth-widget-card .text-text-muted::before {
+  content: '';
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(100, 116, 139, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+/* === ProfilePanel === */
+
+/* Затемнённый фон (backdrop) - через Portal в body */
+.profile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+}
+
+/* Модальное окно профиля - через Portal в body */
+.profile-panel {
+  /* ИДЕАЛЬНОЕ ЦЕНТРИРОВАНИЕ */
+  position: fixed;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+
+  width: 800px;
+  max-width: 90vw;
+  max-height: 90vh;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  z-index: 51;
+
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 3rem;
+  gap: 1.5rem;
+
+  overflow-y: auto;
+}
+
+/* Красивый скроллбар для панели профиля */
+.profile-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.profile-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.profile-panel::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.profile-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--button-primary, #15803d);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--button-primary, #15803d);
+  object-fit: cover;
+}
+
+.profile-name {
+  color: var(--text);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.profile-username {
+  color: var(--button-primary, #15803d);
+  font-size: 1.125rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.profile-logout-button {
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.profile-logout-button:hover:not(:disabled) {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.profile-logout-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* === AgreementDialog === */
+
+.agreement-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.agreement-dialog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl, 16px);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.agreement-button-telegram {
+  background: #2AABEE;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius, 8px);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.agreement-button-telegram:hover {
+  background: #1E96C8;
+  transform: translateY(-2px);
+}
+
+/* === Telegram Colors === */
+
+.telegram-blue {
+  color: #2AABEE;
+}
+
+.bg-telegram-blue {
+  background-color: #2AABEE;
+}
+
+.border-telegram-blue {
+  border-color: #2AABEE;
+}
+
+.bg-telegram-blue\/10 {
+  background-color: rgba(42, 171, 238, 0.1);
+}
+
+.border-telegram-blue\/30 {
+  border-color: rgba(42, 171, 238, 0.3);
+}
+
+/* === Animations === */
+
+/* Плавное дыхание свечения - полное исчезновение */
+@keyframes breathingGlow {
+  0%, 100% {
+    opacity: 0;
+    filter: blur(60px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(80px);
+  }
+}
+
+/* Анимация свечения блока - синхронизована с фоном */
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(16, 185, 129, 0.1),
+      0 0 40px rgba(34, 211, 238, 0.05),
+      0 20px 60px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 60px rgba(16, 185, 129, 0.6),
+      0 0 80px rgba(34, 211, 238, 0.4),
+      0 0 100px rgba(52, 211, 153, 0.3),
+      0 20px 60px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === Адаптивность === */
+
+@media (max-width: 640px) {
+  .auth-widget-card {
+    padding: 1.5rem 1rem;
+    max-width: 95%;
+    min-height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .auth-logo {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .auth-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .auth-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .auth-telegram-wrapper {
+    margin: 1.5rem auto;
+    transform: scale(0.95);
+  }
+
+  .demo-section {
+    margin-top: 1.5rem;
+  }
+
+  .demo-section .text-text-muted {
+    font-size: 0.95rem;
+  }
+
+  .demo-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .profile-panel {
+    width: 100vw;
+    max-width: 100vw;
+    border-left: none;
+    border-radius: 0;
+    max-height: 100vh;
+  }
+
+  .agreement-dialog-card {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  /* Обеспечиваем что виджет занимает весь экран на мобильных */
+  .auth-widget-backdrop {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 375px) {
+  .auth-logo {
+    font-size: 1.75rem;
+  }
+
+  .auth-title {
+    font-size: 1.1rem;
+  }
+
+  .auth-description {
+    font-size: 0.85rem;
+  }
+
+  .auth-telegram-wrapper {
+    transform: scale(0.9);
+  }
+}

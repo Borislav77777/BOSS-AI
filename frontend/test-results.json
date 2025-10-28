@@ -1,0 +1,1079 @@
+{
+  "numTotalTestSuites": 40,
+  "numPassedTestSuites": 37,
+  "numFailedTestSuites": 3,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 79,
+  "numPassedTests": 73,
+  "numFailedTests": 6,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1759220566613,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "All Settings Scenarios"
+          ],
+          "fullName": " All Settings Scenarios should show dropdown on first click, keep it open when selecting category",
+          "status": "failed",
+          "title": "should show dropdown on first click, keep it open when selecting category",
+          "duration": 256,
+          "failureMessages": [
+            "Found multiple elements with the role \"button\" and name `/Настройки/i`\n\nHere are the matching elements:\n\nIgnored nodes: comments, script, style\n\u001b[36m<button\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button\"\u001b[39m\n  \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<svg\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n    \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n    \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n    \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n    \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n    \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n    \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n    \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n    \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n    \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n  \u001b[36m</svg>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"service-content\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"service-title\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0mНастройки\u001b[0m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"service-description\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0mСистемные настройки платформы\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</button>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<button\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n  \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<svg\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n    \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n    \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n    \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n    \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n    \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n    \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n    \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n    \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n    \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<path\u001b[39m\n      \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n  \u001b[36m</svg>\u001b[39m\n\u001b[36m</button>\u001b[39m\n\n(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"h-full liquid-glass-panel transition-[width] duration-150 flex flex-col sidebar-dynamic-width shadow-2xl overflow-y-auto sidebar-scrollbar animate-sidebar-slide-in sidebar-main-container relative volume-container\"\u001b[39m\n      \u001b[33mstyle\u001b[39m=\u001b[32m\"--sidebar-width: 280px; --sidebar-border-radius: 20px;\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center justify-between animate-sidebar-content sidebar-header p-2\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center space-x-3\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"w-8 h-8 rounded-lg flex items-center justify-center sidebar-logo sidebar-service-icon\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<span\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"font-bold text-sm sidebar-logo-text sidebar-service-icon-inverted\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[0mB\u001b[0m\n            \u001b[36m</span>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n          \u001b[36m<h2\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"text-lg font-bold tracking-wide sidebar-title\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mBARSUKOV OS\u001b[0m\n          \u001b[36m</h2>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<button\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2.5 rounded-lg transition-[background-color,transform] duration-200 hover:scale-105 focus:outline-none focus:ring-2 sidebar-toggle-button\"\u001b[39m\n          \u001b[33mtitle\u001b[39m=\u001b[32m\"Свернуть панель\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<svg\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 transition-colors duration-200 sidebar-toggle-icon\"\u001b[39m\n            \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n            \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n            \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n            \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n            \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n            \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n            \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n            \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n            \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<path\u001b[39m\n              \u001b[33md\u001b[39m=\u001b[32m\"m15 18-6-6 6-6\"\u001b[39m\n            \u001b[36m/>\u001b[39m\n          \u001b[36m</svg>\u001b[39m\n        \u001b[36m</button>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-services-scroll\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"px-3 py-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"ChatGPT\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33maria-label\u001b[39m=\u001b[32m\"OpenAI Logo\"\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"20\"\u001b[39m\n              \u001b[33mrole\u001b[39m=\u001b[32m\"img\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"20\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mfill-opacity\u001b[39m=\u001b[32m\"0.1\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"10\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"6\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"1.5\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M8 12C8 9.8 9.8 8 12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12Z\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mfill-opacity\u001b[39m=\u001b[32m\"0.3\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n            \u001b[36m<div\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"service-content\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"service-title\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[0mChatGPT\u001b[0m\n              \u001b[36m</div>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"service-description\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[0mИИ-ассистент OpenAI\u001b[0m\n              \u001b[36m</div>\u001b[39m\n            \u001b[36m</div>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"px-3 py-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Виджеты\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"service-content\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"service-title\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0mВиджеты\u001b[0m\n                \u001b[36m</div>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"service-description\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0mУправление виджетами платформы\u001b[0m\n                \u001b[36m</div>\u001b[39m\n              \u001b[36m</div>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"px-3 py-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"service-content\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"service-title\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0mНастройки\u001b[0m\n                \u001b[36m</div>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"service-description\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0mСистемные настройки платформы\u001b[0m\n                \u001b[36m</div>\u001b[39m\n              \u001b[36m</div>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<nav\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"animate-sidebar-content flex-1 min-h-0 sidebar-projects p-3 pt-0\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center justify-between mb-2 mt-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<h3\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm font-medium sidebar-services-title\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mПроекты\u001b[0m\n          \u001b[36m</h3>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-create-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Создать проект\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<span\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[0m+\u001b[0m\n            \u001b[36m</span>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-workspaces-scroll h-full min-h-0\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<ul\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-nav space-y-5\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</nav>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"mt-auto sidebar-footer p-4\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center justify-between gap-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Уведомления\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Профиль\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"4\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "All Settings Scenarios"
+          ],
+          "fullName": " All Settings Scenarios should work in collapsed mode",
+          "status": "failed",
+          "title": "should work in collapsed mode",
+          "duration": 73,
+          "failureMessages": [
+            "Unable to find an element with the title: Внешний вид.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"h-full liquid-glass-panel transition-[width] duration-150 flex flex-col sidebar-dynamic-width shadow-2xl overflow-y-auto sidebar-scrollbar animate-sidebar-slide-in sidebar-main-container relative volume-container collapsed\"\u001b[39m\n      \u001b[33mstyle\u001b[39m=\u001b[32m\"--sidebar-width: 60px; --sidebar-border-radius: 12px;\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center justify-between animate-sidebar-content sidebar-header p-1\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"w-8 h-8 rounded-lg flex items-center justify-center sidebar-logo mx-auto sidebar-service-icon\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<span\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"font-bold text-sm sidebar-logo-text sidebar-service-icon-inverted\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mB\u001b[0m\n          \u001b[36m</span>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-services-scroll\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button compact\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"ChatGPT\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33maria-label\u001b[39m=\u001b[32m\"OpenAI Logo\"\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"20\"\u001b[39m\n              \u001b[33mrole\u001b[39m=\u001b[32m\"img\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"20\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mfill-opacity\u001b[39m=\u001b[32m\"0.1\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"10\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"6\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"1.5\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M8 12C8 9.8 9.8 8 12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12Z\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mfill-opacity\u001b[39m=\u001b[32m\"0.3\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button compact\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Виджеты\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button compact\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<nav\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"animate-sidebar-content flex-1 min-h-0 sidebar-projects p-2 pt-0\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-workspaces-scroll h-full min-h-0\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<ul\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-nav space-y-4\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<li>\u001b[39m\n              \u001b[36m<button\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-create-button w-full\"\u001b[39m\n                \u001b[33mtitle\u001b[39m=\u001b[32m\"Создать проект\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<span\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0m+\u001b[0m\n                \u001b[36m</span>\u001b[39m\n              \u001b[36m</button>\u001b[39m\n            \u001b[36m</li>\u001b[39m\n          \u001b[36m</ul>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</nav>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"mt-auto sidebar-footer p-2 collapsed\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex flex-col space-y-1\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Уведомления\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Профиль\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"4\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button expand-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Развернуть панель\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m9 18 6-6-6-6\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "All Settings Scenarios"
+          ],
+          "fullName": " All Settings Scenarios should work with bottom button",
+          "status": "failed",
+          "title": "should work with bottom button",
+          "duration": 83,
+          "failureMessages": [
+            "Unable to find an element with the text: (_, el) => el?.textContent?.includes(\"Внешний вид\") ?? false. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"h-full liquid-glass-panel transition-[width] duration-150 flex flex-col sidebar-dynamic-width shadow-2xl overflow-y-auto sidebar-scrollbar animate-sidebar-slide-in sidebar-main-container relative volume-container collapsed\"\u001b[39m\n      \u001b[33mstyle\u001b[39m=\u001b[32m\"--sidebar-width: 60px; --sidebar-border-radius: 12px;\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center justify-between animate-sidebar-content sidebar-header p-1\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"w-8 h-8 rounded-lg flex items-center justify-center sidebar-logo mx-auto sidebar-service-icon\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<span\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"font-bold text-sm sidebar-logo-text sidebar-service-icon-inverted\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[0mB\u001b[0m\n          \u001b[36m</span>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-services-scroll\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button compact\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"ChatGPT\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33maria-label\u001b[39m=\u001b[32m\"OpenAI Logo\"\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"20\"\u001b[39m\n              \u001b[33mrole\u001b[39m=\u001b[32m\"img\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"20\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mfill-opacity\u001b[39m=\u001b[32m\"0.1\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"10\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"6\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"1.5\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M8 12C8 9.8 9.8 8 12 8C14.2 8 16 9.8 16 12C16 14.2 14.2 16 12 16C9.8 16 8 14.2 8 12Z\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mfill-opacity\u001b[39m=\u001b[32m\"0.3\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button compact\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Виджеты\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<rect\u001b[39m\n                  \u001b[33mheight\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mrx\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                  \u001b[33mwidth\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                  \u001b[33mx\u001b[39m=\u001b[32m\"3\"\u001b[39m\n                  \u001b[33my\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"p-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-service-button compact\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"icon\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<nav\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"animate-sidebar-content flex-1 min-h-0 sidebar-projects p-2 pt-0\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-workspaces-scroll h-full min-h-0\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<ul\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-nav space-y-4\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<li>\u001b[39m\n              \u001b[36m<button\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-create-button w-full\"\u001b[39m\n                \u001b[33mtitle\u001b[39m=\u001b[32m\"Создать проект\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<span\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0m+\u001b[0m\n                \u001b[36m</span>\u001b[39m\n              \u001b[36m</button>\u001b[39m\n            \u001b[36m</li>\u001b[39m\n          \u001b[36m</ul>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</nav>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"gradient-divider-light mx-3\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"mt-auto sidebar-footer p-2 collapsed\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex flex-col space-y-1\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Уведомления\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Настройки\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 2v2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M12 22v-2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m17 20.66-1-1.73\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M11 10.27 7 3.34\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m20.66 17-1.73-1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m3.34 7 1.73 1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M14 12h8\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M2 12h2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m20.66 7-1.73 1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m3.34 17 1.73-1\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m17 3.34-1 1.73\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m11 13.73-4 6.93\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Профиль\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n              \u001b[36m<circle\u001b[39m\n                \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                \u001b[33mcy\u001b[39m=\u001b[32m\"7\"\u001b[39m\n                \u001b[33mr\u001b[39m=\u001b[32m\"4\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n          \u001b[36m<button\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"sidebar-footer-button expand-button\"\u001b[39m\n            \u001b[33mtitle\u001b[39m=\u001b[32m\"Развернуть панель\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<svg\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 icon\"\u001b[39m\n              \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n              \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n              \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n              \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n              \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n              \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n              \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<path\u001b[39m\n                \u001b[33md\u001b[39m=\u001b[32m\"m9 18 6-6-6-6\"\u001b[39m\n              \u001b[36m/>\u001b[39m\n            \u001b[36m</svg>\u001b[39m\n          \u001b[36m</button>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        }
+      ],
+      "startTime": 1759220582987,
+      "endTime": 1759220583400,
+      "status": "failed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/AllSettingsScenarios.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "ChatButtons (grouped mode)"
+          ],
+          "fullName": " ChatButtons (grouped mode) рендерит группы по сервисам, показывает заголовок и иконку сервиса",
+          "status": "passed",
+          "title": "рендерит группы по сервисам, показывает заголовок и иконку сервиса",
+          "duration": 61,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "ChatButtons (grouped mode)"
+          ],
+          "fullName": " ChatButtons (grouped mode) пробрасывает onClick(button, serviceId) при клике по кнопке в группе",
+          "status": "passed",
+          "title": "пробрасывает onClick(button, serviceId) при клике по кнопке в группе",
+          "duration": 19,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "ChatButtons grouped rendering"
+          ],
+          "fullName": " ChatButtons grouped rendering renders service groups and triggers onClick with serviceId",
+          "status": "passed",
+          "title": "renders service groups and triggers onClick with serviceId",
+          "duration": 18,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220583789,
+      "endTime": 1759220583888,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/ChatButtons.grouped.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "EnhancedErrorBoundary"
+          ],
+          "fullName": " EnhancedErrorBoundary отображает fallback UI при ошибке",
+          "status": "passed",
+          "title": "отображает fallback UI при ошибке",
+          "duration": 189,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "EnhancedErrorBoundary"
+          ],
+          "fullName": " EnhancedErrorBoundary отображает children когда нет ошибки",
+          "status": "passed",
+          "title": "отображает children когда нет ошибки",
+          "duration": 7,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "EnhancedErrorBoundary"
+          ],
+          "fullName": " EnhancedErrorBoundary показывает детали ошибки в development режиме",
+          "status": "passed",
+          "title": "показывает детали ошибки в development режиме",
+          "duration": 28,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "EnhancedErrorBoundary"
+          ],
+          "fullName": " EnhancedErrorBoundary вызывает onError callback при ошибке",
+          "status": "passed",
+          "title": "вызывает onError callback при ошибке",
+          "duration": 95,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "EnhancedErrorBoundary"
+          ],
+          "fullName": " EnhancedErrorBoundary восстанавливается после нажатия кнопки retry",
+          "status": "passed",
+          "title": "восстанавливается после нажатия кнопки retry",
+          "duration": 90,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "ServiceErrorBoundary"
+          ],
+          "fullName": " ServiceErrorBoundary отображает контекстную информацию о сервисе",
+          "status": "passed",
+          "title": "отображает контекстную информацию о сервисе",
+          "duration": 45,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "SettingsErrorBoundary"
+          ],
+          "fullName": " SettingsErrorBoundary отображает контекстную информацию о настройке",
+          "status": "passed",
+          "title": "отображает контекстную информацию о настройке",
+          "duration": 57,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "ChatErrorBoundary"
+          ],
+          "fullName": " ChatErrorBoundary отображает контекстную информацию о чате",
+          "status": "passed",
+          "title": "отображает контекстную информацию о чате",
+          "duration": 134,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "WorkspaceErrorBoundary"
+          ],
+          "fullName": " WorkspaceErrorBoundary отображает контекстную информацию о рабочем пространстве",
+          "status": "passed",
+          "title": "отображает контекстную информацию о рабочем пространстве",
+          "duration": 13,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220578157,
+      "endTime": 1759220578819,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/ErrorBoundary.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload отображает область для drag & drop",
+          "status": "passed",
+          "title": "отображает область для drag & drop",
+          "duration": 68,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload открывает диалог выбора файлов при клике",
+          "status": "passed",
+          "title": "открывает диалог выбора файлов при клике",
+          "duration": 24,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload обрабатывает drag & drop события",
+          "status": "passed",
+          "title": "обрабатывает drag & drop события",
+          "duration": 48,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload валидирует размер файла",
+          "status": "passed",
+          "title": "валидирует размер файла",
+          "duration": 710,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload валидирует тип файла",
+          "status": "passed",
+          "title": "валидирует тип файла",
+          "duration": 94,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload показывает превью загруженных файлов",
+          "status": "passed",
+          "title": "показывает превью загруженных файлов",
+          "duration": 159,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload удаляет файл из превью",
+          "status": "passed",
+          "title": "удаляет файл из превью",
+          "duration": 367,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "FileUpload"
+          ],
+          "fullName": " FileUpload показывает правильные иконки для разных типов файлов",
+          "status": "passed",
+          "title": "показывает правильные иконки для разных типов файлов",
+          "duration": 31,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220581050,
+      "endTime": 1759220582558,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/FileUpload.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService показывает уведомление об успехе",
+          "status": "passed",
+          "title": "показывает уведомление об успехе",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService показывает уведомление об ошибке",
+          "status": "passed",
+          "title": "показывает уведомление об ошибке",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService показывает предупреждение",
+          "status": "passed",
+          "title": "показывает предупреждение",
+          "duration": 0,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService показывает информационное уведомление",
+          "status": "passed",
+          "title": "показывает информационное уведомление",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService скрывает уведомление по ID",
+          "status": "passed",
+          "title": "скрывает уведомление по ID",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService скрывает все уведомления",
+          "status": "passed",
+          "title": "скрывает все уведомления",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService подписывается на изменения уведомлений",
+          "status": "passed",
+          "title": "подписывается на изменения уведомлений",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService показывает уведомление об ошибке Error Boundary",
+          "status": "passed",
+          "title": "показывает уведомление об ошибке Error Boundary",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "NotificationService"
+          ],
+          "fullName": " NotificationService устанавливает правильную длительность для разных типов уведомлений",
+          "status": "passed",
+          "title": "устанавливает правильную длительность для разных типов уведомлений",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220585460,
+      "endTime": 1759220585476,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/NotificationService.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Platform reducer: удаление проекта + Undo восстановление"
+          ],
+          "fullName": " Platform reducer: удаление проекта + Undo восстановление удаляет элемент и восстанавливает через событие workspace:restore",
+          "status": "passed",
+          "title": "удаляет элемент и восстанавливает через событие workspace:restore",
+          "duration": 51,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220583968,
+      "endTime": 1759220584019,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/PlatformReducer.deleteUndo.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен отображать ошибку, если Web Speech API не поддерживается",
+          "status": "passed",
+          "title": "должен отображать ошибку, если Web Speech API не поддерживается",
+          "duration": 213,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен инициализировать распознавание речи при монтировании",
+          "status": "passed",
+          "title": "должен инициализировать распознавание речи при монтировании",
+          "duration": 31,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен обрабатывать результаты распознавания",
+          "status": "passed",
+          "title": "должен обрабатывать результаты распознавания",
+          "duration": 64,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен обрабатывать промежуточные результаты",
+          "status": "passed",
+          "title": "должен обрабатывать промежуточные результаты",
+          "duration": 72,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен обрабатывать ошибки распознавания",
+          "status": "passed",
+          "title": "должен обрабатывать ошибки распознавания",
+          "duration": 66,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен отправлять текст при нажатии кнопки отправки",
+          "status": "passed",
+          "title": "должен отправлять текст при нажатии кнопки отправки",
+          "duration": 341,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Real Speech Recognition"
+          ],
+          "fullName": " Real Speech Recognition должен перезапускать распознавание при завершении",
+          "status": "passed",
+          "title": "должен перезапускать распознавание при завершении",
+          "duration": 158,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220578476,
+      "endTime": 1759220579422,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/RealSpeechRecognition.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "ServiceManager chat buttons grouping"
+          ],
+          "fullName": " ServiceManager chat buttons grouping groups chat buttons by position and service",
+          "status": "passed",
+          "title": "groups chat buttons by position and service",
+          "duration": 3,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220583315,
+      "endTime": 1759220583318,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/ServiceManager.grouping.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "ServiceManager config validation and normalization"
+          ],
+          "fullName": " ServiceManager config validation and normalization defaults chatButtons position to top and enables when missing",
+          "status": "passed",
+          "title": "defaults chatButtons position to top and enables when missing",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "ServiceManager config validation and normalization"
+          ],
+          "fullName": " ServiceManager config validation and normalization groups chat buttons by position and service",
+          "status": "passed",
+          "title": "groups chat buttons by position and service",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "ServiceManager config validation and normalization"
+          ],
+          "fullName": " ServiceManager config validation and normalization normalizes tool.action, chatButtons.position and warns on mismatches",
+          "status": "passed",
+          "title": "normalizes tool.action, chatButtons.position and warns on mismatches",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220584874,
+      "endTime": 1759220584879,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/ServiceManager.validation.test.ts"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1759220566613,
+      "endTime": 1759220566613,
+      "status": "passed",
+      "message": "[vitest] There was an error when mocking a module. If you are using \"vi.mock\" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/SettingsIntegration.test.tsx"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1759220566613,
+      "endTime": 1759220566613,
+      "status": "passed",
+      "message": "[vitest] There was an error when mocking a module. If you are using \"vi.mock\" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/SettingsSubmenu.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Sidebar project styles"
+          ],
+          "fullName": " Sidebar project styles присваивает классы активного состояния проектам",
+          "status": "failed",
+          "title": "присваивает классы активного состояния проектам",
+          "duration": 237,
+          "failureMessages": [
+            "active.scrollIntoView is not a function"
+          ],
+          "location": {
+            "line": 123,
+            "column": 24
+          }
+        }
+      ],
+      "startTime": 1759220583008,
+      "endTime": 1759220583245,
+      "status": "failed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/Sidebar.styles.test.tsx"
+    },
+    {
+      "assertionResults": [],
+      "startTime": 1759220566613,
+      "endTime": 1759220566613,
+      "status": "passed",
+      "message": "[vitest] There was an error when mocking a module. If you are using \"vi.mock\" factory, make sure there are no top level variables inside, since this call is hoisted to top of the file. Read more: https://vitest.dev/api/vi.html#vi-mock",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/SidebarIntegration.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedButton"
+          ],
+          "fullName": " UnifiedButton renders basic button correctly",
+          "status": "passed",
+          "title": "renders basic button correctly",
+          "duration": 201,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedButton"
+          ],
+          "fullName": " UnifiedButton renders with different variants",
+          "status": "passed",
+          "title": "renders with different variants",
+          "duration": 50,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedButton"
+          ],
+          "fullName": " UnifiedButton renders with different sizes",
+          "status": "passed",
+          "title": "renders with different sizes",
+          "duration": 13,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedButton"
+          ],
+          "fullName": " UnifiedButton shows loading state",
+          "status": "passed",
+          "title": "shows loading state",
+          "duration": 11,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedButton"
+          ],
+          "fullName": " UnifiedButton handles click events",
+          "status": "passed",
+          "title": "handles click events",
+          "duration": 99,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedButton"
+          ],
+          "fullName": " UnifiedButton is disabled when disabled prop is true",
+          "status": "passed",
+          "title": "is disabled when disabled prop is true",
+          "duration": 17,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider renders basic slider correctly",
+          "status": "passed",
+          "title": "renders basic slider correctly",
+          "duration": 84,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider renders with different variants",
+          "status": "passed",
+          "title": "renders with different variants",
+          "duration": 60,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider renders with different sizes",
+          "status": "passed",
+          "title": "renders with different sizes",
+          "duration": 25,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider shows value when showValue is true",
+          "status": "passed",
+          "title": "shows value when showValue is true",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider shows labels when provided",
+          "status": "passed",
+          "title": "shows labels when provided",
+          "duration": 18,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider handles value changes",
+          "status": "passed",
+          "title": "handles value changes",
+          "duration": 21,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider respects min and max values",
+          "status": "passed",
+          "title": "respects min and max values",
+          "duration": 5,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "UnifiedSlider"
+          ],
+          "fullName": " UnifiedSlider shows font size preview for fontSize variant",
+          "status": "failed",
+          "title": "shows font size preview for fontSize variant",
+          "duration": 71,
+          "failureMessages": [
+            "Found multiple elements with the text: (_, el) => el?.textContent?.includes(\"Размер шрифта:\") ?? false\n\nHere are the matching elements:\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"space-y-4\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"p-4 rounded-lg border font-size-preview\"\u001b[39m\n        \u001b[33mdata-font-size\u001b[39m=\u001b[32m\"1rem\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mb-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mПредварительный просмотр:\u001b[0m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mРазмер шрифта: \u001b[0m\n          \u001b[0mСредний\u001b[0m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mt-1\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mЗаголовок H1, обычный текст и мелкий текст\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full relative\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"absolute top-0 h-2 bg-primary rounded-full transition-all duration-200\"\u001b[39m\n            \u001b[33mdata-width\u001b[39m=\u001b[32m\"50\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<input\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"appearance-none outline-none cursor-pointer transition-all duration-200 h-2 font-size-slider\"\u001b[39m\n          \u001b[33mdata-percent\u001b[39m=\u001b[32m\"2\"\u001b[39m\n          \u001b[33mmax\u001b[39m=\u001b[32m\"100\"\u001b[39m\n          \u001b[33mmin\u001b[39m=\u001b[32m\"0\"\u001b[39m\n          \u001b[33mstep\u001b[39m=\u001b[32m\"1\"\u001b[39m\n          \u001b[33mstyle\u001b[39m=\u001b[32m\"--percent: 2%;\"\u001b[39m\n          \u001b[33mtype\u001b[39m=\u001b[32m\"range\"\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"2\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"absolute inset-0 cursor-pointer\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"font-size-slider-thumb hover:scale-105\"\u001b[39m\n          \u001b[33mdata-position\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"flex justify-between items-center text-sm\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<span\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-muted-foreground\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mСредний\u001b[0m\n        \u001b[36m</span>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<div>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"space-y-4\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"p-4 rounded-lg border font-size-preview\"\u001b[39m\n      \u001b[33mdata-font-size\u001b[39m=\u001b[32m\"1rem\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mb-2\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mПредварительный просмотр:\u001b[0m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mРазмер шрифта: \u001b[0m\n        \u001b[0mСредний\u001b[0m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mt-1\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mЗаголовок H1, обычный текст и мелкий текст\u001b[0m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full relative\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"absolute top-0 h-2 bg-primary rounded-full transition-all duration-200\"\u001b[39m\n          \u001b[33mdata-width\u001b[39m=\u001b[32m\"50\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<input\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"appearance-none outline-none cursor-pointer transition-all duration-200 h-2 font-size-slider\"\u001b[39m\n        \u001b[33mdata-percent\u001b[39m=\u001b[32m\"2\"\u001b[39m\n        \u001b[33mmax\u001b[39m=\u001b[32m\"100\"\u001b[39m\n        \u001b[33mmin\u001b[39m=\u001b[32m\"0\"\u001b[39m\n        \u001b[33mstep\u001b[39m=\u001b[32m\"1\"\u001b[39m\n        \u001b[33mstyle\u001b[39m=\u001b[32m\"--percent: 2%;\"\u001b[39m\n        \u001b[33mtype\u001b[39m=\u001b[32m\"range\"\u001b[39m\n        \u001b[33mvalue\u001b[39m=\u001b[32m\"2\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"absolute inset-0 cursor-pointer\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"font-size-slider-thumb hover:scale-105\"\u001b[39m\n        \u001b[33mdata-position\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"flex justify-between items-center text-sm\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<span\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"text-muted-foreground\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mСредний\u001b[0m\n      \u001b[36m</span>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</div>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<div\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"space-y-4\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"p-4 rounded-lg border font-size-preview\"\u001b[39m\n    \u001b[33mdata-font-size\u001b[39m=\u001b[32m\"1rem\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mb-2\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0mПредварительный просмотр:\u001b[0m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0mРазмер шрифта: \u001b[0m\n      \u001b[0mСредний\u001b[0m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mt-1\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0mЗаголовок H1, обычный текст и мелкий текст\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full relative\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"absolute top-0 h-2 bg-primary rounded-full transition-all duration-200\"\u001b[39m\n        \u001b[33mdata-width\u001b[39m=\u001b[32m\"50\"\u001b[39m\n      \u001b[36m/>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n    \u001b[36m<input\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"appearance-none outline-none cursor-pointer transition-all duration-200 h-2 font-size-slider\"\u001b[39m\n      \u001b[33mdata-percent\u001b[39m=\u001b[32m\"2\"\u001b[39m\n      \u001b[33mmax\u001b[39m=\u001b[32m\"100\"\u001b[39m\n      \u001b[33mmin\u001b[39m=\u001b[32m\"0\"\u001b[39m\n      \u001b[33mstep\u001b[39m=\u001b[32m\"1\"\u001b[39m\n      \u001b[33mstyle\u001b[39m=\u001b[32m\"--percent: 2%;\"\u001b[39m\n      \u001b[33mtype\u001b[39m=\u001b[32m\"range\"\u001b[39m\n      \u001b[33mvalue\u001b[39m=\u001b[32m\"2\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"absolute inset-0 cursor-pointer\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"font-size-slider-thumb hover:scale-105\"\u001b[39m\n      \u001b[33mdata-position\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n    \u001b[36m/>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"flex justify-between items-center text-sm\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[36m<span\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"text-muted-foreground\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[0mСредний\u001b[0m\n    \u001b[36m</span>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</div>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<div\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"p-4 rounded-lg border font-size-preview\"\u001b[39m\n  \u001b[33mdata-font-size\u001b[39m=\u001b[32m\"1rem\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mb-2\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[0mПредварительный просмотр:\u001b[0m\n  \u001b[36m</div>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[0mРазмер шрифта: \u001b[0m\n    \u001b[0mСредний\u001b[0m\n  \u001b[36m</div>\u001b[39m\n  \u001b[36m<div\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mt-1\"\u001b[39m\n  \u001b[36m>\u001b[39m\n    \u001b[0mЗаголовок H1, обычный текст и мелкий текст\u001b[0m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</div>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<div\u001b[39m\n  \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[0mРазмер шрифта: \u001b[0m\n  \u001b[0mСредний\u001b[0m\n\u001b[36m</div>\u001b[39m\n\n(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"space-y-4\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"p-4 rounded-lg border font-size-preview\"\u001b[39m\n        \u001b[33mdata-font-size\u001b[39m=\u001b[32m\"1rem\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mb-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mПредварительный просмотр:\u001b[0m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"font-medium\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mРазмер шрифта: \u001b[0m\n          \u001b[0mСредний\u001b[0m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm text-muted-foreground mt-1\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mЗаголовок H1, обычный текст и мелкий текст\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"relative\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full relative\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"absolute top-0 h-2 bg-primary rounded-full transition-all duration-200\"\u001b[39m\n            \u001b[33mdata-width\u001b[39m=\u001b[32m\"50\"\u001b[39m\n          \u001b[36m/>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<input\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"appearance-none outline-none cursor-pointer transition-all duration-200 h-2 font-size-slider\"\u001b[39m\n          \u001b[33mdata-percent\u001b[39m=\u001b[32m\"2\"\u001b[39m\n          \u001b[33mmax\u001b[39m=\u001b[32m\"100\"\u001b[39m\n          \u001b[33mmin\u001b[39m=\u001b[32m\"0\"\u001b[39m\n          \u001b[33mstep\u001b[39m=\u001b[32m\"1\"\u001b[39m\n          \u001b[33mstyle\u001b[39m=\u001b[32m\"--percent: 2%;\"\u001b[39m\n          \u001b[33mtype\u001b[39m=\u001b[32m\"range\"\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"2\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"absolute inset-0 cursor-pointer\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"font-size-slider-thumb hover:scale-105\"\u001b[39m\n          \u001b[33mdata-position\u001b[39m=\u001b[32m\"0.5\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"flex justify-between items-center text-sm\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<span\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-muted-foreground\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mСредний\u001b[0m\n        \u001b[36m</span>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Component Integration"
+          ],
+          "fullName": " Component Integration works together in a form",
+          "status": "passed",
+          "title": "works together in a form",
+          "duration": 14,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220582293,
+      "endTime": 1759220582988,
+      "status": "failed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/UnifiedComponents.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder автоматически запрашивает микрофон и запускает запись при монтировании",
+          "status": "passed",
+          "title": "автоматически запрашивает микрофон и запускает запись при монтировании",
+          "duration": 96,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder показывает индикатор времени после старта записи",
+          "status": "passed",
+          "title": "показывает индикатор времени после старта записи",
+          "duration": 36,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder показывает индикатор записи во время записи",
+          "status": "passed",
+          "title": "показывает индикатор записи во время записи",
+          "duration": 17,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder останавливает запись при нажатии кнопки остановки",
+          "status": "passed",
+          "title": "останавливает запись при нажатии кнопки остановки",
+          "duration": 109,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder паузирует и возобновляет запись",
+          "status": "passed",
+          "title": "паузирует и возобновляет запись",
+          "duration": 90,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder вызывает onRecordingComplete при завершении записи",
+          "status": "passed",
+          "title": "вызывает onRecordingComplete при завершении записи",
+          "duration": 44,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder показывает ошибку при недоступности микрофона",
+          "status": "passed",
+          "title": "показывает ошибку при недоступности микрофона",
+          "duration": 9,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder форматирует время правильно",
+          "status": "passed",
+          "title": "форматирует время правильно",
+          "duration": 11,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "VoiceRecorder"
+          ],
+          "fullName": " VoiceRecorder удаляет запись при нажатии кнопки удаления",
+          "status": "passed",
+          "title": "удаляет запись при нажатии кнопки удаления",
+          "duration": 93,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220579462,
+      "endTime": 1759220579970,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/VoiceRecorder.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Widget Colors"
+          ],
+          "fullName": " Widget Colors should apply dark theme colors to widgets",
+          "status": "passed",
+          "title": "should apply dark theme colors to widgets",
+          "duration": 196,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Widget Colors"
+          ],
+          "fullName": " Widget Colors should apply light theme colors to widgets",
+          "status": "passed",
+          "title": "should apply light theme colors to widgets",
+          "duration": 22,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Widget Colors"
+          ],
+          "fullName": " Widget Colors should apply custom theme colors to widgets",
+          "status": "passed",
+          "title": "should apply custom theme colors to widgets",
+          "duration": 20,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220583345,
+      "endTime": 1759220583583,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/WidgetColors.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "WorkspaceItem emoji picker"
+          ],
+          "fullName": " WorkspaceItem emoji picker открывает пикер по клику и вызывает onItemAction(set-emoji:...) при выборе эмодзи",
+          "status": "failed",
+          "title": "открывает пикер по клику и вызывает onItemAction(set-emoji:...) при выборе эмодзи",
+          "duration": 412,
+          "failureMessages": [
+            "Unable to find an accessible element with the role \"button\" and name \"Выбрать эмодзи\"\n\nHere are the accessible roles:\n\n  button:\n\n  Name \"🏷️\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-0.5 rounded hover:bg-surface-hover text-base\"\u001b[39m\n    \u001b[33mtitle\u001b[39m=\u001b[32m\"Выбрать эмодзи\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"📁\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"📝\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"📷\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🎵\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🎬\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🚀\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"⭐\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🔥\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"💡\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"✅\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🧠\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"⚙️\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🌈\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🧪\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"🏷️\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"Отправить в чат\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 rounded transition-all hover:bg-primary/10 hover:text-primary\"\u001b[39m\n    \u001b[33mtitle\u001b[39m=\u001b[32m\"Отправить в чат\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"Удалить проект\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 rounded transition-all hover:bg-red-500/10 hover:text-red-500\"\u001b[39m\n    \u001b[33mtitle\u001b[39m=\u001b[32m\"Удалить проект\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  Name \"Дополнительные действия\":\n  \u001b[36m<button\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 rounded transition-all hover:bg-surface-hover\"\u001b[39m\n    \u001b[33mtitle\u001b[39m=\u001b[32m\"Дополнительные действия\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  --------------------------------------------------\n  heading:\n\n  Name \"Проект 1\":\n  \u001b[36m<h4\u001b[39m\n    \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm font-medium truncate text-primary leading-tight\"\u001b[39m\n  \u001b[36m/>\u001b[39m\n\n  --------------------------------------------------\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div\u001b[39m\n      \u001b[33mclass\u001b[39m=\u001b[32m\"workspace-item group relative liquid-glass-compact transition-all cursor-pointer card-optimized animate-optimized hover:shadow-lg\"\u001b[39m\n    \u001b[36m>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"p-3\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-start justify-between mb-2\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center space-x-3\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<div\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"text-icon-muted\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"w-5 h-5\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</div>\u001b[39m\n            \u001b[36m<div\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"flex-1 min-w-0\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center gap-2\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<button\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-0.5 rounded hover:bg-surface-hover text-base\"\u001b[39m\n                  \u001b[33mtitle\u001b[39m=\u001b[32m\"Выбрать эмодзи\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[36m<span>\u001b[39m\n                    \u001b[0m🏷️\u001b[0m\n                  \u001b[36m</span>\u001b[39m\n                \u001b[36m</button>\u001b[39m\n                \u001b[36m<h4\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"text-sm font-medium truncate text-primary leading-tight\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[0mПроект 1\u001b[0m\n                \u001b[36m</h4>\u001b[39m\n              \u001b[36m</div>\u001b[39m\n              \u001b[36m<div\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"hidden mt-1 p-1 rounded-lg bg-surface border border-border shadow-lg emoji-picker z-10\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<div\u001b[39m\n                  \u001b[33mclass\u001b[39m=\u001b[32m\"grid grid-cols-8 gap-1\"\u001b[39m\n                \u001b[36m>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m📁\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m📝\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m📷\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🎵\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🎬\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🚀\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m⭐\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🔥\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m💡\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m✅\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🧠\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m⚙️\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🌈\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🧪\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                  \u001b[36m<button\u001b[39m\n                    \u001b[33mclass\u001b[39m=\u001b[32m\"px-1 py-1 rounded hover:bg-surface-hover\"\u001b[39m\n                  \u001b[36m>\u001b[39m\n                    \u001b[36m<span\u001b[39m\n                      \u001b[33mclass\u001b[39m=\u001b[32m\"text-base\"\u001b[39m\n                    \u001b[36m>\u001b[39m\n                      \u001b[0m🏷️\u001b[0m\n                    \u001b[36m</span>\u001b[39m\n                  \u001b[36m</button>\u001b[39m\n                \u001b[36m</div>\u001b[39m\n              \u001b[36m</div>\u001b[39m\n              \u001b[36m<p\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"text-[11px] text-secondary leading-tight\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[0m0 B\u001b[0m\n              \u001b[36m</p>\u001b[39m\n            \u001b[36m</div>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n          \u001b[36m<div\u001b[39m\n            \u001b[33mclass\u001b[39m=\u001b[32m\"flex items-center space-x-1\"\u001b[39m\n          \u001b[36m>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 rounded transition-all hover:bg-primary/10 hover:text-primary\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Отправить в чат\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"m22 2-7 20-4-9-9-4Z\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M22 2 11 13\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 rounded transition-all hover:bg-red-500/10 hover:text-red-500\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Удалить проект\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M3 6h18\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<path\u001b[39m\n                  \u001b[33md\u001b[39m=\u001b[32m\"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<line\u001b[39m\n                  \u001b[33mx1\u001b[39m=\u001b[32m\"10\"\u001b[39m\n                  \u001b[33mx2\u001b[39m=\u001b[32m\"10\"\u001b[39m\n                  \u001b[33my1\u001b[39m=\u001b[32m\"11\"\u001b[39m\n                  \u001b[33my2\u001b[39m=\u001b[32m\"17\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<line\u001b[39m\n                  \u001b[33mx1\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33mx2\u001b[39m=\u001b[32m\"14\"\u001b[39m\n                  \u001b[33my1\u001b[39m=\u001b[32m\"11\"\u001b[39m\n                  \u001b[33my2\u001b[39m=\u001b[32m\"17\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n            \u001b[36m<button\u001b[39m\n              \u001b[33mclass\u001b[39m=\u001b[32m\"opacity-0 group-hover:opacity-100 p-1 rounded transition-all hover:bg-surface-hover\"\u001b[39m\n              \u001b[33mtitle\u001b[39m=\u001b[32m\"Дополнительные действия\"\u001b[39m\n            \u001b[36m>\u001b[39m\n              \u001b[36m<svg\u001b[39m\n                \u001b[33mclass\u001b[39m=\u001b[32m\"w-4 h-4 text-muted\"\u001b[39m\n                \u001b[33mfill\u001b[39m=\u001b[32m\"none\"\u001b[39m\n                \u001b[33mheight\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mstroke\u001b[39m=\u001b[32m\"currentColor\"\u001b[39m\n                \u001b[33mstroke-linecap\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-linejoin\u001b[39m=\u001b[32m\"round\"\u001b[39m\n                \u001b[33mstroke-width\u001b[39m=\u001b[32m\"2\"\u001b[39m\n                \u001b[33mviewBox\u001b[39m=\u001b[32m\"0 0 24 24\"\u001b[39m\n                \u001b[33mwidth\u001b[39m=\u001b[32m\"24\"\u001b[39m\n                \u001b[33mxmlns\u001b[39m=\u001b[32m\"http://www.w3.org/2000/svg\"\u001b[39m\n              \u001b[36m>\u001b[39m\n                \u001b[36m<circle\u001b[39m\n                  \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                  \u001b[33mcy\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                  \u001b[33mr\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<circle\u001b[39m\n                  \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                  \u001b[33mcy\u001b[39m=\u001b[32m\"5\"\u001b[39m\n                  \u001b[33mr\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n                \u001b[36m<circle\u001b[39m\n                  \u001b[33mcx\u001b[39m=\u001b[32m\"12\"\u001b[39m\n                  \u001b[33mcy\u001b[39m=\u001b[32m\"19\"\u001b[39m\n                  \u001b[33mr\u001b[39m=\u001b[32m\"1\"\u001b[39m\n                \u001b[36m/>\u001b[39m\n              \u001b[36m</svg>\u001b[39m\n            \u001b[36m</button>\u001b[39m\n          \u001b[36m</div>\u001b[39m\n        \u001b[36m</div>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"text-[11px] text-muted leading-tight\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mОбновлено: \u001b[0m\n          \u001b[0m30.09.2025\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        }
+      ],
+      "startTime": 1759220580741,
+      "endTime": 1759220581153,
+      "status": "failed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/test/WorkspaceItem.emoji.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "OpenAIIcon"
+          ],
+          "fullName": " OpenAIIcon renders without crashing",
+          "status": "passed",
+          "title": "renders without crashing",
+          "duration": 104,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "OpenAIIcon"
+          ],
+          "fullName": " OpenAIIcon applies custom size",
+          "status": "passed",
+          "title": "applies custom size",
+          "duration": 42,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "OpenAIIcon"
+          ],
+          "fullName": " OpenAIIcon applies custom className",
+          "status": "passed",
+          "title": "applies custom className",
+          "duration": 15,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "OpenAIIcon"
+          ],
+          "fullName": " OpenAIIcon applies custom color",
+          "status": "passed",
+          "title": "applies custom color",
+          "duration": 35,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "OpenAIIcon"
+          ],
+          "fullName": " OpenAIIcon has correct viewBox",
+          "status": "passed",
+          "title": "has correct viewBox",
+          "duration": 47,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "OpenAIIcon"
+          ],
+          "fullName": " OpenAIIcon contains circles and path elements for logo structure",
+          "status": "passed",
+          "title": "contains circles and path elements for logo structure",
+          "duration": 7,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1759220583144,
+      "endTime": 1759220583399,
+      "status": "passed",
+      "message": "",
+      "name": "C:/Users/BAZA/UR/barsukov-platform-ts/src/components/common/__tests__/OpenAIIcon.test.tsx"
+    }
+  ]
+}

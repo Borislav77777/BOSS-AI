@@ -1,0 +1,106 @@
+{
+  "id": "marketing-automation-service",
+  "name": "Маркетинг-автоматизация",
+  "description": "Автоматизация маркетинговых кампаний и лидогенерации",
+  "icon": "Target",
+  "version": "1.0.0",
+  "category": "marketing",
+  "isActive": true,
+  "author": "Boss AI Team",
+  "priority": 3,
+  "tools": [
+    {
+      "id": "email-campaigns",
+      "name": "Email-кампании",
+      "description": "Создание и управление email-рассылками",
+      "icon": "Mail",
+      "action": "email-campaigns",
+      "isEnabled": true,
+      "category": "email",
+      "isChatFunction": true,
+      "chatPrompt": "Создай email-кампанию: {userInput}",
+      "chatApiEndpoint": "/api/marketing/email"
+    },
+    {
+      "id": "lead-magnets",
+      "name": "Лид-магниты",
+      "description": "Создание лид-магнитов и форм захвата",
+      "icon": "Magnet",
+      "action": "lead-magnets",
+      "isEnabled": true,
+      "category": "leads",
+      "isChatFunction": true,
+      "chatPrompt": "Создай лид-магнит: {userInput}",
+      "chatApiEndpoint": "/api/marketing/lead-magnets"
+    },
+    {
+      "id": "retargeting",
+      "name": "Ретаргетинг",
+      "description": "Настройка ретаргетинговых кампаний",
+      "icon": "RefreshCw",
+      "action": "retargeting",
+      "isEnabled": true,
+      "category": "ads",
+      "isChatFunction": true,
+      "chatPrompt": "Настрой ретаргетинг: {userInput}",
+      "chatApiEndpoint": "/api/marketing/retargeting"
+    },
+    {
+      "id": "ab-testing",
+      "name": "A/B тестирование",
+      "description": "Создание и анализ A/B тестов",
+      "icon": "TestTube",
+      "action": "ab-testing",
+      "isEnabled": true,
+      "category": "testing",
+      "isChatFunction": true,
+      "chatPrompt": "Создай A/B тест: {userInput}",
+      "chatApiEndpoint": "/api/marketing/ab-testing"
+    },
+    {
+      "id": "video-generation",
+      "name": "Генерация видео",
+      "description": "AI-генерация маркетинговых видео",
+      "icon": "Video",
+      "action": "video-generation",
+      "isEnabled": true,
+      "category": "content",
+      "isChatFunction": true,
+      "chatPrompt": "Создай видео: {userInput}",
+      "chatApiEndpoint": "/api/marketing/video"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "quick-campaign",
+      "name": "Быстрая кампания",
+      "description": "Создать кампанию за 5 минут",
+      "position": "top",
+      "action": "email-campaigns",
+      "isEnabled": true
+    },
+    {
+      "id": "lead-magnet",
+      "name": "Лид-магнит",
+      "description": "Создать лид-магнит",
+      "position": "top",
+      "action": "lead-magnets",
+      "isEnabled": true
+    },
+    {
+      "id": "video-content",
+      "name": "Видео",
+      "description": "Сгенерировать видео",
+      "position": "bottom",
+      "action": "video-generation",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "apiBase": "/api/marketing",
+    "emailProvider": "sendgrid",
+    "videoGenerationEnabled": true,
+    "abTestingEnabled": true,
+    "retargetingEnabled": true
+  }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie 3D Model - Standalone</title>
+    <meta name="description" content="Автономная 3D модель зомби с анимацией и эффектами">
+
+    <!-- Babylon.js -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+        <div class="loader-text">Загрузка 3D модели...</div>
+        <div id="loading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span id="loading-text">0%</span>
+        </div>
+    </div>
+
+    <!-- Canvas для 3D -->
+    <canvas id="renderCanvas"></canvas>
+
+    <!-- UI Overlay -->
+    <div id="ui-overlay">
+        <!-- Информационная панель -->
+        <div class="info-panel fade-in">
+            <h2>Zombie 3D Model</h2>
+            <p>Интерактивная 3D модель</p>
+            <div class="controls">
+                <p><strong>Управление:</strong></p>
+                <p>🖱️ ЛКМ + перетаскивание - вращение</p>
+                <p>🖱️ Колесо мыши - приближение/отдаление</p>
+                <p>🖱️ ПКМ + перетаскивание - панорамирование</p>
+            </div>
+        </div>
+
+        <!-- FPS Counter (скрыт по умолчанию) -->
+        <div id="fps-counter">
+            FPS: <span id="fps-value">60</span>
+        </div>
+    </div>
+
+    <!-- Конфигурация -->
+    <script src="js/config.js"></script>
+
+    <!-- Модули -->
+    <script src="js/scene.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/particles.js"></script>
+
+    <!-- Главный скрипт -->
+    <script>
+        // Глобальные переменные
+        let bossAIScene = null;
+        let bossAIAnimations = null;
+        let bossAIParticles = null;
+
+        // Инициализация при загрузке страницы
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 Zombie 3D Model Initializing...');
+
+            // Создание сцены
+            bossAIScene = new BossAIScene('renderCanvas');
+
+            // Ожидание загрузки модели
+            window.addEventListener('bossai:modelLoaded', (event) => {
+                const logoMesh = event.detail.mesh;
+                console.log('✓ Model loaded, starting animations and particles');
+
+                // Инициализация анимаций
+                bossAIAnimations = new BossAIAnimations(
+                    bossAIScene.getScene(),
+                    logoMesh
+                );
+
+                // Инициализация частиц
+                bossAIParticles = new BossAIParticles(
+                    bossAIScene.getScene(),
+                    logoMesh
+                );
+
+                // Скрытие прелоадера
+                hidePreloader();
+
+                console.log('✓ Zombie 3D Model fully initialized');
+            });
+
+            // FPS Counter (опционально)
+            if (BOSS_AI_CONFIG.ui.showFPS) {
+                setupFPSCounter();
+            }
+        });
+
+        /**
+         * Скрытие прелоадера
+         */
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            const minDisplayTime = BOSS_AI_CONFIG.ui.preloader.minDisplayTime;
+
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, minDisplayTime);
+        }
+
+        /**
+         * Настройка FPS счетчика
+         */
+        function setupFPSCounter() {
+            const fpsCounter = document.getElementById('fps-counter');
+            const fpsValue = document.getElementById('fps-value');
+            fpsCounter.classList.add('visible');
+
+            setInterval(() => {
+                if (bossAIScene) {
+                    const fps = bossAIScene.getEngine().getFps().toFixed(0);
+                    fpsValue.textContent = fps;
+                }
+            }, 1000);
+        }
+
+        /**
+         * Обработка ошибок
+         */
+        window.addEventListener('error', (event) => {
+            console.error('❌ Error:', event.error);
+        });
+
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('❌ Unhandled rejection:', event.reason);
+        });
+
+        // Экспорт для консоли (для отладки)
+        window.ZOMBIE_3D = {
+            scene: () => bossAIScene,
+            animations: () => bossAIAnimations,
+            particles: () => bossAIParticles,
+            config: BOSS_AI_CONFIG
+        };
+
+        console.log('💡 Tip: Используйте window.ZOMBIE_3D для доступа к API в консоли');
+    </script>
+</body>
+</html>

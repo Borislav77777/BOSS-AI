@@ -1,0 +1,1 @@
+{"version":3,"file":"ServiceChatProvider.d.ts","sourceRoot":"","sources":["../../../src/components/Chat/ServiceChatProvider.tsx"],"names":[],"mappings":"AAAA;;GAEG;AAIH,OAAO,KAAyD,MAAM,OAAO,CAAC;AAa9E,eAAO,MAAM,cAAc,WAM1B,CAAC;AAEF,UAAU,wBAAwB;IAC9B,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAC;CAC7B;AAED,eAAO,MAAM,mBAAmB,EAAE,KAAK,CAAC,EAAE,CAAC,wBAAwB,CAiFlE,CAAC"}

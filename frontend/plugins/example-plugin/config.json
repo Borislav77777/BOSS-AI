@@ -1,0 +1,37 @@
+{
+  "id": "example-plugin",
+  "name": "Пример плагина",
+  "description": "Демонстрационный плагин для тестирования системы плагинов",
+  "icon": "Puzzle",
+  "version": "1.0.0",
+  "isActive": true,
+  "tools": [
+    {
+      "id": "plugin-greet",
+      "name": "Приветствие плагина",
+      "description": "Специальное приветствие от плагина",
+      "icon": "Heart",
+      "action": "greet",
+      "isEnabled": true,
+      "category": "communication"
+    },
+    {
+      "id": "plugin-info",
+      "name": "Информация о плагине",
+      "description": "Показывает информацию о текущем плагине",
+      "icon": "Info",
+      "action": "info",
+      "isEnabled": true,
+      "category": "utility"
+    }
+  ],
+  "settings": {
+    "enabled": true,
+    "autoStart": false,
+    "notifications": true
+  },
+  "dependencies": [],
+  "author": "BARSUKOV OS Team",
+  "category": "utility",
+  "priority": 10
+}

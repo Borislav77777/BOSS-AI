@@ -1,0 +1,1 @@
+{"version":3,"file":"FileUpload.d.ts","sourceRoot":"","sources":["../../../src/components/Chat/FileUpload.tsx"],"names":[],"mappings":"AAAA;;GAEG;AAOH,OAAO,KAA8C,MAAM,OAAO,CAAC;AAEnE,UAAU,eAAe;IACrB,YAAY,EAAE,CAAC,KAAK,EAAE,IAAI,EAAE,KAAK,IAAI,CAAC;IACtC,SAAS,CAAC,EAAE,MAAM,CAAC;CACtB;AAQD,eAAO,MAAM,UAAU,EAAE,KAAK,CAAC,EAAE,CAAC,eAAe,CAwO/C,CAAC;AAIH,eAAe,UAAU,CAAC"}

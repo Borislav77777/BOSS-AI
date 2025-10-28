@@ -1,0 +1,86 @@
+{
+  "id": "sales-funnel-service",
+  "name": "Воронки продаж",
+  "description": "Автоматизированные воронки продаж с AI-квалификацией",
+  "icon": "Funnel",
+  "version": "1.0.0",
+  "category": "business",
+  "isActive": true,
+  "author": "Boss AI Team",
+  "priority": 2,
+  "tools": [
+    {
+      "id": "create-funnel",
+      "name": "Создать воронку",
+      "description": "Создание новой воронки продаж",
+      "icon": "Plus",
+      "action": "create-funnel",
+      "isEnabled": true,
+      "category": "funnels",
+      "isChatFunction": true,
+      "chatPrompt": "Создай воронку продаж: {userInput}",
+      "chatApiEndpoint": "/api/funnels/create"
+    },
+    {
+      "id": "funnel-analytics",
+      "name": "Аналитика воронки",
+      "description": "Анализ эффективности воронки",
+      "icon": "TrendingUp",
+      "action": "funnel-analytics",
+      "isEnabled": true,
+      "category": "analytics",
+      "isChatFunction": true,
+      "chatPrompt": "Покажи аналитику воронки: {userInput}",
+      "chatApiEndpoint": "/api/funnels/analytics"
+    },
+    {
+      "id": "auto-qualification",
+      "name": "AI-квалификация",
+      "description": "Автоматическая квалификация лидов",
+      "icon": "Brain",
+      "action": "auto-qualification",
+      "isEnabled": true,
+      "category": "ai",
+      "isChatFunction": true,
+      "chatPrompt": "Квалифицируй лида: {userInput}",
+      "chatApiEndpoint": "/api/funnels/qualify"
+    },
+    {
+      "id": "follow-up-automation",
+      "name": "Автоматический follow-up",
+      "description": "Настройка автоматических напоминаний",
+      "icon": "Clock",
+      "action": "follow-up-automation",
+      "isEnabled": true,
+      "category": "automation",
+      "isChatFunction": true,
+      "chatPrompt": "Настрой follow-up: {userInput}",
+      "chatApiEndpoint": "/api/funnels/follow-up"
+    }
+  ],
+  "chatButtons": [
+    {
+      "id": "quick-funnel",
+      "name": "Быстрая воронка",
+      "description": "Создать воронку за 2 минуты",
+      "position": "top",
+      "action": "create-funnel",
+      "isEnabled": true
+    },
+    {
+      "id": "funnel-performance",
+      "name": "Эффективность",
+      "description": "Показать метрики воронки",
+      "position": "bottom",
+      "action": "funnel-analytics",
+      "isEnabled": true
+    }
+  ],
+  "settings": {
+    "apiBase": "/api/funnels",
+    "aiEnabled": true,
+    "autoQualification": true,
+    "followUpEnabled": true,
+    "notificationsEnabled": true
+  }
+}

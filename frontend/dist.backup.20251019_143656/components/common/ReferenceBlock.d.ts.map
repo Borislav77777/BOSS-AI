@@ -1,0 +1,1 @@
+{"version":3,"file":"ReferenceBlock.d.ts","sourceRoot":"","sources":["../../../src/components/common/ReferenceBlock.tsx"],"names":[],"mappings":"AAEA,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,UAAU,mBAAmB;IACzB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,OAAO,CAAC,EAAE,MAAM,IAAI,CAAC;IACrB,QAAQ,CAAC,EAAE,OAAO,CAAC;CACtB;AAED;;;GAGG;AACH,eAAO,MAAM,cAAc,EAAE,KAAK,CAAC,EAAE,CAAC,mBAAmB,CAwBxD,CAAC"}
