@@ -37,15 +37,14 @@
     overflow: hidden;
 }
 
+/* Отключаем прыжки на hover для стабильности */
 .agent-circle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
-    border-color: #00ffff;
+    transform: none;
+    box-shadow: none;
+    border-color: inherit;
 }
 
-.agent-circle:active {
-    transform: scale(0.95);
-}
+.agent-circle:active { transform: none; }
 
 /* Соединительные линии */
 .connection-lines {

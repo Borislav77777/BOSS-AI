@@ -77,23 +77,18 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
         >
-            {/* Иконка */}
+            {/* Иконка (статичная без hover-скейла/свечения) */}
             <motion.div
                 className={`
-                    relative rounded-full border-2 border-cyan-500
-                    shadow-[0_10px_30px_rgba(0,255,255,0.3)]
+                    relative rounded-full
                     bg-black/50 backdrop-blur-sm overflow-hidden
-                    saber-glow-cyan saber-hover
-                    ${isSelected ? 'ring-2 ring-cyan-400 ring-opacity-50' : ''}
                 `}
                 style={{
                     width: `${size}px`,
                     height: `${size}px`,
                 }}
-                animate={{
-                    scale: isHovered ? 1.05 : 1.0,
-                }}
-                transition={{ duration: 0.2 }}
+                animate={{ scale: 1.0 }}
+                transition={{ duration: 0 }}
             >
                 <img
                     src={agent.avatarUrl}
@@ -118,8 +113,7 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
                     {agent.icon}
                 </div>
 
-                {/* Эффект парения */}
-                <div className="levitation-shadow" />
+                {/* Эффекты отключены */}
             </motion.div>
 
             {/* Текст ПОД иконкой */}

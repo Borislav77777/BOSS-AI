@@ -75,10 +75,10 @@ export const ORBITAL_SIZES = {
             wide: 320
         },
         iconSize: {
-            mobile: 70,
-            tablet: 85,
-            desktop: 100,
-            wide: 110
+            mobile: 84,
+            tablet: 100,
+            desktop: 118,
+            wide: 128
         },
     },
     LEVEL_2: {
@@ -89,10 +89,10 @@ export const ORBITAL_SIZES = {
             wide: 170
         },
         iconSize: {
-            mobile: 50,
-            tablet: 60,
-            desktop: 70,
-            wide: 75
+            mobile: 60,
+            tablet: 72,
+            desktop: 82,
+            wide: 90
         },
     },
 } as const;

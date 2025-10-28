@@ -346,7 +346,7 @@
 }
 
 .orbital-icon:hover {
-    will-change: transform, filter;
+    will-change: auto;
 }
 
 /* Удален конфликтующий класс orbital-icon-border */
