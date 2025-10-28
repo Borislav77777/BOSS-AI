@@ -174,7 +174,7 @@ export function AuthWidget({ onAuthSuccess, onAuthError }: AuthWidgetProps) {
             damping: 30,
           }}
         >
-          {/* Логотип */}
+          {/* Лого (минимализм) */}
           <div className="auth-logo">
             <span>B</span>
             <span>o</span>
@@ -184,22 +184,6 @@ export function AuthWidget({ onAuthSuccess, onAuthError }: AuthWidgetProps) {
             <span>A</span>
             <span>I</span>
           </div>
-
-          {/* Заголовок */}
-          <h1 className="auth-title">
-            Добро пожаловать в Boss AI
-          </h1>
-
-          {/* Описание */}
-          <p className="auth-description">
-            <span>Авторизуйтесь</span>{' '}
-            <span>через</span>{' '}
-            <span>Telegram</span>{' '}
-            <span>для</span>{' '}
-            <span>доступа</span>{' '}
-            <span>к</span>{' '}
-            <span>платформе</span>
-          </p>
 
           {/* Кнопка Telegram с рамками поверх */}
           {!isLoading && (
@@ -235,19 +219,7 @@ export function AuthWidget({ onAuthSuccess, onAuthError }: AuthWidgetProps) {
             </motion.div>
           )}
 
-          {/* Demo режим */}
-          <div className="demo-section">
-            <p className="text-text-muted text-xs text-center">
-              или используйте demo-режим для ознакомления
-            </p>
-            <button
-              onClick={handleDemoLogin}
-              className="demo-button"
-              disabled={isLoading}
-            >
-              Попробовать демо
-            </button>
-          </div>
+          {/* Demo режим скрыт по требованию дизайна */}
         </motion.div>
       </motion.div>
 

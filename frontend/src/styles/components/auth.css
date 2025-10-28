@@ -19,9 +19,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle 500px at 50% 50%, rgba(16, 185, 129, 0.2) 0%, transparent 70%),
-    radial-gradient(circle 420px at 50% 50%, rgba(34, 211, 238, 0.15) 0%, transparent 70%),
-    radial-gradient(circle 350px at 50% 50%, rgba(52, 211, 153, 0.12) 0%, transparent 70%),
+    radial-gradient(circle 500px at 50% 50%, rgba(0, 255, 255, 0.2) 0%, transparent 70%),
+    radial-gradient(circle 420px at 50% 50%, rgba(0, 255, 255, 0.15) 0%, transparent 70%),
+    radial-gradient(circle 350px at 50% 50%, rgba(0, 204, 204, 0.12) 0%, transparent 70%),
     rgba(0, 0, 0, 0.98);
   backdrop-filter: blur(12px);
   animation: breathingGlow 5s ease-in-out infinite;
@@ -38,7 +38,7 @@
   max-width: 480px;
   width: 90%;
   box-shadow:
-    0 0 40px rgba(3, 173, 65, 0.295),
+    0 0 40px rgba(0, 255, 255, 0.25),
     0 20px 60px rgba(0, 0, 0, 0.6);
   animation:
     slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1),
@@ -53,9 +53,9 @@
   border-radius: 24px;
   padding: 2px;
   background: linear-gradient(135deg,
-    #22c55e 0%,
-    #15803d 50%,
-    #166534 100%
+    #00FFFF 0%,
+    #00CCCC 50%,
+    #009999 100%
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -96,7 +96,7 @@
   display: inline-block;
   opacity: 0;
   /* Градиент для каждой буквы */
-  background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+  background: linear-gradient(135deg, #00FFFF 0%, #00CCCC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -142,7 +142,7 @@
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  border-right: 3px solid var(--button-primary, #15803d);
+  border-right: 3px solid var(--button-primary, #00CCCC);
   animation:
     typing 2.5s steps(30, end) 0.5s 1 normal both,
     blink-caret 0.75s step-end 0.5s 4 normal forwards,
@@ -221,28 +221,28 @@
 @keyframes glow-pulse {
   0%, 100% {
     box-shadow:
-      0 0 12px rgba(42, 171, 238, 0.6),
-      0 0 25px rgba(42, 171, 238, 0.5),
-      0 0 37px rgba(0, 136, 204, 0.4),
-      0 0 50px rgba(42, 171, 238, 0.4),
+      0 0 12px rgba(0, 255, 255, 0.6),
+      0 0 25px rgba(0, 255, 255, 0.5),
+      0 0 37px rgba(0, 204, 255, 0.4),
+      0 0 50px rgba(0, 255, 255, 0.4),
       0 10px 40px rgba(0, 0, 0, 0.8),
       inset 0 0 12px rgba(42, 171, 238, 0.4);
   }
   25% {
     box-shadow:
-      0 0 15px rgba(0, 136, 204, 0.6),
-      0 0 30px rgba(0, 136, 204, 0.54),
-      0 0 45px rgba(42, 171, 238, 0.48),
-      0 0 60px rgba(0, 136, 204, 0.36),
+      0 0 15px rgba(0, 204, 255, 0.6),
+      0 0 30px rgba(0, 204, 255, 0.54),
+      0 0 45px rgba(0, 255, 255, 0.48),
+      0 0 60px rgba(0, 204, 255, 0.36),
       0 10px 40px rgba(0, 0, 0, 0.8),
       inset 0 0 15px rgba(0, 136, 204, 0.3);
   }
   50% {
     box-shadow:
-      0 0 17px rgba(84, 179, 244, 0.6),
-      0 0 35px rgba(42, 171, 238, 0.6),
-      0 0 50px rgba(84, 179, 244, 0.54),
-      0 0 65px rgba(42, 171, 238, 0.42),
+      0 0 17px rgba(84, 220, 255, 0.6),
+      0 0 35px rgba(0, 255, 255, 0.6),
+      0 0 50px rgba(84, 220, 255, 0.54),
+      0 0 65px rgba(0, 255, 255, 0.42),
       0 10px 40px rgba(0, 0, 0, 0.8),
       inset 0 0 17px rgba(84, 179, 244, 0.36);
   }
@@ -278,7 +278,7 @@
   width: calc(100% - 49px); /* Оставляем больше места для аватарки справа */
   border: 3px solid #2AABEE; /* Сплошная Telegram синяя рамка */
   border-radius: 16px;
-  background: rgba(9, 192, 238, 0.842); /* Более яркая голубая заливка */
+  background: rgba(0, 255, 255, 0.85); /* Яркая голубая заливка */
   animation: glow-pulse 2s ease-in-out infinite;
   pointer-events: none;
   z-index: 0; /* Позади кнопки */
@@ -456,14 +456,14 @@
 }
 
 .profile-panel::-webkit-scrollbar-thumb:hover {
-  background: var(--button-primary, #15803d);
+  background: var(--button-primary, #00CCCC);
 }
 
 .profile-avatar {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 4px solid var(--button-primary, #15803d);
+  border: 4px solid var(--button-primary, #00CCCC);
   object-fit: cover;
 }
 
@@ -478,6 +478,7 @@
 
 .profile-username {
   color: var(--button-primary, #15803d);
+  color: var(--button-primary, #00CCCC);
   font-size: 1.125rem;
   margin: 0;
   text-align: center;
