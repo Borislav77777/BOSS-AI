@@ -117,7 +117,7 @@ export const AgentSelection: React.FC<AgentSelectionProps> = ({ agents, onSelect
     );
 
     return (
-        <div className="relative w-full h-full bg-black flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-full bg-black flex items-center justify-center overflow-hidden app-center">
             {/* SVG для линий */}
             <svg
                 className="absolute inset-0 w-full h-full pointer-events-none z-5"

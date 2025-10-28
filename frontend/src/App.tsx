@@ -15,14 +15,14 @@ import { usageAnalyticsService } from '@/services/UsageAnalyticsService';
 import { AnimatePresence, motion } from 'framer-motion';
 import { memo, useEffect, useState } from 'react';
 import { allAgents } from './data/agentsData';
-import AnimatedStripesPage from './pages/AnimatedStripesPage';
+// import AnimatedStripesPage from './pages/AnimatedStripesPage';
 
 const AppContent = memo(() => {
     // Получаем контекст платформы
     const platformContext = usePlatform();
     const { state, dispatch } = platformContext;
     const [showZombieConfig, setShowZombieConfig] = useState(false);
-    const [showStripesGenerator, setShowStripesGenerator] = useState(false);
+    // const [showStripesGenerator, setShowStripesGenerator] = useState(false);
 
 
     // Инициализация виджетов
@@ -123,18 +123,7 @@ const AppContent = memo(() => {
     };
 
     // Если открыт генератор полосок, показываем его
-    if (showStripesGenerator) {
-        return (
-            <div className="min-h-screen bg-black">
-                <SimpleHeader
-                    onOpenZombieConfig={() => setShowZombieConfig(true)}
-                    onOpenStripesGenerator={() => setShowStripesGenerator(false)}
-                    onLogout={handleLogout}
-                />
-                <AnimatedStripesPage />
-            </div>
-        );
-    }
+    // Генератор полосок отключен
 
     // Основной интерфейс - SimpleHeader + статичный фон + ChatInterface
     return (
@@ -142,7 +131,6 @@ const AppContent = memo(() => {
             {/* SimpleHeader с логотипом и кнопками */}
             <SimpleHeader
                 onOpenZombieConfig={() => setShowZombieConfig(true)}
-                onOpenStripesGenerator={() => setShowStripesGenerator(true)}
                 onLogout={handleLogout}
             />
 

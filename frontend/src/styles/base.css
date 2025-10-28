@@ -33,10 +33,10 @@
     color: var(--text) !important;
   }
 
-  /* Убираем синий цвет при фокусе */
+  /* Фокус по умолчанию без box-shadow (чтобы не было квадратов у иконок) */
   *:focus {
     outline: none !important;
-    box-shadow: 0 0 0 2px var(--accent) !important;
+    box-shadow: none !important;
   }
 
   /* Убираем синий цвет при фокусе на input */
@@ -60,16 +60,19 @@
     border-color: var(--border) !important;
   }
 
-  /* Убираем синий цвет при фокусе на button */
-  button:focus {
+  /* Явный фокус только для интерактивных элементов формы */
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
     outline: none !important;
     box-shadow: 0 0 0 2px var(--accent) !important;
   }
 
-  /* Убираем синий цвет при фокусе на div */
+  /* div не получает box-shadow на фокусе */
   div:focus {
     outline: none !important;
-    box-shadow: 0 0 0 2px var(--accent) !important;
+    box-shadow: none !important;
   }
 
   /* Убираем синий цвет при выделении текста */

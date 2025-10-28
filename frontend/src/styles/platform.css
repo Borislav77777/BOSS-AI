@@ -1129,7 +1129,14 @@
   display: flex;
   flex-direction: column;
   height: calc(100vh - (var(--spacing-4) * 2));
-  min-width: 720px; /* гарантируем место для панели инструментов */
+  /* min-width удален для адаптивности: контейнер больше не ломает сетку */
+  min-width: 0;
+}
+/* Центрирующий контейнер для равномерной сетки */
+.app-center {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--spacing-4);
 }
 
 /* Стили для скроллинга главного контента */

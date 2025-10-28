@@ -53,7 +53,7 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
 
     return (
         <motion.div
-            className="absolute flex flex-col items-center cursor-pointer group orbital-icon z-30"
+            className="absolute flex flex-col items-center cursor-pointer orbital-icon z-30 focus:outline-none focus-visible:outline-none"
             style={{
                 left: `calc(50% + ${position.x}px)`,
                 top: `calc(50% + ${position.y}px)`,
@@ -82,6 +82,7 @@ export const OrbitalIcon: React.FC<OrbitalIconProps> = ({
                 className={`
                     relative rounded-full
                     bg-black/50 backdrop-blur-sm overflow-hidden
+                    focus:outline-none focus-visible:outline-none
                 `}
                 style={{
                     width: `${size}px`,

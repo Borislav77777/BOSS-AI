@@ -2,11 +2,10 @@ import React from 'react';
 
 interface SimpleHeaderProps {
     onOpenZombieConfig: () => void;
-    onOpenStripesGenerator?: () => void;
     onLogout?: () => void;
 }
 
-export const SimpleHeader: React.FC<SimpleHeaderProps> = ({ onOpenZombieConfig, onOpenStripesGenerator, onLogout }) => {
+export const SimpleHeader: React.FC<SimpleHeaderProps> = ({ onOpenZombieConfig, onLogout }) => {
     return (
         <header className="h-24 md:h-32 lg:h-36 bg-black border-b-2 border-cyan-500/30 flex items-center justify-between px-3 md:px-6">
             {/* Логотип BOSS AI в центре */}
@@ -20,19 +19,7 @@ export const SimpleHeader: React.FC<SimpleHeaderProps> = ({ onOpenZombieConfig, 
 
             {/* Правая часть - кнопки и баланс */}
             <div className="flex items-center space-x-2 md:space-x-4">
-                {/* Кнопка Генератор Полосок */}
-                {onOpenStripesGenerator && (
-                    <button
-                        onClick={onOpenStripesGenerator}
-                        className="flex items-center space-x-2 px-2 py-1.5 md:px-4 md:py-2 bg-purple-500/20 backdrop-blur-md border-2 border-purple-500/50 text-purple-400 rounded-lg shadow-[0_0_20px_rgba(147,51,234,0.2)] hover:shadow-[0_0_30px_rgba(147,51,234,0.4)] transition-all hover:scale-105"
-                        title="Открыть Генератор Полосок"
-                    >
-                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <span className="hidden md:inline text-sm font-semibold">Полоски</span>
-                    </button>
-                )}
+                {/* Кнопка генератора полосок удалена */}
 
                 {/* Кнопка 3D Конфигуратор */}
                 <button

@@ -349,6 +349,18 @@
     will-change: auto;
 }
 
+/* Жесткий сброс фокуса/бордеров у иконок агентов */
+.orbital-icon, .orbital-icon * {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.orbital-icon:focus, .orbital-icon:focus-visible,
+.orbital-icon div:focus, .orbital-icon div:focus-visible,
+.orbital-icon img:focus, .orbital-icon img:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* Удален конфликтующий класс orbital-icon-border */
 
 /* Оптимизация для мобильных */
