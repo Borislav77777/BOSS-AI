@@ -1,0 +1,190 @@
+[2025-10-28T21:27:29.821Z] 🌐 Открываем OpenRouter...
+[2025-10-28T21:27:38.787Z] 
+[1/10] Обработка: DeepSeek V3.1
+[2025-10-28T21:27:38.787Z] 
+🚀 Начинаем парсинг: DeepSeek V3.1
+[2025-10-28T21:27:38.788Z] 🔍 Поиск модели: DeepSeek V3.1
+[2025-10-28T21:27:44.623Z]    Поиск выполнен
+[2025-10-28T21:27:44.626Z] 📝 Извлечение названий для: DeepSeek V3.1
+[2025-10-28T21:27:44.636Z]    ✓ Найдено название: ModelsDeepSeek: DeepSeek
+[2025-10-28T21:27:44.636Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsdeepseek/deepseek
+[2025-10-28T21:27:44.637Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsdeepseek/deepseek
+[2025-10-28T21:27:49.047Z] ✅ Валидация страницы для: DeepSeek V3.1
+[2025-10-28T21:27:49.055Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:27:49.055Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:27:49.056Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:27:49.063Z]    ✓ Собрана информация: The model "modelsdeepseek/deepseek" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:27:49.063Z] ✅ Успешно спарсена: DeepSeek V3.1
+[2025-10-28T21:27:49.064Z] ✓ Успешно: DeepSeek V3.1
+[2025-10-28T21:27:49.064Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:27:52.065Z] 
+[2/10] Обработка: Google Gemini 2.5 Flash
+[2025-10-28T21:27:52.066Z] 
+🚀 Начинаем парсинг: Google Gemini 2.5 Flash
+[2025-10-28T21:27:52.067Z] 🔍 Поиск модели: Google Gemini 2.5 Flash
+[2025-10-28T21:27:57.812Z]    Поиск выполнен
+[2025-10-28T21:27:57.813Z] 📝 Извлечение названий для: Google Gemini 2.5 Flash
+[2025-10-28T21:27:57.819Z]    ✓ Найдено название: ModelsGoogle: Gemini
+[2025-10-28T21:27:57.819Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsgoogle/gemini
+[2025-10-28T21:27:57.819Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsgoogle/gemini
+[2025-10-28T21:28:01.886Z] ✅ Валидация страницы для: Google Gemini 2.5 Flash
+[2025-10-28T21:28:01.893Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:28:01.894Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:28:01.894Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:28:01.907Z]    ✓ Собрана информация: The model "modelsgoogle/gemini" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:28:01.916Z] ✅ Успешно спарсена: Google Gemini 2.5 Flash
+[2025-10-28T21:28:01.916Z] ✓ Успешно: Google Gemini 2.5 Flash
+[2025-10-28T21:28:01.917Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:28:04.918Z] 
+[3/10] Обработка: Meta Llama 3.3 8B
+[2025-10-28T21:28:04.919Z] 
+🚀 Начинаем парсинг: Meta Llama 3.3 8B
+[2025-10-28T21:28:04.919Z] 🔍 Поиск модели: Meta Llama 3.3 8B
+[2025-10-28T21:28:10.687Z]    Поиск выполнен
+[2025-10-28T21:28:10.688Z] 📝 Извлечение названий для: Meta Llama 3.3 8B
+[2025-10-28T21:28:10.699Z]    ✓ Найдено название: ModelsMeta: Llama
+[2025-10-28T21:28:10.700Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsmeta/llama
+[2025-10-28T21:28:10.701Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsmeta/llama
+[2025-10-28T21:28:14.800Z] ✅ Валидация страницы для: Meta Llama 3.3 8B
+[2025-10-28T21:28:14.806Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:28:14.806Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:28:14.807Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:28:14.813Z]    ✓ Собрана информация: The model "modelsmeta/llama" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(e,t,r)=>{let n=null==(r=r||document.querySelector('[data-br="'.concat(e,'"]')))?void 0:r.parentElement;if(!n)return;let a=e=>r.style.maxWidth=e+"px";r.style.maxWidth="";let i=n.clientWidth,l=n.clientHeight,o=i/2-.25,s=i+.5,c;if(i){for(a(o),o=Math.max(r.scrollWidth,o);o+1<s;)a(c=Math.round((o+s)/2)),n.clientHeight===l?s=c:o=c;a(s*t+i*(1-t))}r.__wrap_o||"undefined"!=typeof ResizeObserver&&(r.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+r.dataset.brr,r)})).observe(n)};self.__wrap_n!=1&&self.__wrap_b("_r_g_",1) (Skip to content)
+[2025-10-28T21:28:14.813Z] ✅ Успешно спарсена: Meta Llama 3.3 8B
+[2025-10-28T21:28:14.814Z] ✓ Успешно: Meta Llama 3.3 8B
+[2025-10-28T21:28:14.814Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:28:17.815Z] 
+[4/10] Обработка: Qwen Qwen3 4B
+[2025-10-28T21:28:17.815Z] 
+🚀 Начинаем парсинг: Qwen Qwen3 4B
+[2025-10-28T21:28:17.815Z] 🔍 Поиск модели: Qwen Qwen3 4B
+[2025-10-28T21:28:23.528Z]    Поиск выполнен
+[2025-10-28T21:28:23.529Z] 📝 Извлечение названий для: Qwen Qwen3 4B
+[2025-10-28T21:28:23.534Z]    ✓ Найдено название: ModelsQwen: Qwen3
+[2025-10-28T21:28:23.534Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsqwen/qwen3
+[2025-10-28T21:28:23.534Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsqwen/qwen3
+[2025-10-28T21:28:27.720Z] ✅ Валидация страницы для: Qwen Qwen3 4B
+[2025-10-28T21:28:27.726Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:28:27.726Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:28:27.727Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:28:27.733Z]    ✓ Собрана информация: The model "modelsqwen/qwen3" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:28:27.734Z] ✅ Успешно спарсена: Qwen Qwen3 4B
+[2025-10-28T21:28:27.734Z] ✓ Успешно: Qwen Qwen3 4B
+[2025-10-28T21:28:27.734Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:28:30.735Z] 
+[5/10] Обработка: Mistral Small 3.2
+[2025-10-28T21:28:30.736Z] 
+🚀 Начинаем парсинг: Mistral Small 3.2
+[2025-10-28T21:28:30.737Z] 🔍 Поиск модели: Mistral Small 3.2
+[2025-10-28T21:28:36.477Z]    Поиск выполнен
+[2025-10-28T21:28:36.478Z] 📝 Извлечение названий для: Mistral Small 3.2
+[2025-10-28T21:28:36.481Z]    ✓ Найдено название: ModelsMistral: Mistral
+[2025-10-28T21:28:36.482Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsmistral/mistral
+[2025-10-28T21:28:36.483Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsmistral/mistral
+[2025-10-28T21:28:40.716Z] ✅ Валидация страницы для: Mistral Small 3.2
+[2025-10-28T21:28:40.725Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:28:40.726Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:28:40.727Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:28:40.734Z]    ✓ Собрана информация: The model "modelsmistral/mistral" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:28:40.735Z] ✅ Успешно спарсена: Mistral Small 3.2
+[2025-10-28T21:28:40.735Z] ✓ Успешно: Mistral Small 3.2
+[2025-10-28T21:28:40.736Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:28:43.738Z] 
+[6/10] Обработка: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:43.739Z] 
+🚀 Начинаем парсинг: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:43.750Z] 🔍 Поиск модели: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:49.638Z]    Поиск выполнен
+[2025-10-28T21:28:49.639Z] 📝 Извлечение названий для: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:49.644Z]    ✓ Найдено название: ModelsNVIDIA: Nemotron
+[2025-10-28T21:28:49.645Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsnvidia/nemotron
+[2025-10-28T21:28:49.645Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsnvidia/nemotron
+[2025-10-28T21:28:53.726Z] ✅ Валидация страницы для: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:53.741Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:28:53.741Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:28:53.742Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:28:53.749Z]    ✓ Собрана информация: The model "modelsnvidia/nemotron" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:28:53.750Z] ✅ Успешно спарсена: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:53.750Z] ✓ Успешно: NVIDIA Nemotron Nano 12B
+[2025-10-28T21:28:53.751Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:28:56.752Z] 
+[7/10] Обработка: MiniMax MiniMax M2
+[2025-10-28T21:28:56.753Z] 
+🚀 Начинаем парсинг: MiniMax MiniMax M2
+[2025-10-28T21:28:56.754Z] 🔍 Поиск модели: MiniMax MiniMax M2
+[2025-10-28T21:29:02.550Z]    Поиск выполнен
+[2025-10-28T21:29:02.551Z] 📝 Извлечение названий для: MiniMax MiniMax M2
+[2025-10-28T21:29:02.555Z]    ✓ Найдено название: ModelsMiniMax: MiniMax
+[2025-10-28T21:29:02.556Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsminimax/minimax
+[2025-10-28T21:29:02.556Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsminimax/minimax
+[2025-10-28T21:29:06.663Z] ✅ Валидация страницы для: MiniMax MiniMax M2
+[2025-10-28T21:29:06.678Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:29:06.679Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:29:06.679Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:29:06.686Z]    ✓ Собрана информация: The model "modelsminimax/minimax" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:29:06.687Z] ✅ Успешно спарсена: MiniMax MiniMax M2
+[2025-10-28T21:29:06.687Z] ✓ Успешно: MiniMax MiniMax M2
+[2025-10-28T21:29:06.687Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:29:09.688Z] 
+[8/10] Обработка: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:09.689Z] 
+🚀 Начинаем парсинг: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:09.689Z] 🔍 Поиск модели: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:15.627Z]    Поиск выполнен
+[2025-10-28T21:29:15.627Z] 📝 Извлечение названий для: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:15.632Z]    ✓ Найдено название: ModelsNous: DeepHermes
+[2025-10-28T21:29:15.633Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/modelsnous/deephermes
+[2025-10-28T21:29:15.633Z] 🔗 Переход по ссылке: https://openrouter.ai/models/modelsnous/deephermes
+[2025-10-28T21:29:19.662Z] ✅ Валидация страницы для: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:19.673Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:29:19.674Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:29:19.674Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:29:19.680Z]    ✓ Собрана информация: The model "modelsnous/deephermes" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:29:19.680Z] ✅ Успешно спарсена: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:19.680Z] ✓ Успешно: Nous DeepHermes 3 Llama 3 8B
+[2025-10-28T21:29:19.680Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:29:22.681Z] 
+[9/10] Обработка: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:22.681Z] 
+🚀 Начинаем парсинг: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:22.681Z] 🔍 Поиск модели: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:28.506Z]    Поиск выполнен
+[2025-10-28T21:29:28.506Z] 📝 Извлечение названий для: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:28.510Z]    ✓ Найдено название: 4 Multimodal InstructMicrosoft: Phi-3
+[2025-10-28T21:29:28.510Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/4 multimodal instructmicrosoft/phi-3
+[2025-10-28T21:29:28.511Z] 🔗 Переход по ссылке: https://openrouter.ai/models/4 multimodal instructmicrosoft/phi-3
+[2025-10-28T21:29:32.553Z] ✅ Валидация страницы для: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:32.561Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:29:32.562Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:29:32.562Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:29:32.567Z]    ✓ Собрана информация: The model "4%20multimodal%20instructmicrosoft/phi-3" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:29:32.567Z] ✅ Успешно спарсена: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:32.567Z] ✓ Успешно: Microsoft Phi 4 Reasoning Plus
+[2025-10-28T21:29:32.567Z] ⏳ Пауза 3 секунды...
+[2025-10-28T21:29:35.568Z] 
+[10/10] Обработка: OpenAI GPT-4o-mini
+[2025-10-28T21:29:35.570Z] 
+🚀 Начинаем парсинг: OpenAI GPT-4o-mini
+[2025-10-28T21:29:35.570Z] 🔍 Поиск модели: OpenAI GPT-4o-mini
+[2025-10-28T21:29:41.290Z]    Поиск выполнен
+[2025-10-28T21:29:41.291Z] 📝 Извлечение названий для: OpenAI GPT-4o-mini
+[2025-10-28T21:29:41.312Z]    ✓ Найдено название: Search PreviewOpenAI: GPT-4o-miniOpenAI
+[2025-10-28T21:29:41.313Z]    🔗 Сгенерирована ссылка: https://openrouter.ai/models/search previewopenai/gpt-4o-miniopenai
+[2025-10-28T21:29:41.314Z] 🔗 Переход по ссылке: https://openrouter.ai/models/search previewopenai/gpt-4o-miniopenai
+[2025-10-28T21:29:45.376Z] ✅ Валидация страницы для: OpenAI GPT-4o-mini
+[2025-10-28T21:29:45.382Z]    ❌ Страница невалидна: URL=false, Title=true, Error=true
+[2025-10-28T21:29:45.382Z]    ⚠️ Страница невалидна, но продолжаем парсинг
+[2025-10-28T21:29:45.383Z] 📊 Парсинг информации со страницы
+[2025-10-28T21:29:45.388Z]    ✓ Собрана информация: The model "search%20previewopenai/gpt-4o-miniopenai" is not availableself.__wrap_n=self.__wrap_n||(self.CSS&&CSS.supports("text-wrap","balance")?1:2);self.__wrap_b=(a,b,c)=>{let d=null==(c=c||document.querySelector(`[data-br="${a}"]`))?void 0:c.parentElement;if(!d)return;let e=a=>c.style.maxWidth=a+"px";c.style.maxWidth="";let f=d.clientWidth,g=d.clientHeight,h=f/2-.25,i=f+.5,j;if(f){for(e(h),h=Math.max(c.scrollWidth,h);h+1<i;)e(j=Math.round((h+i)/2)),d.clientHeight===g?i=j:h=j;e(i*b+f*(1-b))}c.__wrap_o||"undefined"!=typeof ResizeObserver&&(c.__wrap_o=new ResizeObserver(()=>{self.__wrap_b(0,+c.dataset.brr,c)})).observe(d)};self.__wrap_n!=1&&self.__wrap_b("_R_1iv5tivlqnb_",1) (Skip to content)
+[2025-10-28T21:29:45.389Z] ✅ Успешно спарсена: OpenAI GPT-4o-mini
+[2025-10-28T21:29:45.389Z] ✓ Успешно: OpenAI GPT-4o-mini
+[2025-10-28T21:29:45.389Z] 
+💾 Сохранение результатов...
+[2025-10-28T21:29:45.390Z] ✅ Сохранено 10 моделей в openrouter-final-models.json
+[2025-10-28T21:29:45.390Z] 
+📈 Статистика:
+[2025-10-28T21:29:45.391Z]    Успешно спарсено: 10
+[2025-10-28T21:29:45.391Z]    Ошибок: 0
+[2025-10-28T21:29:45.391Z]    Провайдеров: 1
+[2025-10-28T21:29:45.391Z] 
+🎉 Парсинг завершен!

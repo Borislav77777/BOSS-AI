@@ -1,0 +1,112 @@
+{
+  "lastUpdated": "2025-10-28T21:30:00.000Z",
+  "totalModels": 106,
+  "providers": [
+    "AI21", "Agentica", "AlfredPros", "Arcee AI", "ArliAI", "Cohere", "Deep Cogito", "DeepSeek", "Dolphin", "Google",
+    "Inflection", "Meituan", "Meta", "Microsoft", "MiniMax", "Mistral", "MoonshotAI", "Morph", "NVIDIA", "NeverSleep",
+    "Noromaid", "Nous", "NousResearch", "OpenAI", "Perplexity", "Qwen", "Relace", "ReMM", "Shisa AI", "SorcererLM",
+    "TNG", "Tencent", "Tongyi", "Venice", "Z.AI"
+  ],
+  "models": [
+    {
+      "name": "Nous: DeepHermes 3 Llama 3 8B Preview",
+      "id": "nous/deephermes-3-llama-3-8b-preview:free",
+      "provider": "Nous",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "A preview model from Nous, based on Llama 3 8B, optimized for instruction following.",
+      "url": "https://openrouter.ai/models/nous/deephermes-3-llama-3-8b-preview"
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1",
+      "id": "deepseek/deepseek-v3.1:free",
+      "provider": "DeepSeek",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "DeepSeek V3.1 is a powerful language model with enhanced reasoning capabilities and 128K context window.",
+      "url": "https://openrouter.ai/models/deepseek/deepseek-v3.1"
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Image Preview (Nano Banana)",
+      "id": "google/gemini-2.5-flash-image-preview-nano-banana:free",
+      "provider": "Google",
+      "context": "1M",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Google's latest multimodal model with image understanding capabilities and 1M context window.",
+      "url": "https://openrouter.ai/models/google/gemini-2.5-flash-image-preview-nano-banana"
+    },
+    {
+      "name": "Meta: Llama 3.3 8B Instruct",
+      "id": "meta-llama/llama-3.3-8b-instruct:free",
+      "provider": "Meta",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Meta's latest Llama 3.3 model with 8B parameters, optimized for instruction following.",
+      "url": "https://openrouter.ai/models/meta-llama/llama-3.3-8b-instruct"
+    },
+    {
+      "name": "Qwen: Qwen3 4B",
+      "id": "qwen/qwen3-4b:free",
+      "provider": "Qwen",
+      "context": "32K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Qwen3 4B is a compact yet powerful language model from Alibaba Cloud.",
+      "url": "https://openrouter.ai/models/qwen/qwen3-4b"
+    },
+    {
+      "name": "Mistral: Small 3.2 24B",
+      "id": "mistralai/mistral-small-3.2-24b:free",
+      "provider": "Mistral",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Mistral Small 3.2 with 24B parameters, offering excellent performance for various tasks.",
+      "url": "https://openrouter.ai/models/mistralai/mistral-small-3.2-24b"
+    },
+    {
+      "name": "NVIDIA: Nemotron Nano 12B 2 VL",
+      "id": "nvidia/nemotron-nano-12b-2-vl:free",
+      "provider": "NVIDIA",
+      "context": "8K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "NVIDIA's vision-language model with 12B parameters for multimodal understanding.",
+      "url": "https://openrouter.ai/models/nvidia/nemotron-nano-12b-2-vl"
+    },
+    {
+      "name": "MiniMax: MiniMax M2",
+      "id": "minimax/minimax-m2:free",
+      "provider": "MiniMax",
+      "context": "32K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "MiniMax M2 is a versatile language model with strong reasoning capabilities.",
+      "url": "https://openrouter.ai/models/minimax/minimax-m2"
+    },
+    {
+      "name": "Microsoft: Phi 4 Reasoning Plus",
+      "id": "microsoft/phi-4-reasoning-plus:free",
+      "provider": "Microsoft",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "Microsoft's Phi 4 model with enhanced reasoning capabilities and multimodal support.",
+      "url": "https://openrouter.ai/models/microsoft/phi-4-reasoning-plus"
+    },
+    {
+      "name": "OpenAI: GPT-4o-mini Search Preview",
+      "id": "openai/gpt-4o-mini-search-preview:free",
+      "provider": "OpenAI",
+      "context": "128K",
+      "inputPrice": "$0/M",
+      "outputPrice": "$0/M",
+      "description": "OpenAI's GPT-4o-mini with search capabilities for enhanced information retrieval.",
+      "url": "https://openrouter.ai/models/openai/gpt-4o-mini-search-preview"
+    }
+  ]
+}

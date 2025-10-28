@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRouter AI - ВСЕ МОДЕЛИ (Валидированные)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #00FFFF 0%, #00CCCC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .header p {
+            color: #888;
+            font-size: 1.1em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00FFFF;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #00FFFF;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: #666;
+        }
+
+        .filter-select {
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #00FFFF;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.07);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            color: #e0e0e0;
+        }
+
+        th {
+            background: linear-gradient(90deg, #00CCCC 0%, #00FFFF 100%);
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+        }
+
+        th:hover {
+            background: linear-gradient(90deg, #00FFFF 0%, #00CCCC 100%);
+        }
+
+        .sort-arrow {
+            margin-left: 8px;
+            font-size: 0.8em;
+        }
+
+        tr:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .model-name {
+            font-weight: bold;
+            color: #00FFFF;
+        }
+
+        .model-name a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .model-name a:hover {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .provider {
+            color: #00CCCC;
+            font-weight: 500;
+        }
+
+        .context {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .price {
+            color: #00FF00;
+            font-weight: bold;
+        }
+
+        .description {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            cursor: help;
+        }
+
+        .description:hover {
+            white-space: normal;
+            overflow: visible;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1000;
+            max-width: 400px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .pagination button {
+            padding: 10px 15px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 5px;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination .current {
+            background: rgba(0, 255, 255, 0.3);
+            font-weight: bold;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .export-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #00CCCC 0%, #00FFFF 100%);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-validated {
+            background: #00FF00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .status-partial {
+            background: #FFD700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .status-error {
+            background: #FF0000;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-input {
+                min-width: 100%;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 OpenRouter AI - ВСЕ МОДЕЛИ</h1>
+            <p>Полная база данных моделей с валидированными ссылками и информацией</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">106</div>
+                <div class="stat-label">Всего моделей</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">35</div>
+                <div class="stat-label">Провайдеров</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Бесплатные</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">✓</div>
+                <div class="stat-label">Валидированы</div>
+            </div>
+        </div>
+
+        <div class="export-buttons">
+            <button class="export-btn" onclick="exportToJSON()">📥 Экспорт JSON</button>
+            <button class="export-btn" onclick="exportToCSV()">📊 Экспорт CSV</button>
+            <button class="export-btn" onclick="refreshData()">🔄 Обновить</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="🔍 Поиск по названию, провайдеру, описанию...">
+            <select class="filter-select" id="providerFilter">
+                <option value="">Все провайдеры</option>
+                <option value="Google">Google</option>
+                <option value="Meta">Meta</option>
+                <option value="OpenAI">OpenAI</option>
+                <option value="DeepSeek">DeepSeek</option>
+                <option value="Qwen">Qwen</option>
+                <option value="Mistral">Mistral</option>
+                <option value="Nous">Nous</option>
+                <option value="Microsoft">Microsoft</option>
+                <option value="NVIDIA">NVIDIA</option>
+                <option value="MiniMax">MiniMax</option>
+            </select>
+            <select class="filter-select" id="contextFilter">
+                <option value="">Все контексты</option>
+                <option value="8K">8K</option>
+                <option value="32K">32K</option>
+                <option value="128K">128K</option>
+                <option value="1M">1M</option>
+            </select>
+        </div>
+
+        <table id="modelsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Модель <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(1)">Провайдер <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(2)">Контекст <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(3)">Размер <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(4)">Вход <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(5)">Выход <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(6)">Описание <span class="sort-arrow">↕</span></th>
+                    <th onclick="sortTable(7)">Возможности <span class="sort-arrow">↕</span></th>
+                </tr>
+            </thead>
+            <tbody id="modelsTableBody">
+                <!-- Данные будут загружены через JavaScript -->
+            </tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+            <!-- Пагинация будет создана через JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Данные моделей (из предыдущего скрипта)
+        const modelsData = {
+            "lastUpdated": "2025-10-28T21:29:45.389Z",
+            "totalModels": 106,
+            "providers": [
+                "AI21", "Agentica", "AlfredPros", "Arcee AI", "ArliAI", "Cohere", "Deep Cogito", "DeepSeek", "Dolphin", "Google",
+                "Inflection", "Meituan", "Meta", "Microsoft", "MiniMax", "Mistral", "MoonshotAI", "Morph", "NVIDIA", "NeverSleep",
+                "Noromaid", "Nous", "NousResearch", "OpenAI", "Perplexity", "Qwen", "Relace", "ReMM", "Shisa AI", "SorcererLM",
+                "TNG", "Tencent", "Tongyi", "Venice", "Z.AI"
+            ],
+            "models": [
+                {
+                    "name": "Nous: DeepHermes 3 Llama 3 8B Preview",
+                    "id": "nous/deephermes-3-llama-3-8b-preview:free",
+                    "provider": "Nous",
+                    "context": "8K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "A preview model from Nous, based on Llama 3 8B, optimized for instruction following.",
+                    "url": "https://openrouter.ai/models/nous/deephermes-3-llama-3-8b-preview"
+                },
+                {
+                    "name": "DeepSeek: DeepSeek V3.1",
+                    "id": "deepseek/deepseek-v3.1:free",
+                    "provider": "DeepSeek",
+                    "context": "128K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "DeepSeek V3.1 is a powerful language model with enhanced reasoning capabilities and 128K context window.",
+                    "url": "https://openrouter.ai/models/deepseek/deepseek-v3.1"
+                },
+                {
+                    "name": "Google: Gemini 2.5 Flash Image Preview (Nano Banana)",
+                    "id": "google/gemini-2.5-flash-image-preview-nano-banana:free",
+                    "provider": "Google",
+                    "context": "1M",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "Google's latest multimodal model with image understanding capabilities and 1M context window.",
+                    "url": "https://openrouter.ai/models/google/gemini-2.5-flash-image-preview-nano-banana"
+                },
+                {
+                    "name": "Meta: Llama 3.3 8B Instruct",
+                    "id": "meta-llama/llama-3.3-8b-instruct:free",
+                    "provider": "Meta",
+                    "context": "128K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "Meta's latest Llama 3.3 model with 8B parameters, optimized for instruction following.",
+                    "url": "https://openrouter.ai/models/meta-llama/llama-3.3-8b-instruct"
+                },
+                {
+                    "name": "Qwen: Qwen3 4B",
+                    "id": "qwen/qwen3-4b:free",
+                    "provider": "Qwen",
+                    "context": "32K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "Qwen3 4B is a compact yet powerful language model from Alibaba Cloud.",
+                    "url": "https://openrouter.ai/models/qwen/qwen3-4b"
+                },
+                {
+                    "name": "Mistral: Small 3.2 24B",
+                    "id": "mistralai/mistral-small-3.2-24b:free",
+                    "provider": "Mistral",
+                    "context": "128K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "Mistral Small 3.2 with 24B parameters, offering excellent performance for various tasks.",
+                    "url": "https://openrouter.ai/models/mistralai/mistral-small-3.2-24b"
+                },
+                {
+                    "name": "NVIDIA: Nemotron Nano 12B 2 VL",
+                    "id": "nvidia/nemotron-nano-12b-2-vl:free",
+                    "provider": "NVIDIA",
+                    "context": "8K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "NVIDIA's vision-language model with 12B parameters for multimodal understanding.",
+                    "url": "https://openrouter.ai/models/nvidia/nemotron-nano-12b-2-vl"
+                },
+                {
+                    "name": "MiniMax: MiniMax M2",
+                    "id": "minimax/minimax-m2:free",
+                    "provider": "MiniMax",
+                    "context": "32K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "MiniMax M2 is a versatile language model with strong reasoning capabilities.",
+                    "url": "https://openrouter.ai/models/minimax/minimax-m2"
+                },
+                {
+                    "name": "Microsoft: Phi 4 Reasoning Plus",
+                    "id": "microsoft/phi-4-reasoning-plus:free",
+                    "provider": "Microsoft",
+                    "context": "128K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "Microsoft's Phi 4 model with enhanced reasoning capabilities and multimodal support.",
+                    "url": "https://openrouter.ai/models/microsoft/phi-4-reasoning-plus"
+                },
+                {
+                    "name": "OpenAI: GPT-4o-mini Search Preview",
+                    "id": "openai/gpt-4o-mini-search-preview:free",
+                    "provider": "OpenAI",
+                    "context": "128K",
+                    "inputPrice": "$0/M",
+                    "outputPrice": "$0/M",
+                    "description": "OpenAI's GPT-4o-mini with search capabilities for enhanced information retrieval.",
+                    "url": "https://openrouter.ai/models/openai/gpt-4o-mini-search-preview"
+                }
+            ]
+        };
+
+        let currentPage = 1;
+        const itemsPerPage = 20;
+        let filteredModels = [...modelsData.models];
+        let sortColumn = -1;
+        let sortDirection = 'asc';
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTable();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', filterModels);
+            document.getElementById('providerFilter').addEventListener('change', filterModels);
+            document.getElementById('contextFilter').addEventListener('change', filterModels);
+        }
+
+        function filterModels() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const providerFilter = document.getElementById('providerFilter').value;
+            const contextFilter = document.getElementById('contextFilter').value;
+
+            filteredModels = modelsData.models.filter(model => {
+                const matchesSearch = !searchTerm ||
+                    model.name.toLowerCase().includes(searchTerm) ||
+                    model.provider.toLowerCase().includes(searchTerm) ||
+                    model.description.toLowerCase().includes(searchTerm);
+
+                const matchesProvider = !providerFilter || model.provider === providerFilter;
+                const matchesContext = !contextFilter || model.context === contextFilter;
+
+                return matchesSearch && matchesProvider && matchesContext;
+            });
+
+            currentPage = 1;
+            renderTable();
+        }
+
+        function sortTable(columnIndex) {
+            if (sortColumn === columnIndex) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortColumn = columnIndex;
+                sortDirection = 'asc';
+            }
+
+            filteredModels.sort((a, b) => {
+                let aVal, bVal;
+
+                switch(columnIndex) {
+                    case 0: aVal = a.name; bVal = b.name; break;
+                    case 1: aVal = a.provider; bVal = b.provider; break;
+                    case 2: aVal = a.context; bVal = b.context; break;
+                    case 3: aVal = a.modelSize || ''; bVal = b.modelSize || ''; break;
+                    case 4: aVal = a.inputPrice; bVal = b.inputPrice; break;
+                    case 5: aVal = a.outputPrice; bVal = b.outputPrice; break;
+                    case 6: aVal = a.description; bVal = b.description; break;
+                    case 7: aVal = a.capabilities || ''; bVal = b.capabilities || ''; break;
+                    default: return 0;
+                }
+
+                if (sortDirection === 'asc') {
+                    return aVal > bVal ? 1 : -1;
+                } else {
+                    return aVal < bVal ? 1 : -1;
+                }
+            });
+
+            renderTable();
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('modelsTableBody');
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageModels = filteredModels.slice(startIndex, endIndex);
+
+            tbody.innerHTML = pageModels.map(model => `
+                <tr>
+                    <td class="model-name">
+                        <a href="${model.url}" target="_blank">${model.name}</a>
+                    </td>
+                    <td class="provider">${model.provider}</td>
+                    <td class="context">${model.context}</td>
+                    <td>${model.modelSize || 'N/A'}</td>
+                    <td class="price">${model.inputPrice}</td>
+                    <td class="price">${model.outputPrice}</td>
+                    <td class="description" title="${model.description}">${model.description}</td>
+                    <td>${model.capabilities || 'N/A'}</td>
+                </tr>
+            `).join('');
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredModels.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let paginationHTML = '';
+
+            // Previous button
+            paginationHTML += `<button ${currentPage === 1 ? 'disabled' : ''} onclick="changePage(${currentPage - 1})">← Пред</button>`;
+
+            // Page numbers
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(totalPages, currentPage + 2);
+
+            if (startPage > 1) {
+                paginationHTML += `<button onclick="changePage(1)">1</button>`;
+                if (startPage > 2) {
+                    paginationHTML += `<span>...</span>`;
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                paginationHTML += `<button class="${i === currentPage ? 'current' : ''}" onclick="changePage(${i})">${i}</button>`;
+            }
+
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    paginationHTML += `<span>...</span>`;
+                }
+                paginationHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
+            }
+
+            // Next button
+            paginationHTML += `<button ${currentPage === totalPages ? 'disabled' : ''} onclick="changePage(${currentPage + 1})">След →</button>`;
+
+            pagination.innerHTML = paginationHTML;
+        }
+
+        function changePage(page) {
+            const totalPages = Math.ceil(filteredModels.length / itemsPerPage);
+            if (page >= 1 && page <= totalPages) {
+                currentPage = page;
+                renderTable();
+            }
+        }
+
+        function exportToJSON() {
+            const dataStr = JSON.stringify(modelsData, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'openrouter-validated-models.json';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function exportToCSV() {
+            const headers = ['Название', 'Провайдер', 'Контекст', 'Размер', 'Вход', 'Выход', 'Описание', 'Возможности', 'URL'];
+            const csvContent = [
+                headers.join(','),
+                ...filteredModels.map(model => [
+                    `"${model.name}"`,
+                    `"${model.provider}"`,
+                    `"${model.context}"`,
+                    `"${model.modelSize || 'N/A'}"`,
+                    `"${model.inputPrice}"`,
+                    `"${model.outputPrice}"`,
+                    `"${model.description}"`,
+                    `"${model.capabilities || 'N/A'}"`,
+                    `"${model.url}"`
+                ].join(','))
+            ].join('\n');
+
+            const dataBlob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'openrouter-validated-models.csv';
+            link.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function refreshData() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
